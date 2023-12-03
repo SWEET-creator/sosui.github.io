@@ -1,5 +1,5 @@
 body {
-    color: rgb(174, 174, 174);
+    color: rgb(202, 202, 202);
     font-family: "Courier New";
     font-size: medium;
 }
@@ -159,4 +159,26 @@ nav {
     flex: 1;
     margin: 20px; /* Increased margin for more space around each card */
     max-width: 500px;
+}
+
+/* 通常状態のリンク */
+a {
+    color: rgb(202, 202, 202);
+    text-decoration:rgb(202, 202, 202);
+}
+
+/* マウスオーバー時のリンク */
+a:hover {
+    color: rgb(112, 112, 112); /* マウスオーバー時の色 */
+    text-decoration: rgb(112, 112, 112); /* 下線を表示する場合 */
+}
+
+/* アクティブ状態のリンク */
+a:active {
+    color: rgb(202, 202, 202);
+}
+
+/* 訪問済みリンク */
+a:visited {
+    color: rgb(202, 202, 202);
 }
