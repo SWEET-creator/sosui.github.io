@@ -157,7 +157,7 @@ nav {
 
 .card-link-wrapper_06 {
     flex: 1;
-    margin: 20px; /* Increased margin for more space around each card */
+    margin: 10px; /* Increased margin for more space around each card */
     max-width: 500px;
 }
 
@@ -165,6 +165,11 @@ nav {
 a {
     color: rgb(202, 202, 202);
     text-decoration:rgb(202, 202, 202);
+    text-align: right;
+    display: inline-block;
+    position: relative;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 /* マウスオーバー時のリンク */
@@ -181,4 +186,25 @@ a:active {
 /* 訪問済みリンク */
 a:visited {
     color: rgb(202, 202, 202);
+}
+
+@media screen and (max-width: 600px) {
+    .card-link-wrapper_06 {
+        flex-basis: 100%; /* 1列で表示 */
+        max-width: 100%; /* コンテナの幅に合わせる */
+    }
+}
+
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+    .card-link-wrapper_06 {
+        flex-basis: calc(50% - 40px); /* 2列で表示、両側のマージンを考慮 */
+        max-width: calc(50% - 40px); /* 両側のマージンを考慮 */
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    .card-link-wrapper_06 {
+        flex-basis: calc(33.33% - 40px); /* 3列で表示、両側のマージンを考慮 */
+        max-width: calc(33.33% - 40px); /* 両側のマージンを考慮 */
+    }
 }
