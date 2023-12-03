@@ -1,127 +1,178 @@
 <!DOCTYPE html>
 <html lang="ja">
-    <head>
-        <meta charset="UTF-8"/>
-        <title>古賀 荘翠 / Sosui Koga</title>
-        <link rel="stylesheet" href="css/main.css">
-        
-        <!--
-                    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.2/p5.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.2/p5.js"></script>
-        <script src="js/main.js"></script>
-        -->
-    </head>
 
-    <body text="#000000"
-        style ="background: #ffffff;
-                background: -webkit-linear-gradient(to right, #9ac8d3, #d4cef6);
-                background: linear-gradient(to right, #9ac9d4, #dad2ff);"> 
-        <h1 id="pagetop">
-            <font style="color:rgb(0, 0, 0);" size="10" face="monospace">古賀 荘翠 / Sosui Koga</font>
-        </h1>
+<head>
+    <meta charset="UTF-8" />
+    <title>古賀 荘翠 / Sosui Koga</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
 
-        <nav>
-            <a href="#Bio" style="color:inherit; text-decoration: none;">
-                <font size="4" face="monospace">
-                    <p class="borderLeftRight">
+<body style="background: rgb(36, 36, 36);">
+    <h1 id="pagetop">
+        <font size="10">古賀 荘翠 / Sosui Koga</font>
+    </h1>
+
+    <nav>
+        <a href="#Bio" style="color:inherit; text-decoration: none;">
+            <font size="4">
+                <p class="borderLeftRight">
                     Bio
-                    </p>
-                </font>
-            </a>
-            <a href="#Products" style="color:inherit; text-decoration: none;">
-                <font size="4" face="monospace">
-                    <p class="borderLeftRight">
+                </p>
+            </font>
+        </a>
+        <a href="#Products" style="color:inherit; text-decoration: none;">
+            <font size="4">
+                <p class="borderLeftRight">
                     Products
-                    </p>
-                </font>
-            </a>
-            <a href="#Article" style="color:inherit; text-decoration: none;">
-                <font size="4" face="monospace">
-                    <p  class="borderLeftRight">
-                        Article
-                    </p>
-                </font>
-            </a>
-        </nav>
-        <!--
-                    <div id="canvas" style="position: absolute;"></div>
-        <p class="resizeimage" style="position: relative;">
-            <img src="/images/EOS kiss m.002.png" style="visibility:hidden;">
-         </p>
+                </p>
+            </font>
+        </a>
+        <a href="#Article" style="color:inherit; text-decoration: none;">
+            <font size="4">
+                <p class="borderLeftRight">
+                    Article
+                </p>
+            </font>
+        </a>
+    </nav>
 
-        -->
-        <h2 id="Bio">
-            <font size="6" face="monospace">Bio</font>
-        </h2>
-        <font face="monospace"　font size="4">
-            <pre>
-            在籍：　　岡山県立大学 情報工学部 情報通信工学科 B4
-            生まれ：　2002年
-            遍歴：　　京都→兵庫→岡山
-            趣味：　　3D Graphics, Generative Coding, Photography, Coding, Degital Painting
-
+    <h2 id="Products">
+        <font size="6">Products</font>
+    </h2>
+    <font font size="4">
+        <pre>
+            <a style="color:blue;" href="https://github.com/Sweet-cleater/MEWB/">https://github.com/Sweet-cleater/MEWB/</a>
+            <a style="color:blue;" href="http://enpit.cs.ehime-u.ac.jp/camp/">emPit@Ehime(2022 年 10 月~ 2 月) 参加</a>
+            enPiT-2 Security(2022 年 9 月・12 月)
+            ダルマガエルプロジェクト
+                
         </pre>
-        </font>
-
-        <h2 id="Products">
-            <font size="6" face="monospace">Products</font>
-        </h2>
-
+        <div class="cards-container">
+            <a href="#" class="card-link-wrapper_06">
+                <div class="l-wrapper_06">
+                    <div class="card_06">
+                        <div class="card-img-wrapper_06">
+                            <img class="card-img_06" src="public/generateImage0.jpg" alt="">
+                        </div>
+                        <div class="card-content_06">
+                            <p class="card-title_06">ANPR<br>(Auto Number Plate Recognition)</p>
+                            <p class="card-text_06">YoLoを用いて車のナンバープレート識別を行うシステムを開発</p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <a href="#" class="card-link-wrapper_06">
+                <div class="l-wrapper_06">
+                    <div class="card_06">
+                        <div class="card-img-wrapper_06">
+                            <img class="card-img_06" src="public/OCR.png" alt="">
+                        </div>
+                        <div class="card-content_06">
+                            <p class="card-title_06">OCR Anotator</p>
+                            <p class="card-text_06">アノテーションの様にOCRのフォーマットを作成し運用するためのWEBアプリケーションを開発</p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="cards-container">
+            <a href="#" class="card-link-wrapper_06">
+                <div class="l-wrapper_06">
+                    <div class="card_06">
+                        <div class="card-img-wrapper_06">
+                            <img class="card-img_06" src="public/wan-nyan.png" alt="">
+                        </div>
+                        <div class="card-content_06">
+                            <p class="card-title_06">WanとNyan</p>
+                            <p class="card-text_06">WebxIoTメイカーズチャレンジin岡山に参加<br>犬と猫の生息を調査するツールをチーム開発</p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <a href="#" class="card-link-wrapper_06">
+                <div class="l-wrapper_06">
+                    <div class="card_06">
+                        <div class="card-img-wrapper_06">
+                            <img class="card-img_06" src="public/Meta-OPU.png" alt="">
+                        </div>
+                        <div class="card-content_06">
+                            <p class="card-title_06">Meta-OPU</p>
+                            <p class="card-text_06">岡山県立大学(OPU)をバーチャル空間に制作して学祭で展示した</p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="cards-container">
+            <a href="#" class="card-link-wrapper_06">
+                <div class="l-wrapper_06">
+                    <div class="card_06">
+                        <div class="card-img-wrapper_06">
+                            <img class="card-img_06" src="public/kirameki.png" alt="">
+                        </div>
+                        <div class="card-content_06">
+                            <p class="card-title_06">キラメキセラメキ</p>
+                            <p class="card-text_06">セラミック+テキスタイルのデザインサークルとの合作を学祭でで展示した</p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <a href="#" class="card-link-wrapper_06">
+                <div class="l-wrapper_06">
+                    <div class="card_06">
+                        <div class="card-img-wrapper_06">
+                            <img class="card-img_06" src="public/OpuCoder_logo.png" alt="">
+                        </div>
+                        <div class="card-content_06">
+                            <p class="card-title_06">OpuCoderのロゴ制作</p>
+                            <p class="card-text_06">岡山県立大学のプログラミングサークルOpuCoderのロゴと名刺を作成</p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
         <h2 id="Achievement">
-            <font face="monospace" font size="4">
+            <font size="6">Achievement</font>
+        </h2>
+        <font font size="4">
             <pre>
                 <a style="color:blue;" href="http://www.rikokei.jp/winning/2021.html">日刊工業新聞社 モノづくり日本会議 主催 2021 年(第２１回)理工系科学技術論文コンクール 入選</a>
-                enPiT@Ehime(2022 年 10 月~ 2 月)
-                enPiT-2 Security(2022 年 9 月・12 月)
-                ダルマガエルプロジェクト
                 C2C
-                Meta-OPU
-                キラメキセラメキ
-                WebxIoTメイカーズチャレンジ
                 <a style="color:blue;" href="https://www.sice.or.jp/org/pattern/program2023.html">第28回パターン計測シンポジウム(第108回パターン計測部会研究会) 登壇</a>
             </pre>
-        </h2>
 
-        <h2 id="Article">
-            <font size="6" face="monospace">Article</font>
-        </h2>
-            <h3>
-                <font size="5" face="monospace">日常の話</font>
-            </h3>
-            <font face="monospace" font size="4">
-            <pre>
-            音楽が好きです．ギターとキーボードを極まれに触ってます．DTM，DJ．
-            特に好きなバンドは，ヨルシカとmillenium paradeです．
-            アニメは色々見ている方だと思う．好きなアニメは物語シリーズ，氷菓，宝石の国．
-            最近読んで面白かった漫画は葬送のフリーレン，呪術廻戦．
-            </pre>
-            <h3>
-                <font size="5" face="monospace">情報工学に関するあれこれ</font>
-            </h3>
-            <font face="monospace" font size="4">
-            <pre>
-            webアプリケーションの制作の経験はないですが，pythonベースで簡単なPC上で動くアプリケーションを作ったことはあります。
-            <a style="color:blue;" href="https://github.com/Sweet-cleater/MEWB/">https://github.com/Sweet-cleater/MEWB/</a>
-            他に，Raspberry Piというマイコンを使ってロボットを制御したり，Unityでゲームを作ったり．
-            グラフィックを伴ったコーディングをよくしていますが，HTMLやPHPはあまり触ったことがないので，
-            今回の開発を通して学びたいと思っています．
-            </pre>
-
-        <h2 id="Link">
-            <font face="monospace" font size="4">
-            <pre>
+            <h2 id="Link">
+                <font size="6">Link</font>
+            </h2>
+            <font font size="4">
+                <pre>
                 <a style="color:blue;" href="https://twitter.com/sosui0131/status/1124813766917443584">Twitter</a>
             </pre>
-        </h2>
 
-        <h2 id="qualification">
-            <font face="monospace" font size="4">
-            <pre>
+                <h2 id="Qualification">
+                    <font size="6">Qualification</font>
+                </h2>
+                <font font size="4">
+                    <pre>
                 <a style="color:blue;" href="https://atcoder.jp/users/sweet000">Atcoder</a>
                 TOEIC 835 (2023 年 2 月）
                 <a style="color:blue;" href="https://masutomi.or.jp/pages/72/">鉱物鑑定士 ６級</a>
             </pre>
-        </h2>
 
-        </body>
+                    <h2 id="Bio">
+                        <font size="6" ">Bio</font>
+                    </h2>
+                    <font  　font size=" 4">
+                            <pre>
+                在籍：　　岡山県立大学 情報工学部 情報通信工学科 B4
+                生まれ：　2002年
+                遍歴：　　京都→兵庫→岡山
+                趣味：　　3D Graphics, Generative Coding, Photography, Coding, Degital Painting
+
+            </pre>
+                        </font>
+
+
+</body>
+
 </html>

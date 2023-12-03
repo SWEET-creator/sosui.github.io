@@ -1,23 +1,32 @@
-.table_set{
-    color: #ffffff;
-    background-color:#363636;
-    }
+body {
+    color: rgb(174, 174, 174);
+    font-family: "Courier New";
+    font-size: medium;
+}
 
-    .resizeimage img {
-        width: 100vw;
-        height: 70vw;
-    }
+pre {
+    font-family: メイリオ;
+}
 
-    .borderLeftRight {
-        text-align: right;
-        display: inline-block;
-        position: relative;
-        padding-left: 10px;
-        padding-right: 10px;
-        color: hsl(216, 100%, 1%);
-    }
-    
-    .borderLeftRight::after {
+.table_set {
+    background-color: #363636;
+}
+
+.resizeimage img {
+    width: 100vw;
+    height: 70vw;
+}
+
+.borderLeftRight {
+    text-align: right;
+    display: inline-block;
+    position: relative;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: hsl(216, 100%, 1%);
+}
+
+.borderLeftRight::after {
     content: '';
     position: absolute;
     width: 100%;
@@ -28,23 +37,126 @@
     background-color: hsl(243, 80%, 62%);
     transform-origin: bottom right;
     transition: transform 0.4s cubic-bezier(0.86, 0, 0.07, 1);
-    }
+}
 
-    .borderLeftRight:hover::after {
+.borderLeftRight:hover::after {
     transform: scaleX(1);
     transform-origin: bottom left;
-    }
+}
 
-    nav {
+nav {
     padding-left: 10px;
     padding-right: 10px;
     box-sizing: border-box;
     position: fixed;
     top: 0;
     right: 0;
-    background-color:rgba(255, 255, 255, 0.8);
-    }
+    background-color: rgba(255, 255, 255, 0.8);
+}
 
-    .container {
-        display:flex;
-    }
+.container {
+    display: flex;
+}
+
+.l-wrapper_06 {
+    margin: 1rem auto;
+    width: 70%;
+}
+
+.l-wrapper_06:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 7px 34px rgba(50, 50, 93, .1), 0 3px 6px rgba(0, 0, 0, .08);
+    transition: all .5s;
+}
+
+.card_06 {
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px #ccc;
+}
+
+.card-img_06 {
+    width: 100%;
+    /* Adjust image width to fit the container */
+    height: auto;
+    /* Maintain aspect ratio */
+    object-fit: cover;
+    /* Ensures the image covers the container without stretching */
+    border-radius: 5px 5px 0 0;
+    /* Maintains the border radius */
+}
+
+.card-img-wrapper_06 {
+    overflow: hidden;
+    /* Ensures no part of the image spills out */
+    border-radius: 5px 5px 0 0;
+    /* Maintains the border radius */
+    padding: 10px;
+    /* Adds padding */
+    position: relative;
+    /* Needed for pseudo-element positioning */
+}
+
+.card-img-wrapper_06::after {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    /* Aligns with the padding */
+    right: -10px;
+    bottom: -10px;
+    background: inherit;
+    filter: blur(8px);
+    /* Adjust the blur amount as needed */
+    z-index: -1;
+}
+
+.card-content_06 {
+    padding: 8px 20px 20px;
+}
+
+.card-title_06 {
+    font-size: 1.6em;
+    color: #333;
+    font-weight: 700;
+}
+
+.card-text_06 {
+    color: #777;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 0.2em;
+}
+
+.card-link_06 {
+    text-align: center;
+    border-top: 1px solid #eee;
+    padding: 20px;
+}
+
+.card-link_06 a {
+    text-decoration: none;
+    color: #4f96f6;
+    margin: 0 10px;
+}
+
+.card-link_06 a:hover {
+    color: #6bb6ff;
+}
+
+.card-content_06 p {
+    margin-bottom: 0;
+}
+
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Adjusted for equal spacing between items */
+    align-items: center;
+}
+
+.card-link-wrapper_06 {
+    flex: 1;
+    margin: 20px; /* Increased margin for more space around each card */
+    max-width: 500px;
+}
