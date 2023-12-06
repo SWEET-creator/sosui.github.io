@@ -2,6 +2,8 @@ body {
     color: rgb(202, 202, 202);
     font-family: "Courier New";
     font-size: medium;
+    margin-left: 40px; /* 左のマージン */
+    margin-right: 40px; /* 右のマージン */
 }
 
 pre {
@@ -158,18 +160,14 @@ nav {
 .card-link-wrapper_06 {
     flex: 1;
     margin: 10px; /* Increased margin for more space around each card */
-    max-width: 500px;
 }
 
 /* 通常状態のリンク */
 a {
     color: rgb(202, 202, 202);
     text-decoration:rgb(202, 202, 202);
-    text-align: right;
     display: inline-block;
     position: relative;
-    padding-left: 10px;
-    padding-right: 10px;
 }
 
 /* マウスオーバー時のリンク */
@@ -207,4 +205,28 @@ a:visited {
         flex-basis: calc(33.33% - 40px); /* 3列で表示、両側のマージンを考慮 */
         max-width: calc(33.33% - 40px); /* 両側のマージンを考慮 */
     }
+}
+
+.card-footer_06 {
+    padding: 10px 10px; /* パディングを設定 */
+    border-top: 1px solid #eee; /* 上部に細い境界線を追加 */
+    display: flex; /* Flexboxに変更 */
+    justify-content: center; /* 水平方向の中央揃え */
+    align-items: center; 
+}
+
+.card-footer_06 img {
+    width: 24px; /* 幅を24ピクセルに設定 */
+    height: auto; /* 高さを自動で調整し、アスペクト比を維持 */
+}
+
+.card-footer_06 a {
+    text-decoration: none; /* アンダーラインを無効に設定 */
+    color: #4f96f6; /* リンクの色を設定 */
+    margin: 0 5px; /* マージンを設定 */
+    transition: color 0.3s ease; /* 色の変化にアニメーションを追加 */
+}
+
+.card-footer_06 a:hover {
+    color: #6bb6ff; /* マウスオーバー時のリンクの色を変更 */
 }
