@@ -1,0 +1,107 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background: #222;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+header h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+}
+header p {
+    margin: 8px 0 0;
+    font-size: 1rem;
+    opacity: 0.8;
+}
+.back-link {
+    text-decoration: none;
+    color: #ddd;
+    font-size: 0.9rem;
+    position: absolute;
+    left: 20px;
+    top: 20px;
+}
+.back-link:hover {
+    color: #fff;
+}
+
+/* タイムライン全体のスタイル */
+.timeline-container {
+    width: 90%;
+    max-width: 800px;
+    margin: 0 auto 50px;
+    position: relative;
+}
+
+.timeline-line {
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: #ccc;
+    border-radius: 2px;
+    margin-left: -2px; /* 水平方向に中央寄せしたい場合 */
+}
+
+/* タイムラインアイテム */
+.timeline-item {
+    position: relative;
+    padding: 20px 20px 20px 50px;
+    margin-bottom: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    top: 30px;
+    left: 20px;
+    width: 16px;
+    height: 16px;
+    background: #4285f4; /* タイムラインの節点カラー（青系） */
+    border-radius: 50%;
+    border: 2px solid #fff;
+    box-shadow: 0 0 0 2px #4285f4;
+}
+
+.timeline-year {
+    font-weight: 700;
+    color: #4285f4;
+    margin-bottom: 6px;
+    font-size: 1.1rem;
+}
+
+.timeline-title {
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.timeline-link a {
+    color: #4285f4;
+    text-decoration: none;
+    margin-right: 10px;
+}
+.timeline-link a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    background: #222;
+    color: #fff;
+    text-align: center;
+    padding: 12px;
+}

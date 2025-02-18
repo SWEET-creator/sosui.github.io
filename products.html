@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>CSV からカードを生成</title>
+  <!-- Google Fonts の読み込み: 例として Roboto を使用 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Papa Parse をCDNで読み込み -->
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+
+  <link rel="stylesheet" href="css/main.css">
+  
+</head>
+<body>
+  <header>
+    <h1>Products</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Bio</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="arts.html">Arts</a></li>
+        <li><a href="achievements.html">Achievements</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- カード一覧を表示するコンテナ -->
+  <div id="cards-container" class="cards-container"></div>
+
+  <!-- Papa Parse を使ってCSV読み込み & カード生成 -->
+  <script>
+    const csvFilePath = 'products_data.csv';
+
+    Papa.parse(csvFilePath, {
+      download: true,
+      header: true,  // 1行目をヘッダとして扱う
+      complete: function(results) {
+        const data = results.data;
+        console.log('CSV data:', data);
+
+        const container = document.getElementById('cards-container');
+
+        data.forEach(item => {
+          // カード要素を作る
+          const card = document.createElement('div');
+          card.className = 'card';
+
+          // 年を表示（yearフィールド）
+          if (item.year && item.year.trim() !== '') {
+            const year = document.createElement('div');
+            year.className = 'card-year';
+            year.textContent = item.year;
+            card.appendChild(year);
+          }
+
+          // 画像
+          if (item.imgPath && item.imgPath.trim() !== '') {
+            const img = document.createElement('img');
+            img.src = item.imgPath;
+            card.appendChild(img);
+          }
+
+          // タイトル
+          if (item.title && item.title.trim() !== '') {
+            const title = document.createElement('div');
+            title.className = 'card-title';
+            title.textContent = item.title;
+            card.appendChild(title);
+          }
+
+          // テキスト
+          if (item.text && item.text.trim() !== '') {
+            const text = document.createElement('div');
+            text.className = 'card-text';
+            text.textContent = item.text;
+            card.appendChild(text);
+          }
+
+          // フッター（リンクなど）
+          const footer = document.createElement('div');
+          footer.className = 'card-footer';
+
+          // GitHubリンクがあれば表示
+          if (item.githubLink && item.githubLink.trim() !== '') {
+            const ghLink = document.createElement('a');
+            ghLink.href = item.githubLink;
+            ghLink.target = '_blank';
+            ghLink.textContent = 'GitHub';
+            footer.appendChild(ghLink);
+          }
+
+          // 他にもリンク項目（projectLinkなど）を増やしたければここに追加
+          if (item.projectLink && item.projectLink.trim() !== '') {
+            const projectLink = document.createElement('a');
+            projectLink.href = item.projectLink;
+            projectLink.target = '_blank';
+            projectLink.textContent = 'Project';
+            // リンク同士の間にスペースを入れる場合
+            footer.appendChild(document.createTextNode(' '));
+            footer.appendChild(projectLink);
+          }
+
+          // フッターをカードに追加（リンクが1つもなくても一応表示）
+          card.appendChild(footer);
+
+          // containerに追加
+          container.appendChild(card);
+        });
+      }
+    });
+  </script>
+
+  <footer>
+    © 2025 Sosui Koga
+  </footer>
+</body>
+</html>

@@ -1,0 +1,19 @@
+year,imgPath,title,text,githubLink,projectLink
+2024,public/Mimamori_Zamurai.png,見守り侍,"""Sensing solution ハッカソン 2024""にて最終審査進出 画像認識で学習時間を計測に基づきアバターが成長する,学習支援プロダクト 使用:Spressense, AWS, Neural Network Console",https://github.com/SWEET-creator/Mimamori_Samurai
+2024,public/NTTRandD.png,NTTR&D 長期インターン,"V&L基盤モデルを活用した人物行動認識手法の提案 使用:Pytorch, Transformers, LAVIS, PEFT",
+2024,public/paper_summarizer.png,Paper summarizer,"Arxiv IDもしくは任意論文PDFを要約しNotionに自動追加するAPP 使用:Arxiv API, GPT, Notion API, Python",https://github.com/SWEET-creator/paper_summarizer,https://qiita.com/Sweet/items/c677043f97b508f1294f
+2024,public/X-CLIP+TPT.png,X-CLIP+TPT,"マルチモーダル基盤モデルを用いたZero-shot行動分類の精度向上 ギリア株式会社様でのインターンで取り組ませていただきました 使用:pytorch, transformers",
+2024,public/VKG.png,Virtual Kawaii Girl,"AI Vtuberを作成中 使用:Python, Unity, etc",https://github.com/SWEET-creator/Virtual_Kawaii_Girl
+2024,public/move.png,Move!,"長時間の着座を検知してLINEに通知する 使用:OpenCV, flask, LINENotification",https://github.com/SWEET-creator/Camera_System/tree/main
+2023,public/generateImage0.jpg,"ANPR (Auto Number Plate Recognition)","YoLoを用いて車のナンバープレート識別を行うシステムを開発 使用:YoLo",
+2023,public/OCR.png,OCR Anotator,"アノテーションの様にOCRをテンプレート化，自動文字認識のためのWEBアプリケーションを開発 使用:Node.js, PostgreSQL, tesract",
+2023,public/motionsort.png,MotionSORT（卒業研究）,"人の動きの非線形性に着目してDeep SORTを拡張したMotion SORTを提案した 使用:pytorch",https://github.com/SWEET-creator/MotionSORT
+2023,public/wan-nyan.png,WanとNyan,"WebxIoTメイカーズチャレンジin岡山に参加 犬と猫の生息を調査するツールをチーム開発 使用:RaspberryPi, GPS, Flask",
+2023,public/Meta-OPU.png,Meta-OPU,"岡山県立大学(OPU)をVR空間に制作して学祭で展示した 使用:Blender, Unity, Oculas",
+2023,public/kirameki.png,キラメキセラメキ,"セラミック+テキスタイルのデザインサークルとの合作を学祭でで展示した 使用:Arudino, LED",
+2023,public/daruma.png,ダルマガエルの個体識別Project,"絶滅危惧種ダルマガエルの個体を識別するツールを開発 使用:Python(Keras)",
+2023,public/OpuCoder_logo.png,OpuCoderのロゴ制作,"岡山県立大学のプログラミングサークルOpuCoderのロゴと名刺を作成 使用:P5.js, Photoshop",
+2023,public/White_Box.png,White Box,"農作地や工場で使用可能なクラウド・センシングシステムを開発 使用:Raspberry Pi, AWS S3,Node.js",
+2022,public/gattai_shogi.png,合体将棋,"駒と駒が合体するインターネット対戦可能な将棋をwebアプリとしてチーム開発 in emPit@Ehime 使用:HTML, JavaScript, PHP",https://github.com/SWEET-creator/gattai-shogi.git
+2022,public/Evolutional_Q.png,Evo-Q,"Q学習と進化計算を合わせた学習モデルを実装 使用:Java, Processing",https://github.com/SWEET-creator/Evolutional_Q.git
+2022,public/MEWB.png,MEWB(My English Word Book),"自分専用の英単語学習帳 使用:Python(Tikinter)",https://github.com/SWEET-creator/MEWB

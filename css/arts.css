@@ -1,0 +1,126 @@
+/* リセット */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ベース設定 */
+body {
+  font-family: 'Helvetica', sans-serif;
+  background: #1c1c1c; /* ダークな背景 */
+  color: #f0f0f0;      /* 明るい文字 */
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+/* ヘッダー */
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #000;
+  padding: 2rem 1rem;
+}
+
+header h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* ナビゲーション */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+nav a {
+  color: #f0f0f0;
+  text-decoration: none;
+  font-weight: bold;
+  position: relative;
+  padding: 0.25rem 0;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0;
+  height: 2px;
+  background: #f39c12;
+  transition: width 0.3s ease;
+}
+
+nav a:hover::after,
+nav a.active::after {
+  width: 100%;
+}
+
+/* メインコンテンツ */
+main {
+  width: 90%;
+  max-width: 1200px;
+  margin: 3rem auto;
+}
+
+/* セクション */
+section {
+  margin-bottom: 4rem;
+  text-align: center;
+}
+
+section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+  display: inline-block;
+}
+
+section h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: #f39c12;
+  margin: 0.5rem auto 0;
+  border-radius: 2px;
+}
+
+/* ギャラリー */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.work-item {
+  background: #2f2f2f;
+  border-radius: 10px;
+  padding: 1rem;
+  transition: transform 0.3s ease;
+  text-align: center;
+}
+
+.work-item img {
+  max-width: 100%;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.work-item:hover {
+  transform: scale(1.03);
+}
+
+/* フッター */
+footer {
+  text-align: center;
+  background: #000;
+  color: #999;
+  padding: 1rem;
+}

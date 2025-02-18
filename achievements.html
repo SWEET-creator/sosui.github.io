@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Achievements Timeline</title>
+
+  <!-- Google Fonts の読み込み -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- Papa Parse をCDNで読み込み -->
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+
+  <!-- メインCSS -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/achievements.css">
+
+  <!-- 以下は体裁崩れ対策用の一例のインラインCSS -->
+  <style>
+    .timeline-container {
+      position: relative;
+      width: 90%;
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px 0;
+    }
+    /* タイムラインの縦線 */
+    .timeline-line {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: #ccc;
+      transform: translateX(-50%);
+    }
+    /* 各カードの基本スタイル */
+    .timeline-card {
+      position: relative;
+      width: 45%;
+      padding: 15px;
+      margin-bottom: 30px;
+      background: #f9f9f9;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    /* 左右に交互配置 */
+    .timeline-card.left {
+      float: left;
+      clear: both;
+      margin-right: 5%;
+    }
+    .timeline-card.right {
+      float: right;
+      clear: both;
+      margin-left: 5%;
+    }
+    /* 各カード内のグループヘッダー */
+    .timeline-group-header {
+      font-weight: bold;
+      margin-bottom: 10px;
+      font-size: 18px;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 5px;
+    }
+    /* 各実績項目 */
+    .timeline-item-inner {
+      margin-bottom: 10px;
+    }
+    .timeline-title {
+      font-size: 16px;
+      margin-bottom: 5px;
+    }
+    .timeline-link a {
+      text-decoration: none;
+      color: #0073e6;
+    }
+    /* タイムラインの丸マーカー */
+    .timeline-card::before {
+      content: '';
+      position: absolute;
+      top: 20px;
+      width: 12px;
+      height: 12px;
+      background: #fff;
+      border: 2px solid #ccc;
+      border-radius: 50%;
+      z-index: 1;
+    }
+    .timeline-card.left::before {
+      right: -8px;
+    }
+    .timeline-card.right::before {
+      left: -8px;
+    }
+    /* クリア用 */
+    .clearfix::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Achievements</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Bio</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="arts.html">Arts</a></li>
+        <li><a href="achievements.html">Achievements</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- タイムラインコンテナ -->
+  <div class="timeline-container clearfix">
+    <div class="timeline-line"></div>
+    
+    <!-- Papa Parse で CSV 読み込み & タイムライン生成 -->
+    <script>
+      const csvFilePath = 'achievements_data.csv';
+
+      Papa.parse(csvFilePath, {
+        download: true,
+        header: true,
+        complete: function(results) {
+          const data = results.data;
+          const container = document.querySelector('.timeline-container');
+
+          // グループごとにまとめる（year列の値をキーに）
+          const groups = {};
+          data.forEach(item => {
+            // 空行は除外
+            if (!item.year && !item.title) return;
+            // key が空の場合は "Other" などで補完
+            const key = item.year ? item.year.trim() : "Other";
+            if (!groups[key]) {
+              groups[key] = [];
+            }
+            groups[key].push(item);
+          });
+
+          // グループキーをソート（例: 数値の場合は降順）
+          const sortedKeys = Object.keys(groups).sort((a, b) => {
+            if (a === 'Other') return 1;
+            if (b === 'Other') return -1;
+            return parseInt(b) - parseInt(a);
+          });
+
+          // 左右配置を交互にするためのフラグ
+          let isLeft = true;
+
+          sortedKeys.forEach(groupKey => {
+            const groupItems = groups[groupKey];
+
+            // グループごとのカードを作成
+            const card = document.createElement('div');
+            card.className = 'timeline-card ' + (isLeft ? 'left' : 'right');
+            isLeft = !isLeft; // 交互に切替
+
+            // グループヘッダー（例：「2024」または「Qualification」）
+            const headerDiv = document.createElement('div');
+            headerDiv.className = 'timeline-group-header';
+            headerDiv.textContent = groupKey;
+            card.appendChild(headerDiv);
+
+            // グループ内の各実績項目を追加
+            groupItems.forEach(item => {
+              const itemDiv = document.createElement('div');
+              itemDiv.className = 'timeline-item-inner';
+
+              // タイトル
+              if (item.title && item.title.trim() !== '') {
+                const titleDiv = document.createElement('div');
+                titleDiv.className = 'timeline-title';
+                titleDiv.textContent = item.title;
+                itemDiv.appendChild(titleDiv);
+              }
+
+              // リンクがあれば追加
+              if (item.Link && item.Link.trim() !== '') {
+                const linkDiv = document.createElement('div');
+                linkDiv.className = 'timeline-link';
+                const anchor = document.createElement('a');
+                anchor.href = item.Link;
+                anchor.target = '_blank';
+                anchor.textContent = '関連リンク';
+                linkDiv.appendChild(anchor);
+                itemDiv.appendChild(linkDiv);
+              }
+              card.appendChild(itemDiv);
+            });
+
+            container.appendChild(card);
+          });
+        }
+      });
+    </script>
+  </div>
+
+  <footer>
+    © 2025 Sosui Koga
+  </footer>
+</body>
+</html>

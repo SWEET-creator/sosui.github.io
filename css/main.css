@@ -1,232 +1,134 @@
-body {
-    color: rgb(202, 202, 202);
-    font-family: "Courier New";
-    font-size: medium;
-    margin-left: 40px; /* 左のマージン */
-    margin-right: 40px; /* 右のマージン */
-}
-
-pre {
-    font-family: メイリオ;
-}
-
-.table_set {
-    background-color: #363636;
-}
-
-.resizeimage img {
-    width: 100vw;
-    height: 70vw;
-}
-
-.borderLeftRight {
-    text-align: right;
-    display: inline-block;
-    position: relative;
-    padding-left: 10px;
-    padding-right: 10px;
-    color: hsl(216, 100%, 1%);
-}
-
-.borderLeftRight::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    transform: scaleX(0);
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: hsl(243, 80%, 62%);
-    transform-origin: bottom right;
-    transition: transform 0.4s cubic-bezier(0.86, 0, 0.07, 1);
-}
-
-.borderLeftRight:hover::after {
-    transform: scaleX(1);
-    transform-origin: bottom left;
-}
-
-nav {
-    padding-left: 10px;
-    padding-right: 10px;
+* {
     box-sizing: border-box;
-    position: fixed;
-    top: 0;
-    right: 0;
-    background-color: rgba(255, 255, 255, 0.8);
+    margin: 0;
+    padding: 0;
 }
-
-.container {
+body {
+    background: linear-gradient(135deg, #1c1c1c, #2c2c2c);
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    min-height: 100vh;
+    padding: 0;
     display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.l-wrapper_06 {
-    margin: 1rem auto;
-    width: 70%;
-}
-
-.l-wrapper_06:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 7px 34px rgba(50, 50, 93, .1), 0 3px 6px rgba(0, 0, 0, .08);
-    transition: all .5s;
-}
-
-.card_06 {
-    background: #fff;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px #ccc;
-}
-
-.card-img_06 {
+header {
     width: 100%;
-    /* Adjust image width to fit the container */
-    height: auto;
-    /* Maintain aspect ratio */
-    object-fit: cover;
-    /* Ensures the image covers the container without stretching */
-    border-radius: 5px 5px 0 0;
-    /* Maintains the border radius */
-}
-
-.card-img-wrapper_06 {
-    overflow: hidden;
-    /* Ensures no part of the image spills out */
-    border-radius: 5px 5px 0 0;
-    /* Maintains the border radius */
-    padding: 10px;
-    /* Adds padding */
-    position: relative;
-    /* Needed for pseudo-element positioning */
-}
-
-.card-img-wrapper_06::after {
-    content: '';
-    position: absolute;
-    top: -10px;
-    left: -10px;
-    /* Aligns with the padding */
-    right: -10px;
-    bottom: -10px;
-    background: inherit;
-    filter: blur(8px);
-    /* Adjust the blur amount as needed */
-    z-index: -1;
-}
-
-.card-content_06 {
-    padding: 8px 20px 20px;
-}
-
-.card-title_06 {
-    font-size: 1.6em;
-    color: #333;
-    font-weight: 700;
-}
-
-.card-text_06 {
-    color: #777;
-    font-size: 14px;
-    line-height: 1.5;
-    margin-bottom: 0.2em;
-}
-
-.card-link_06 {
+    position: relative; /* リンクを絶対配置にするため */
     text-align: center;
-    border-top: 1px solid #eee;
-    padding: 20px;
+    padding: 2rem 0 1rem;
 }
-
-.card-link_06 a {
+header a.back-link {
+    position: absolute; /* 画面左上や任意位置に配置するための例 */
+    left: 1rem;
+    top: 2rem;
     text-decoration: none;
-    color: #4f96f6;
-    margin: 0 10px;
+    color: #ccc;
+    background: rgba(0,0,0,0.3);
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+header a.back-link:hover {
+    background: rgba(0,0,0,0.6);
 }
 
-.card-link_06 a:hover {
-    color: #6bb6ff;
+header h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
 }
-
-.card-content_06 p {
-    margin-bottom: 0;
+header p {
+    font-size: 1.2rem;
+    color: #ccc;
 }
 
 .cards-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between; /* Adjusted for equal spacing between items */
-    align-items: center;
+    justify-content: center;
+    max-width: 1200px;
+    width: 100%;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    padding: 0 1rem;
 }
 
-.card-link-wrapper_06 {
+.card {
+    width: 280px;
+    background: #333;
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    display: flex;
+    flex-direction: column;
+}
+.card:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+}
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+}
+.card-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+.card-text {
+    font-size: 0.95rem;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+    color: #ddd;
     flex: 1;
-    margin: 10px; /* Increased margin for more space around each card */
+}
+.card-footer {
+    margin-top: auto;
+    display: flex;
+    gap: 1rem;
+}
+.card-footer a {
+    color: #fff;
+    text-decoration: none;
+    background: #007bff;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    transition: background 0.3s ease;
+}
+.card-footer a:hover {
+    background: #0056cc;
 }
 
-/* 通常状態のリンク */
-a {
-    color: rgb(202, 202, 202);
-    text-decoration:rgb(202, 202, 202);
-    display: inline-block;
-    position: relative;
+footer {
+    margin-top: auto;
+    padding: 1rem 0;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #aaa;
 }
-
-/* マウスオーバー時のリンク */
-a:hover {
-    color: rgb(112, 112, 112); /* マウスオーバー時の色 */
-    text-decoration: rgb(112, 112, 112); /* 下線を表示する場合 */
-}
-
-/* アクティブ状態のリンク */
-a:active {
-    color: rgb(202, 202, 202);
-}
-
-/* 訪問済みリンク */
-a:visited {
-    color: rgb(202, 202, 202);
-}
-
-@media screen and (max-width: 600px) {
-    .card-link-wrapper_06 {
-        flex-basis: 100%; /* 1列で表示 */
-        max-width: 100%; /* コンテナの幅に合わせる */
-    }
-}
-
-@media screen and (min-width: 601px) and (max-width: 1024px) {
-    .card-link-wrapper_06 {
-        flex-basis: calc(50% - 40px); /* 2列で表示、両側のマージンを考慮 */
-        max-width: calc(50% - 40px); /* 両側のマージンを考慮 */
-    }
-}
-
-@media screen and (min-width: 1025px) {
-    .card-link-wrapper_06 {
-        flex-basis: calc(33.33% - 40px); /* 3列で表示、両側のマージンを考慮 */
-        max-width: calc(33.33% - 40px); /* 両側のマージンを考慮 */
-    }
-}
-
-.card-footer_06 {
-    padding: 10px 10px; /* パディングを設定 */
-    border-top: 1px solid #eee; /* 上部に細い境界線を追加 */
-    display: flex; /* Flexboxに変更 */
-    justify-content: center; /* 水平方向の中央揃え */
-    align-items: center; 
-}
-
-.card-footer_06 img {
-    width: 24px; /* 幅を24ピクセルに設定 */
-    height: auto; /* 高さを自動で調整し、アスペクト比を維持 */
-}
-
-.card-footer_06 a {
-    text-decoration: none; /* アンダーラインを無効に設定 */
-    color: #4f96f6; /* リンクの色を設定 */
-    margin: 0 5px; /* マージンを設定 */
-    transition: color 0.3s ease; /* 色の変化にアニメーションを追加 */
-}
-
-.card-footer_06 a:hover {
-    color: #6bb6ff; /* マウスオーバー時のリンクの色を変更 */
-}
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  
+  nav a:hover {
+    color: #f39c12;
+  }
+  
