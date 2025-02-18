@@ -1,0 +1,46 @@
+body {
+    background: linear-gradient(135deg, #1c1c1c, #2c2c2c);
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    min-height: 100vh;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    width: 100%;
+    position: relative; /* リンクを絶対配置にするため */
+    text-align: center;
+    padding: 2rem 0 1rem;
+}
+header a.back-link {
+    position: absolute; /* 画面左上や任意位置に配置するための例 */
+    left: 1rem;
+    top: 2rem;
+    text-decoration: none;
+    color: #ccc;
+    background: rgba(0,0,0,0.3);
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #f39c12;
+}
