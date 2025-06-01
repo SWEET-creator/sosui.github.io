@@ -8,41 +8,41 @@ body {
 }
 
 header {
+    width: 100%;
+    position: relative; /* リンクを絶対配置にするため */
     text-align: center;
-    margin: 24px 0 18px 0;
-    background: #222;
-    color: #fff;
-    padding: 20px 0 18px 0;
+    padding: 2rem 0 1rem;
 }
 
 h1 {
-    font-size: 2em;
+    font-size: 3rem;
     font-weight: 700;
-    margin: 0;
+    margin-bottom: 0.5rem;
     letter-spacing: 0.02em;
 }
 
 nav ul {
     list-style: none;
-    padding: 0;
-    margin: 0 0 8px 0;
     display: flex;
     justify-content: center;
-    gap: 18px;
+    gap: 1rem;
+    padding: 0;
+    margin: 0 0 8px 0;
 }
 
-a {
-    color: orange;
-    text-decoration: underline;
-}
-
-header nav a {
-    color: #fff; /* ヘッダのリンク文字を白に */
+nav a {
+    color: #fff;
     text-decoration: none;
-    font-weight: 500;
-    padding: 2px 6px;
+    font-weight: bold;
+    transition: color 0.3s ease;
     border-radius: 3px;
-    transition: background 0.2s;
+    padding: 2px 6px;
+}
+
+nav a:hover {
+    color: #f39c12;
+    background: none;
+    text-decoration: underline;
 }
 
 header nav a.active,
@@ -50,6 +50,27 @@ header nav a:hover {
     background: #e3eafc;
     color: #1976d2; /* ホバー時は青に */
     text-decoration: underline;
+}
+
+header a.back-link {
+    position: absolute; /* 画面左上や任意位置に配置するための例 */
+    left: 1rem;
+    top: 2rem;
+    text-decoration: none;
+    color: #ccc;
+    background: rgba(0,0,0,0.3);
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+
+header a.back-link:hover {
+    background: rgba(0,0,0,0.6);
+}
+
+header p {
+    font-size: 1.2rem;
+    color: #ccc;
 }
 
 footer {
@@ -67,52 +88,52 @@ footer {
     margin: 32px auto;
     padding: 0;
 }
-
 .timeline-line {
     display: none; /* 縦線を非表示に */
+}   display: none; /* 縦線を非表示に */
 }
-
 /* タイムラインカード */
 .timeline-card {
     width: 100%;
     background: #f5f5f5;
-    border-radius: 4px;
+    border-radius: 4px;;
     margin-bottom: 18px;
-    padding: 12px 16px;
-    box-shadow: none;
+    padding: 12px 16px;;
+    box-shadow: none;x;
     position: static;
-    float: none;
+    float: none;atic;
     clear: both;
     color: #222; /* カード内は黒文字で可読性UP */
+}   color: #222; /* カード内は黒文字で可読性UP */
 }
-
 .timeline-card::before {
     display: none; /* 丸マーカー非表示 */
+}   display: none; /* 丸マーカー非表示 */
 }
-
 .timeline-group-header {
-    font-weight: bold;
-    font-size: 17px;
+    font-weight: bold; {
+    font-size: 17px;d;
     margin-bottom: 6px;
-    border: none;
-    padding: 0;
+    border: none;: 6px;
+    padding: 0;e;
+}   padding: 0;
 }
-
 .timeline-item-inner {
     margin-bottom: 6px;
+}   margin-bottom: 6px;
 }
-
 .timeline-title {
     font-size: 15px;
     margin-bottom: 2px;
+}   margin-bottom: 2px;
 }
-
 .timeline-link a {
     color: orange;
     text-decoration: underline;
-    font-size: 14px;
+    font-size: 14px; underline;
+}   font-size: 14px;
 }
-
 .clearfix::after {
     display: none;
+}   display: none;
 }

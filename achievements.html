@@ -59,58 +59,83 @@
             groups[key].push(item);
           });
 
-          // グループキーをソート（例: 数値の場合は降順）
+          // グループキーをソート（年度は降順）
           const sortedKeys = Object.keys(groups).sort((a, b) => {
             if (a === 'Other') return 1;
             if (b === 'Other') return -1;
-            return parseInt(b) - parseInt(a);
+            // 年度の数値比較（新しい年から順に）
+            const yearA = parseInt(a);
+            const yearB = parseInt(b);
+            return yearB - yearA;
           });
-
-          // 左右配置を交互にするためのフラグ
-          let isLeft = true;
 
           sortedKeys.forEach(groupKey => {
             const groupItems = groups[groupKey];
 
-            // グループごとのカードを作成
-            const card = document.createElement('div');
-            card.className = 'timeline-card ' + (isLeft ? 'left' : 'right');
-            isLeft = !isLeft; // 交互に切替
+            // 年度セクションを作成
+            const yearSection = document.createElement('div');
+            yearSection.className = 'year-section';
 
-            // グループヘッダー（例：「2024」または「Qualification」）
-            const headerDiv = document.createElement('div');
-            headerDiv.className = 'timeline-group-header';
-            headerDiv.textContent = groupKey;
-            card.appendChild(headerDiv);
+            // 年度ヘッダー
+            const yearHeader = document.createElement('div');
+            yearHeader.className = 'year-header';
+            yearHeader.innerHTML = `<h2>${groupKey}</h2>`;
+            yearSection.appendChild(yearHeader);
 
-            // グループ内の各実績項目を追加
-            groupItems.forEach(item => {
-              const itemDiv = document.createElement('div');
-              itemDiv.className = 'timeline-item-inner';
+            // その年の実績リスト
+            const achievementsList = document.createElement('div');
+            achievementsList.className = 'achievements-list';
+
+            groupItems.forEach((item, index) => {
+              const achievementItem = document.createElement('div');
+              achievementItem.className = 'achievement-item';
+
+              // 実績カード
+              const card = document.createElement('div');
+              card.className = 'achievement-card';
 
               // タイトル
               if (item.title && item.title.trim() !== '') {
                 const titleDiv = document.createElement('div');
-                titleDiv.className = 'timeline-title';
+                titleDiv.className = 'achievement-title';
                 titleDiv.textContent = item.title;
-                itemDiv.appendChild(titleDiv);
+                card.appendChild(titleDiv);
+              }
+
+              // 詳細（あれば）
+              if (item.description && item.description.trim() !== '') {
+                const descDiv = document.createElement('div');
+                descDiv.className = 'achievement-description';
+                descDiv.textContent = item.description;
+                card.appendChild(descDiv);
+              }
+
+              // 日付（月日がある場合）
+              if (item.date && item.date.trim() !== '') {
+                const dateDiv = document.createElement('div');
+                dateDiv.className = 'achievement-date';
+                dateDiv.textContent = item.date;
+                card.appendChild(dateDiv);
               }
 
               // リンクがあれば追加
               if (item.Link && item.Link.trim() !== '') {
                 const linkDiv = document.createElement('div');
-                linkDiv.className = 'timeline-link';
+                linkDiv.className = 'achievement-link';
                 const anchor = document.createElement('a');
                 anchor.href = item.Link;
                 anchor.target = '_blank';
-                anchor.textContent = '関連リンク';
+                anchor.textContent = '詳細を見る →';
                 linkDiv.appendChild(anchor);
-                itemDiv.appendChild(linkDiv);
+                card.appendChild(linkDiv);
               }
-              card.appendChild(itemDiv);
+
+              achievementItem.appendChild(card);
+              achievementsList.appendChild(achievementItem);
             });
 
-            container.appendChild(card);
+            yearSection.appendChild(achievementsList);
+            container.appendChild(yearSection);
           });
         }
       });
