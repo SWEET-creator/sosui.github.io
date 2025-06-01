@@ -128,7 +128,10 @@
                 cardBody.appendChild(descDiv);
               }
 
-              card.appendChild(cardBody);
+              // カードボディに内容がある場合のみ追加
+              if (cardBody.children.length > 0) {
+                card.appendChild(cardBody);
+              }
 
               // カードフッター（リンク）
               if (item.Link && item.Link.trim() !== '') {

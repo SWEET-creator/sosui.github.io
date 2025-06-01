@@ -255,11 +255,27 @@ footer {
   padding: 1.5rem;
 }
 
+.card-body:empty {
+  display: none;
+  padding: 0;
+}
+
 .achievement-description {
   font-size: 1rem;
   color: #5a6c7d;
   line-height: 1.6;
   margin: 0;
+}
+
+/* descriptionがない場合のヘッダー調整 */
+.card-header:last-child {
+  border-bottom: none;
+  border-radius: 0 0 16px 16px;
+}
+
+/* フッターがない場合のボディ調整 */
+.card-body:last-child {
+  border-radius: 0 0 16px 16px;
 }
 
 /* カードフッター */
