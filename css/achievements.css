@@ -140,30 +140,30 @@ footer {
 
 /* 年度セクションのスタイル */
 .year-section {
-  margin-bottom: 4rem;
-  max-width: 1200px;
+  margin-bottom: 3rem;
+  max-width: 100%;
   margin-left: auto;
   margin-right: auto;
-  padding: 0 2rem;
+  padding: 0 1rem;
 }
 
 .year-header {
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   position: relative;
 }
 
 .year-header h2 {
-  font-size: 2.8rem;
+  font-size: 2rem;
   font-weight: 700;
   color: #2c3e50;
   margin: 0;
-  padding: 1.5rem 3rem;
+  padding: 1rem 2rem;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  border-bottom: 4px solid #667eea;
+  border-bottom: 3px solid #667eea;
   display: inline-block;
   position: relative;
 }
@@ -171,11 +171,11 @@ footer {
 .year-header h2::after {
   content: '';
   position: absolute;
-  bottom: -8px;
+  bottom: -6px;
   left: 50%;
   transform: translateX(-50%);
-  width: 50px;
-  height: 4px;
+  width: 40px;
+  height: 3px;
   background: #764ba2;
   border-radius: 2px;
 }
@@ -183,25 +183,27 @@ footer {
 /* 実績リストのスタイル */
 .achievements-list {
   display: grid;
-  gap: 2rem;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  width: 100%;
 }
 
 .achievement-item {
   display: flex;
-  justify-content: center;
+  justify-content: stretch;
 }
 
 .achievement-card {
   background: white;
-  border-radius: 16px;
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
   border: 1px solid #e8ecef;
   transition: all 0.3s ease;
   width: 100%;
-  max-width: 450px;
   position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 .achievement-card::before {
@@ -210,49 +212,48 @@ footer {
   top: 0;
   left: 0;
   right: 0;
-  height: 4px;
+  height: 3px;
   background: linear-gradient(90deg, #667eea, #764ba2);
 }
 
 .achievement-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
   border-color: #667eea;
 }
 
 /* カードヘッダー */
 .card-header {
-  padding: 1.5rem 1.5rem 1rem;
+  padding: 1rem;
   background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
   border-bottom: 1px solid #dee2e6;
 }
 
 .achievement-date {
-  font-size: 0.85rem;
-  color: #6c757d;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  display: inline-block;
-  padding: 0.25rem 0.75rem;
-  background: #667eea;
+  font-size: 0.7rem;
   color: white;
-  border-radius: 12px;
-  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  background: #667eea;
+  border-radius: 8px;
 }
 
 .achievement-title {
-  font-size: 1.3rem;
+  font-size: 1rem;
   font-weight: 700;
   color: #2c3e50;
-  line-height: 1.4;
+  line-height: 1.3;
   margin: 0;
 }
 
 /* カードボディ */
 .card-body {
-  padding: 1.5rem;
+  padding: 1rem;
+  flex-grow: 1;
 }
 
 .card-body:empty {
@@ -261,28 +262,18 @@ footer {
 }
 
 .achievement-description {
-  font-size: 1rem;
+  font-size: 0.85rem;
   color: #5a6c7d;
-  line-height: 1.6;
+  line-height: 1.5;
   margin: 0;
-}
-
-/* descriptionがない場合のヘッダー調整 */
-.card-header:last-child {
-  border-bottom: none;
-  border-radius: 0 0 16px 16px;
-}
-
-/* フッターがない場合のボディ調整 */
-.card-body:last-child {
-  border-radius: 0 0 16px 16px;
 }
 
 /* カードフッター */
 .card-footer {
-  padding: 1rem 1.5rem;
+  padding: 0.8rem 1rem;
   background: #f8f9fa;
   border-top: 1px solid #dee2e6;
+  margin-top: auto;
 }
 
 .achievement-link {
@@ -293,41 +284,52 @@ footer {
   color: #667eea;
   text-decoration: none;
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: 0.8rem;
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.4rem;
   transition: all 0.3s ease;
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
   background: transparent;
 }
 
 .achievement-link a:hover {
   background: #667eea;
   color: white;
-  transform: translateX(4px);
+  transform: translateX(2px);
 }
 
 .achievement-link .arrow {
   transition: transform 0.3s ease;
+  font-size: 0.9rem;
 }
 
 .achievement-link a:hover .arrow {
-  transform: translateX(4px);
+  transform: translateX(2px);
+}
+
+/* カードの最後の要素の調整 */
+.card-header:last-child {
+  border-bottom: none;
+  border-radius: 0 0 12px 12px;
+}
+
+.card-body:last-child {
+  border-radius: 0 0 12px 12px;
 }
 
 /* アニメーション効果 */
 .achievement-card {
-  animation: fadeInUp 0.6s ease forwards;
+  animation: fadeInUp 0.5s ease forwards;
   opacity: 0;
-  transform: translateY(30px);
+  transform: translateY(20px);
 }
 
-.achievement-card:nth-child(1) { animation-delay: 0.1s; }
-.achievement-card:nth-child(2) { animation-delay: 0.2s; }
-.achievement-card:nth-child(3) { animation-delay: 0.3s; }
-.achievement-card:nth-child(4) { animation-delay: 0.4s; }
+.achievement-card:nth-child(1) { animation-delay: 0.05s; }
+.achievement-card:nth-child(2) { animation-delay: 0.1s; }
+.achievement-card:nth-child(3) { animation-delay: 0.15s; }
+.achievement-card:nth-child(4) { animation-delay: 0.2s; }
 
 @keyframes fadeInUp {
   to {
@@ -337,39 +339,62 @@ footer {
 }
 
 /* レスポンシブ対応 */
+@media (max-width: 1200px) {
+  .achievements-list {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
+
 @media (max-width: 768px) {
   .year-section {
-    padding: 0 1rem;
+    padding: 0 0.5rem;
   }
   
   .year-header h2 {
-    font-size: 2.2rem;
-    padding: 1rem 2rem;
+    font-size: 1.6rem;
+    padding: 0.8rem 1.5rem;
   }
   
   .achievements-list {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 0.8rem;
   }
   
   .card-header,
   .card-body,
   .card-footer {
-    padding: 1rem;
+    padding: 0.8rem;
   }
   
   .achievement-title {
-    font-size: 1.1rem;
+    font-size: 0.9rem;
+  }
+  
+  .achievement-description {
+    font-size: 0.8rem;
   }
 }
 
 @media (max-width: 480px) {
-  .achievement-card {
-    margin: 0 0.5rem;
+  .year-header h2 {
+    font-size: 1.4rem;
+    padding: 0.6rem 1rem;
   }
   
-  .year-header h2 {
-    font-size: 1.8rem;
-    padding: 0.8rem 1.5rem;
+  .achievements-list {
+    grid-template-columns: 1fr;
+    gap: 0.6rem;
+  }
+  
+  .achievement-title {
+    font-size: 0.85rem;
+  }
+  
+  .achievement-description {
+    font-size: 0.75rem;
+  }
+  
+  .achievement-link a {
+    font-size: 0.75rem;
   }
 }
