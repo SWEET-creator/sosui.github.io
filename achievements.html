@@ -94,40 +94,57 @@
               const card = document.createElement('div');
               card.className = 'achievement-card';
 
-              // タイトル
-              if (item.title && item.title.trim() !== '') {
-                const titleDiv = document.createElement('div');
-                titleDiv.className = 'achievement-title';
-                titleDiv.textContent = item.title;
-                card.appendChild(titleDiv);
-              }
-
-              // 詳細（あれば）
-              if (item.description && item.description.trim() !== '') {
-                const descDiv = document.createElement('div');
-                descDiv.className = 'achievement-description';
-                descDiv.textContent = item.description;
-                card.appendChild(descDiv);
-              }
+              // カードヘッダー（日付とタイトルを含む）
+              const cardHeader = document.createElement('div');
+              cardHeader.className = 'card-header';
 
               // 日付（月日がある場合）
               if (item.date && item.date.trim() !== '') {
                 const dateDiv = document.createElement('div');
                 dateDiv.className = 'achievement-date';
                 dateDiv.textContent = item.date;
-                card.appendChild(dateDiv);
+                cardHeader.appendChild(dateDiv);
               }
 
-              // リンクがあれば追加
+              // タイトル
+              if (item.title && item.title.trim() !== '') {
+                const titleDiv = document.createElement('div');
+                titleDiv.className = 'achievement-title';
+                titleDiv.textContent = item.title;
+                cardHeader.appendChild(titleDiv);
+              }
+
+              card.appendChild(cardHeader);
+
+              // カードボディ（詳細情報）
+              const cardBody = document.createElement('div');
+              cardBody.className = 'card-body';
+
+              // 詳細（あれば）
+              if (item.description && item.description.trim() !== '') {
+                const descDiv = document.createElement('div');
+                descDiv.className = 'achievement-description';
+                descDiv.textContent = item.description;
+                cardBody.appendChild(descDiv);
+              }
+
+              card.appendChild(cardBody);
+
+              // カードフッター（リンク）
               if (item.Link && item.Link.trim() !== '') {
+                const cardFooter = document.createElement('div');
+                cardFooter.className = 'card-footer';
+                
                 const linkDiv = document.createElement('div');
                 linkDiv.className = 'achievement-link';
                 const anchor = document.createElement('a');
                 anchor.href = item.Link;
                 anchor.target = '_blank';
-                anchor.textContent = '詳細を見る →';
+                anchor.innerHTML = '<span>詳細を見る</span> <span class="arrow">→</span>';
                 linkDiv.appendChild(anchor);
-                card.appendChild(linkDiv);
+                cardFooter.appendChild(linkDiv);
+                
+                card.appendChild(cardFooter);
               }
 
               achievementItem.appendChild(card);
