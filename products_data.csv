@@ -1,5 +1,5 @@
 year,imgPath,title,text,githubLink,projectLink
-2025,https://s2025.conference-schedule.org/wp-content/linklings_snippets/representative_images/5xLPi8fNn2yyMR9S.jpg,AniDepth : Anime In-between Diffusion using Depth-guided Warped Line-art,SIGGRAPH 2025 Talks https://s2025.conference-schedule.org/presentation/?id=gensub_270&sess=sess173,
+2025,https://s2025.conference-schedule.org/wp-content/linklings_snippets/representative_images/5xLPi8fNn2yyMR9S.jpg,AniDepth : Anime In-between Diffusion using Depth-guided Warped Line-art,SIGGRAPH 2025 Talks,,https://s2025.conference-schedule.org/presentation/?id=gensub_270&sess=sess173
 2024,public/Mimamori_Zamurai.png,見守り侍,"""Sensing solution ハッカソン 2024""にて最終審査進出 画像認識で学習時間を計測に基づきアバターが成長する,学習支援プロダクト 使用:Spressense, AWS, Neural Network Console",https://github.com/SWEET-creator/Mimamori_Samurai
 2024,public/NTTRandD.png,NTTR&D 長期インターン,"V&L基盤モデルを活用した人物行動認識手法の提案 使用:Pytorch, Transformers, LAVIS, PEFT",
 2024,public/paper_summarizer.png,Paper summarizer,"Arxiv IDもしくは任意論文PDFを要約しNotionに自動追加するAPP 使用:Arxiv API, GPT, Notion API, Python",https://github.com/SWEET-creator/paper_summarizer,https://qiita.com/Sweet/items/c677043f97b508f1294f
