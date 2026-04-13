@@ -5,6 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>古賀 荘翠 / Sosui Koga</title>
+    <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
     <link rel="stylesheet" href="css/index.css">
 </head>
 
@@ -16,8 +17,6 @@
             <ul>
                 <li><a class="nav-button active" href="index.html" aria-current="page">Bio</a></li>
                 <li><a class="nav-button" href="products.html">Products</a></li>
-                <li><a class="nav-button" href="arts.html">Arts</a></li>
-                <li><a class="nav-button" href="achievements.html">Achievements</a></li>
             </ul>
         </nav>
     </header>
@@ -28,13 +27,13 @@
                 <strong>Products</strong>
                 <span>制作物・プロジェクトを見る</span>
             </a>
-            <a class="card-link" href="arts.html">
-                <strong>Arts</strong>
-                <span>作品ギャラリーを見る</span>
+            <a class="card-link" href="#links">
+                <strong>Arts Links</strong>
+                <span>Instagramアカウントを見る</span>
             </a>
-            <a class="card-link" href="achievements.html">
+            <a class="card-link" href="#achievements">
                 <strong>Achievements</strong>
-                <span>実績・発表を見る</span>
+                <span>実績一覧を見る</span>
             </a>
         </section>
 
@@ -58,15 +57,57 @@
             <p>2024年 NTT R&D インターンシップ（8月〜9月）</p>
             <p>2025年 ANIMINS Project メンバーとして活動開始</p>
 
-            <h2>Links</h2>
+            <h2 id="links">Links</h2>
             <p>Google Scholar: <a href="https://scholar.google.com/citations?view_op=list_works&hl=ja&hl=ja&user=VOoQZkEAAAAJ">古賀荘翠</a></p>
             <p>X: <a href="https://x.com/sosui0131">古賀 荘翠</a></p>
             <p>GitHub: <a href="https://github.com/SWEET-creator">SWEET-creator</a></p>
+            <p>Instagram (Photo): <a href="https://www.instagram.com/sweets.photon/">@sweets.photon</a></p>
+            <p>Instagram (Generative Art): <a href="https://www.instagram.com/so_sweet_jp/">@so_sweet_jp</a></p>
 
             <h2>Contact</h2>
             <p><a href="mailto:sosui.koga.ko9@naist.ac.jp">sosui.koga.ko9@naist.ac.jp</a></p>
         </section>
+
+        <section class="content-block" id="achievements">
+            <h2>Achievements</h2>
+            <div id="achievements-list" class="achievements-list"></div>
+        </section>
     </main>
+
+    <script>
+        Papa.parse('achievements_data.csv', {
+            download: true,
+            header: true,
+            skipEmptyLines: true,
+            complete: function (results) {
+                const list = document.getElementById('achievements-list');
+                const rows = (results.data || []).filter((r) => r && (r.year || r.title));
+
+                rows.sort((a, b) => Number(b.year || 0) - Number(a.year || 0));
+
+                rows.forEach((item) => {
+                    const entry = document.createElement('article');
+                    entry.className = 'achievement-item';
+
+                    const title = document.createElement('p');
+                    title.className = 'achievement-title';
+                    title.textContent = `${item.year || ''}  ${item.title || ''}`.trim();
+                    entry.appendChild(title);
+
+                    if (item.Link && item.Link.trim() !== '') {
+                        const link = document.createElement('a');
+                        link.href = item.Link;
+                        link.target = '_blank';
+                        link.rel = 'noopener noreferrer';
+                        link.textContent = '詳細';
+                        entry.appendChild(link);
+                    }
+
+                    list.appendChild(entry);
+                });
+            }
+        });
+    </script>
 
 </body>
 </html>
