@@ -55,6 +55,39 @@
     }
 
     const csvFilePath = 'products_data.csv';
+    const MIN_CARD_WIDTH = 280;
+    const CARD_GAP = 16;
+
+    function layoutMasonry() {
+      const container = document.getElementById('cards-container');
+      if (!container) return;
+
+      const cards = Array.from(container.querySelectorAll('.card'));
+      if (cards.length === 0) {
+        container.style.height = '0px';
+        return;
+      }
+
+      const containerWidth = container.clientWidth;
+      const columnCount = Math.max(1, Math.floor((containerWidth + CARD_GAP) / (MIN_CARD_WIDTH + CARD_GAP)));
+      const cardWidth = Math.floor((containerWidth - (columnCount - 1) * CARD_GAP) / columnCount);
+
+      const heights = Array.from({ length: columnCount }, () => 0);
+
+      cards.forEach((card, index) => {
+        const col = index % columnCount;
+        const x = col * (cardWidth + CARD_GAP);
+        const y = heights[col];
+
+        card.style.width = `${cardWidth}px`;
+        card.style.left = `${x}px`;
+        card.style.top = `${y}px`;
+
+        heights[col] += card.offsetHeight + CARD_GAP;
+      });
+
+      container.style.height = `${Math.max(...heights) - CARD_GAP}px`;
+    }
 
     Papa.parse(csvFilePath, {
       download: true,
@@ -89,6 +122,8 @@
           if (item.imgPath && item.imgPath.trim() !== '') {
             const img = document.createElement('img');
             img.src = item.imgPath;
+            img.loading = 'lazy';
+            img.addEventListener('load', () => requestAnimationFrame(layoutMasonry));
             card.appendChild(img);
           }
 
@@ -138,7 +173,13 @@
           // containerに追加
           container.appendChild(card);
         });
+
+        requestAnimationFrame(layoutMasonry);
       }
+    });
+
+    window.addEventListener('resize', () => {
+      requestAnimationFrame(layoutMasonry);
     });
 
     document.getElementById('lang-toggle')?.addEventListener('click', () => {

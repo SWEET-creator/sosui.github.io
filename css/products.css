@@ -116,15 +116,13 @@ nav ul {
     width: min(1200px, 100%);
     margin-top: 1.2rem;
     margin-bottom: 2rem;
-    padding: 0 1rem;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 1rem;
-    align-items: start;
+    padding: 0;
+    position: relative;
 }
 
 .card {
-    width: auto;
+    width: 280px;
+    position: absolute;
     background: #333;
     margin: 0;
     padding: 1rem;
@@ -204,7 +202,6 @@ footer {
     }
 
     .cards-container {
-        grid-template-columns: 1fr;
         padding: 0;
     }
 }
