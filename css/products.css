@@ -15,7 +15,13 @@ header {
     position: relative;
     text-align: center;
     padding: 2rem 0 1rem;
-    min-height: 160px;
+    min-height: 180px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: clamp(2rem, 4vw, 2.6rem);
+    line-height: 1.2;
 }
 
 .header-right-tools {
@@ -77,6 +83,7 @@ header {
     margin: 0.5rem 0 1.4rem;
     color: #c7d2fe;
     opacity: 0.9;
+    min-height: 1.6em;
 }
 
 .profile-hero {
@@ -222,7 +229,7 @@ footer {
     color: #aaa;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 760px) {
     .header-right-tools {
         right: 0.5rem;
         top: 0.5rem;

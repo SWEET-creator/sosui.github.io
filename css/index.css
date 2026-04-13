@@ -18,6 +18,12 @@ header {
     min-height: 180px;
 }
 
+header h1 {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 2.6rem);
+  line-height: 1.2;
+}
+
 .header-right-tools {
   position: fixed;
   top: 0.6rem;
@@ -78,6 +84,7 @@ header {
   margin: 0.5rem 0 1.4rem;
   color: #c7d2fe;
   opacity: 0.9;
+  min-height: 1.6em;
 }
 
 nav ul {
