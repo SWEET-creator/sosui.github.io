@@ -1,156 +1,86 @@
-/* ベース設定 */
 body {
-  font-family: 'Helvetica', sans-serif;
-  background: #1c1c1c; /* ダークな背景 */
-  color: #f0f0f0;      /* 明るい文字 */
+  background: linear-gradient(135deg, #1c1c1c, #2c2c2c);
+  color: #f0f0f0;
+  font-family: 'Roboto', sans-serif;
   line-height: 1.5;
   min-height: 100vh;
+  padding: 0 1rem 2rem;
+  margin: 0;
 }
 
-/* ヘッダー */
 header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background: #181818; /* products.cssに合わせてやや明るめの黒 */
-  padding: 2rem 1rem;
-  border-bottom: 2px solid #222; /* 下線を追加 */
+  width: min(980px, 100%);
+  margin: 0 auto;
+  text-align: center;
+  padding: 2rem 0 1rem;
 }
 
 header h1 {
-    font-size: 3rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
 }
 
-/* ナビゲーション */
+.subtitle {
+  margin: 0.5rem 0 1.4rem;
+  color: #c7d2fe;
+  opacity: 0.9;
+}
+
 nav ul {
   list-style: none;
   display: flex;
-  gap: 2rem;
+  justify-content: center;
+  gap: 1rem;
   margin: 0;
   padding: 0;
+  flex-wrap: wrap;
 }
 
-nav a {
-  color: #f0f0f0;
+.nav-button {
+  display: inline-block;
+  color: #fff;
   text-decoration: none;
   font-weight: bold;
-  position: relative;
-  padding: 0.25rem 0.5rem;
-  border-radius: 6px;
-  transition: background 0.2s, color 0.2s;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  padding: 0.58rem 1.1rem;
+  transition: all 0.2s ease;
 }
 
-nav a:hover,
-nav a.active {
-  background: #232323;
-  color: #f39c12;
+.nav-button:hover {
+  transform: translateY(-1px);
+  background: rgba(255, 255, 255, 0.16);
+  border-color: rgba(255, 255, 255, 0.35);
 }
 
-nav a::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: -3px;
-  width: 0;
-  height: 2px;
-  background: #f39c12;
-  transition: width 0.3s ease;
+.nav-button.active {
+  background: #2563eb;
+  border-color: #3b82f6;
 }
 
-nav a:hover::after,
-nav a.active::after {
-  width: 100%;
-}
-
-/* メインコンテンツ */
 main {
-  width: 90%;
-  max-width: 1200px;
-  margin: 3rem auto;
+  width: min(980px, 100%);
+  margin: 2rem auto;
 }
 
-/* セクション */
 section {
   margin-bottom: 4rem;
   text-align: center;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 1rem 1rem 1.4rem;
 }
 
 section h2 {
   font-size: 1.8rem;
   margin-bottom: 1.5rem;
-  position: relative;
-  display: inline-block;
 }
 
-section h2::after {
-  content: '';
-  display: block;
-  width: 60px;
-  height: 3px;
-  background: #f39c12;
-  margin: 0.5rem auto 0;
-  border-radius: 2px;
-}
-
-/* ギャラリー */
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
-}
-
-.work-item {
-  background: #2f2f2f;
-  border-radius: 10px;
-  padding: 1rem;
-  transition: transform 0.3s ease;
-  text-align: center;
-}
-
-.work-item img {
-  max-width: 100%;
-  border-radius: 10px;
-  margin-bottom: 1rem;
-}
-
-.work-item:hover {
-  transform: scale(1.03);
-}
-
-/* フッター */
 footer {
   text-align: center;
-  background: #000;
   color: #999;
-  padding: 1rem;
-}
-
-/* --- Pixivバナー用スタイル --- */
-.pixiv-banner {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5em;
-  background: #fff;
-  color: #212121;
-  border-radius: 8px;
-  padding: 0.5em 1.2em;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-  font-weight: bold;
-  font-size: 1.1em;
-  text-decoration: none;
-  transition: background 0.2s, box-shadow 0.2s;
-}
-.pixiv-banner:hover {
-  background: #f3f3f3;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.13);
-  color: #0096fa;
-}
-.pixiv-banner img {
-  width: 32px;
-  height: 32px;
-  border-radius: 6px;
-  background: #fff;
+  padding: 0.8rem;
 }
