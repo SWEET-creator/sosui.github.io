@@ -50,7 +50,14 @@
       download: true,
       header: true,  // 1行目をヘッダとして扱う
       complete: function(results) {
-        const data = results.data;
+        const data = (results.data || []).filter((item) => item && (item.title || item.year));
+        data.sort((a, b) => {
+          const ay = Number.parseInt((a.year || '').trim(), 10);
+          const by = Number.parseInt((b.year || '').trim(), 10);
+          const av = Number.isNaN(ay) ? -Infinity : ay;
+          const bv = Number.isNaN(by) ? -Infinity : by;
+          return bv - av;
+        });
         console.log('CSV data:', data);
 
         const container = document.getElementById('cards-container');
@@ -109,7 +116,7 @@
             const projectLink = document.createElement('a');
             projectLink.href = item.projectLink;
             projectLink.target = '_blank';
-            projectLink.textContent = currentLang === 'en' ? 'Project' : 'プロジェクト';
+            projectLink.textContent = currentLang === 'en' ? 'Project' : 'Projetct';
             // リンク同士の間にスペースを入れる場合
             footer.appendChild(document.createTextNode(' '));
             footer.appendChild(projectLink);

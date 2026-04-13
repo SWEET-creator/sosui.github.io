@@ -73,17 +73,16 @@ nav ul {
     margin-top: 1.2rem;
     margin-bottom: 2rem;
     padding: 0 1rem;
-    column-width: 280px;
-    column-gap: 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1rem;
+    align-items: start;
 }
 
 .card {
-    width: 100%;
-    display: inline-block;
-    break-inside: avoid;
-    -webkit-column-break-inside: avoid;
+    width: auto;
     background: #333;
-    margin: 0 0 1rem;
+    margin: 0;
     padding: 1rem;
     border-radius: 12px;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -151,7 +150,7 @@ footer {
 
 @media (max-width: 640px) {
     .cards-container {
-        column-width: 100%;
+        grid-template-columns: 1fr;
         padding: 0;
     }
 }
