@@ -16,15 +16,25 @@
 </head>
 <body>
   <header>
-    <button id="lang-toggle" class="lang-toggle" type="button">EN</button>
+    <div class="header-right-tools">
+      <button id="lang-toggle" class="lang-toggle" type="button">EN</button>
+      <div class="header-quick-links" aria-label="主要ページへの移動">
+        <a class="header-quick-link" href="index.html#bio">
+          <strong data-ja="Bio" data-en="Bio">Bio</strong>
+        </a>
+        <a class="header-quick-link" href="products.html">
+          <strong data-ja="Products" data-en="Products">Products</strong>
+        </a>
+        <a class="header-quick-link" href="index.html#links">
+          <strong data-ja="Arts Links" data-en="Arts Links">Arts Links</strong>
+        </a>
+        <a class="header-quick-link" href="index.html#achievements">
+          <strong data-ja="Achievements" data-en="Achievements">Achievements</strong>
+        </a>
+      </div>
+    </div>
     <h1>Products</h1>
     <p class="subtitle" data-ja="制作物・プロジェクト" data-en="Projects & Works">制作物・プロジェクト</p>
-    <nav aria-label="メインナビゲーション">
-      <ul>
-        <li><a class="nav-button active" href="products.html" aria-current="page" data-ja="Products" data-en="Products">Products</a></li>
-        <li><a class="nav-button" href="index.html" data-ja="Bio" data-en="Bio">Bio</a></li>
-      </ul>
-    </nav>
   </header>
 
   <!-- カード一覧を表示するコンテナ -->
@@ -116,7 +126,7 @@
             const projectLink = document.createElement('a');
             projectLink.href = item.projectLink;
             projectLink.target = '_blank';
-            projectLink.textContent = currentLang === 'en' ? 'Project' : 'Projetct';
+            projectLink.textContent = currentLang === 'en' ? 'Project' : 'プロジェクト';
             // リンク同士の間にスペースを入れる場合
             footer.appendChild(document.createTextNode(' '));
             footer.appendChild(projectLink);
