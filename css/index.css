@@ -15,6 +15,7 @@ header {
   position: relative;
     text-align: center;
     padding: 2rem 0 1rem;
+    min-height: 180px;
 }
 
 .header-right-tools {
@@ -50,6 +51,8 @@ header {
   border-radius: 10px;
   padding: 0.35rem 0.65rem;
   text-align: left;
+  min-height: 50px;
+  box-sizing: border-box;
 }
 
 .header-quick-link strong {
@@ -62,6 +65,7 @@ header {
   color: #dbeafe;
   font-size: 0.74rem;
   line-height: 1.25;
+  min-height: 1.85em;
 }
 
 .subtitle {

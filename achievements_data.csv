@@ -1,31 +1,31 @@
-year,type,category,title,Link
-2026,学歴,,"奈良先端科学技術大学院大学（NAIST） 先端科学技術研究科 情報科学領域 博士後期課程（2026年4月〜在学中）",
-2024,学歴,,"奈良先端科学技術大学院大学（NAIST） 先端科学技術研究科 情報科学領域 修士課程（2024年4月〜2026年3月 修了見込み）",
-2020,学歴,,"岡山県立大学 情報工学部 情報通信工学科 学士（2020年4月〜2024年3月）",
-2024,研究業績,査読付き論文（論文誌）,"北山晃生，岸孝樹，古賀荘翠，滝本裕則，金川明弘「室内での見守り実現に向けた全方位画像に対する複数人物追跡」日本福祉工学会誌，Vol.26，No.2，pp.2–8，2024",
-2025,研究業績,査読付き国際会議（筆頭著者）,"古賀荘翠，舩冨卓哉，藤村友貴，品川政太朗，北野和哉，久保尋之，前島謙宣，向川康博「AniDepth: Depth-guided Warped Line-art に基づくアニメ中割生成手法」SIGGRAPH Talks 2025（ACM）採択率：21%",
-2025,研究業績,国内会議（筆頭著者）,"古賀荘翠，舩冨卓哉，他「深度画像に基づく線画変形を用いた条件付拡散モデルによるアニメ中割手法」画像の認識・理解シンポジウム（MIRU2025）",
-2025,研究業績,国内会議（筆頭著者）,"古賀荘翠，舩冨卓哉，他「深度画像に基づく線画変形を用いた条件付拡散モデルによるアニメ中割手法の検討」Vision, Graphics, and Sensing Workshop（VGSW 2025）",
-2023,研究業績,国内会議（筆頭著者）,"古賀荘翠，北山晃生，岸孝樹，滝本裕則，金川明弘, 複数物体追跡におけるIDスイッチ抑制のためのMotionSORTの提案, 第28回パターン計測シンポジウム（第108回パターン計測部会研究会）登壇",https://www.sice.or.jp/org/pattern/program2023.html
-2025,研究業績,査読付き国際会議（共著）,"丸山敦史，古賀荘翠，他「LayerPack: レイヤー間一貫性を考慮したトレーニング不要な中割手法」SIGGRAPH Asia 2025 Posters 採択率：20%",
-2026,研究業績,査読付き国際会議（共著）,"丸山敦史，古賀荘翠，他「LayerPack: Cross-Layer Consistency in Animation Inbetweening」Computer Vision and Multimedia（CVM 2026）（採録決定）採択率：31%",
-2025,研究業績,国内会議（共著）,"丸山敦史，古賀荘翠，他「LayerPack: トレーニング不要な中割手法」Visual Computing 2025",
-2026,フェローシップ・研究費,,"日本学術振興会 特別研究員（DC1）研究課題：「合成データによる事前学習駆動の生成モデル構築」採択率：約12%（2026年4月〜2029年3月）",
-2025,プロジェクト,,"「ジャンボタニシの卵撲滅するニャん」おかやまテックガレージ（J-PEAKS関連事業）採択プロジェクト，2025年",
-2024,競技・ハッカソン,,"Sensing Solution ハッカソン 2024 ファイナリスト（ソニーグループ株式会社・計測自動制御学会 共催）採択率：36%",
-2023,競技・ハッカソン,,"WebxIoTメイカーズチャレンジ in 岡山 参加",https://webiotmakers.github.io/2023/
-2023,競技・ハッカソン,,"C2C-ctf-2023 in 慶應義塾大学 本戦参加",https://c2c-ctf-2023.cysec-lab.keio.ac.jp
-2022,競技・ハッカソン,,"emPit@Ehime（2022年11月〜2月）参加",http://enpit.cs.ehime-u.ac.jp/camp/
-2022,競技・ハッカソン,,"enPiT-2 Security（2022年9月・12月）参加",https://www.eng.okayama-u.ac.jp/enpit2-sec/
-2024,職歴,,"ギリア株式会社 インターンシップ（2024年〜2025年）",
-2024,職歴,,"NTT R&D インターンシップ（2024年8月〜2024年9月・6週間）",
-2025,職歴,,"OLM Digital R&D 研究調査業務（2025年〜2026年）",
-2024,受賞歴,,"計測自動制御学会（SICE）優秀学生賞（2024年3月）",
-2024,受賞歴,,"岡山県立大学 情報工学部 情報通信工学科学業成績最優秀賞（2024年3月）",
-2022,受賞歴,,"岡山県立大学 情報工学部 情報通信工学科学業成績優秀賞（2022年3月）",
-2021,受賞歴,,"第21回 理工系科学技術論文コンクール 入賞（2021年）（日刊工業新聞社 モノづくり日本会議）",http://www.rikokei.jp/winning/2021.html
-2015,受賞歴,,"日本教育書道研究会主催 第二十七回書初コンクール 準特選",
-2014,その他,資格,"鉱物鑑定士 6級",https://masutomi.or.jp/pages/72/
-2013,受賞歴,,"「ぼくの字はミミズがおどっているいようだ」第二十四回 伊藤園おーいお茶新俳句大賞 佳作",
-2011,受賞歴,,"「愛知川の石」第五十二回京都ユネスコ協会「自然観察展」京都ユネスコ協会連盟賞",
-2023,その他,,"TOEIC：835",
+year,type,category,title,title_en,Link
+2026,学歴,,"奈良先端科学技術大学院大学（NAIST） 先端科学技術研究科 情報科学領域 博士後期課程（2026年4月〜在学中）","Ph.D. Program, Division of Information Science, NAIST (Apr 2026 - Present)",
+2024,学歴,,"奈良先端科学技術大学院大学（NAIST） 先端科学技術研究科 情報科学領域 修士課程（2024年4月〜2026年3月 修了見込み）","M.S. Program, Division of Information Science, NAIST (Apr 2024 - Mar 2026 expected)",
+2020,学歴,,"岡山県立大学 情報工学部 情報通信工学科 学士（2020年4月〜2024年3月）","B.E., Information and Communication Engineering, Okayama Prefectural University (Apr 2020 - Mar 2024)",
+2024,研究業績,査読付き論文（論文誌）,"北山晃生，岸孝樹，古賀荘翠，滝本裕則，金川明弘「室内での見守り実現に向けた全方位画像に対する複数人物追跡」日本福祉工学会誌，Vol.26，No.2，pp.2–8，2024","A. Kitayama, T. Kishi, S. Koga, H. Takimoto, A. Kanagawa, Multi-person tracking on omnidirectional images for indoor monitoring, Journal of Japanese Society for Wellbeing Science and Assistive Technology, Vol.26, No.2, pp.2-8, 2024", 
+2025,研究業績,査読付き国際会議（筆頭著者）,"古賀荘翠，舩冨卓哉，藤村友貴，品川政太朗，北野和哉，久保尋之，前島謙宣，向川康博「AniDepth: Depth-guided Warped Line-art に基づくアニメ中割生成手法」SIGGRAPH Talks 2025（ACM）採択率：21%","Sosui Koga et al., AniDepth: Anime in-between generation based on depth-guided warped line-art, ACM SIGGRAPH Talks 2025 (acceptance rate: 21%)", 
+2025,研究業績,国内会議（筆頭著者）,"古賀荘翠，舩冨卓哉，他「深度画像に基づく線画変形を用いた条件付拡散モデルによるアニメ中割手法」画像の認識・理解シンポジウム（MIRU2025）","Sosui Koga et al., Anime in-between generation with conditional diffusion using depth-based line-art warping, MIRU 2025", 
+2025,研究業績,国内会議（筆頭著者）,"古賀荘翠，舩冨卓哉，他「深度画像に基づく線画変形を用いた条件付拡散モデルによるアニメ中割手法の検討」Vision, Graphics, and Sensing Workshop（VGSW 2025）","Sosui Koga et al., Study on anime in-between generation with conditional diffusion using depth-based line-art warping, VGSW 2025", 
+2023,研究業績,国内会議（筆頭著者）,"古賀荘翠，北山晃生，岸孝樹，滝本裕則，金川明弘, 複数物体追跡におけるIDスイッチ抑制のためのMotionSORTの提案, 第28回パターン計測シンポジウム（第108回パターン計測部会研究会）登壇","Sosui Koga et al., MotionSORT for reducing ID-switches in multi-object tracking, 28th Pattern Measurement Symposium",https://www.sice.or.jp/org/pattern/program2023.html
+2025,研究業績,査読付き国際会議（共著）,"丸山敦史，古賀荘翠，他「LayerPack: レイヤー間一貫性を考慮したトレーニング不要な中割手法」SIGGRAPH Asia 2025 Posters 採択率：20%","Atsushi Maruyama, Sosui Koga et al., LayerPack: Training-free inbetweening with cross-layer consistency, SIGGRAPH Asia 2025 Posters (acceptance rate: 20%)", 
+2026,研究業績,査読付き国際会議（共著）,"丸山敦史，古賀荘翠，他「LayerPack: Cross-Layer Consistency in Animation Inbetweening」Computer Vision and Multimedia（CVM 2026）（採録決定）採択率：31%","Atsushi Maruyama, Sosui Koga et al., LayerPack: Cross-Layer Consistency in Animation Inbetweening, CVM 2026 (accepted, acceptance rate: 31%)", 
+2025,研究業績,国内会議（共著）,"丸山敦史，古賀荘翠，他「LayerPack: トレーニング不要な中割手法」Visual Computing 2025","Atsushi Maruyama, Sosui Koga et al., LayerPack: Training-free animation inbetweening, Visual Computing 2025", 
+2026,フェローシップ・研究費,,"日本学術振興会 特別研究員（DC1）研究課題：「合成データによる事前学習駆動の生成モデル構築」採択率：約12%（2026年4月〜2029年3月）","JSPS Research Fellowship for Young Scientists (DC1), research topic: Building generative models driven by synthetic-data pretraining (acceptance rate: ~12%, Apr 2026 - Mar 2029)", 
+2025,プロジェクト,,"「ジャンボタニシの卵撲滅するニャん」おかやまテックガレージ（J-PEAKS関連事業）採択プロジェクト，2025年","Selected project at Okayama Tech Garage (J-PEAKS): Nyan to Eliminate Apple Snail Eggs, 2025", 
+2024,競技・ハッカソン,,"Sensing Solution ハッカソン 2024 ファイナリスト（ソニーグループ株式会社・計測自動制御学会 共催）採択率：36%","Finalist, Sensing Solution Hackathon 2024 (co-hosted by Sony Group and SICE, acceptance rate: 36%)", 
+2023,競技・ハッカソン,,"WebxIoTメイカーズチャレンジ in 岡山 参加","Participant, WebxIoT Makers Challenge in Okayama",https://webiotmakers.github.io/2023/
+2023,競技・ハッカソン,,"C2C-ctf-2023 in 慶應義塾大学 本戦参加","Final round participant, C2C-CTF 2023 at Keio University",https://c2c-ctf-2023.cysec-lab.keio.ac.jp
+2022,競技・ハッカソン,,"emPit@Ehime（2022年11月〜2月）参加","Participant, emPit@Ehime (Nov 2022 - Feb 2023)",http://enpit.cs.ehime-u.ac.jp/camp/
+2022,競技・ハッカソン,,"enPiT-2 Security（2022年9月・12月）参加","Participant, enPiT-2 Security (Sep & Dec 2022)",https://www.eng.okayama-u.ac.jp/enpit2-sec/
+2024,職歴,,"ギリア株式会社 インターンシップ（2024年〜2025年）","Internship at GHELIA Inc. (2024-2025)", 
+2024,職歴,,"NTT R&D インターンシップ（2024年8月〜2024年9月・6週間）","NTT R&D Internship (Aug-Sep 2024, 6 weeks)", 
+2025,職歴,,"OLM Digital R&D 研究調査業務（2025年〜2026年）","Research and investigation work at OLM Digital R&D (2025-2026)", 
+2024,受賞歴,,"計測自動制御学会（SICE）優秀学生賞（2024年3月）","SICE Outstanding Student Award (Mar 2024)", 
+2024,受賞歴,,"岡山県立大学 情報工学部 情報通信工学科学業成績最優秀賞（2024年3月）","Best Academic Performance Award, Department of Information and Communication Engineering, OPU (Mar 2024)", 
+2022,受賞歴,,"岡山県立大学 情報工学部 情報通信工学科学業成績優秀賞（2022年3月）","Academic Excellence Award, Department of Information and Communication Engineering, OPU (Mar 2022)", 
+2021,受賞歴,,"第21回 理工系科学技術論文コンクール 入賞（2021年）（日刊工業新聞社 モノづくり日本会議）","Prize winner, 21st Science and Technology Essay Contest (2021)",http://www.rikokei.jp/winning/2021.html
+2015,受賞歴,,"日本教育書道研究会主催 第二十七回書初コンクール 準特選","Semi-special Prize, 27th New Year Calligraphy Contest", 
+2014,その他,資格,"鉱物鑑定士 6級","Mineral Appraiser, Grade 6",https://masutomi.or.jp/pages/72/
+2013,受賞歴,,"「ぼくの字はミミズがおどっているいようだ」第二十四回 伊藤園おーいお茶新俳句大賞 佳作","Honorable Mention, 24th Ito En Oi Ocha New Haiku Contest", 
+2011,受賞歴,,"「愛知川の石」第五十二回京都ユネスコ協会「自然観察展」京都ユネスコ協会連盟賞","Kyoto UNESCO Federation Award, 52nd Nature Observation Exhibition", 
+2023,その他,,"TOEIC：835","TOEIC: 835", 
