@@ -79,6 +79,38 @@ header {
     opacity: 0.9;
 }
 
+.profile-hero {
+    width: min(980px, 100%);
+    display: flex;
+    align-items: center;
+    gap: 1.4rem;
+    margin: 0.2rem 0 1.2rem;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+.profile-image {
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    flex-shrink: 0;
+}
+
+.profile-summary {
+    text-align: left;
+    line-height: 1.6;
+    color: #e5e7eb;
+}
+
+.profile-summary p {
+    margin: 0.25rem 0;
+}
+
 nav ul {
     list-style: none;
     display: flex;
@@ -203,6 +235,16 @@ footer {
 
     .cards-container {
         padding: 0;
+    }
+
+    .profile-hero {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .profile-image {
+        width: 130px;
+        height: 130px;
     }
 }
   
