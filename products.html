@@ -16,12 +16,13 @@
 </head>
 <body>
   <header>
+    <button id="lang-toggle" class="lang-toggle" type="button">EN</button>
     <h1>Products</h1>
-    <p class="subtitle">制作物・プロジェクト</p>
+    <p class="subtitle" data-ja="制作物・プロジェクト" data-en="Projects & Works">制作物・プロジェクト</p>
     <nav aria-label="メインナビゲーション">
       <ul>
-        <li><a class="nav-button active" href="products.html" aria-current="page">Products</a></li>
-        <li><a class="nav-button" href="index.html">Bio</a></li>
+        <li><a class="nav-button active" href="products.html" aria-current="page" data-ja="Products" data-en="Products">Products</a></li>
+        <li><a class="nav-button" href="index.html" data-ja="Bio" data-en="Bio">Bio</a></li>
       </ul>
     </nav>
   </header>
@@ -31,6 +32,18 @@
 
   <!-- Papa Parse を使ってCSV読み込み & カード生成 -->
   <script>
+    const LANG_KEY = 'site-lang';
+    let currentLang = localStorage.getItem(LANG_KEY) || 'ja';
+
+    function applyStaticLanguage() {
+      document.documentElement.lang = currentLang;
+      document.querySelectorAll('[data-ja][data-en]').forEach((el) => {
+        el.textContent = currentLang === 'en' ? el.dataset.en : el.dataset.ja;
+      });
+      const button = document.getElementById('lang-toggle');
+      if (button) button.textContent = currentLang === 'en' ? '日本語' : 'EN';
+    }
+
     const csvFilePath = 'products_data.csv';
 
     Papa.parse(csvFilePath, {
@@ -96,7 +109,7 @@
             const projectLink = document.createElement('a');
             projectLink.href = item.projectLink;
             projectLink.target = '_blank';
-            projectLink.textContent = 'Project';
+            projectLink.textContent = currentLang === 'en' ? 'Project' : 'プロジェクト';
             // リンク同士の間にスペースを入れる場合
             footer.appendChild(document.createTextNode(' '));
             footer.appendChild(projectLink);
@@ -110,6 +123,15 @@
         });
       }
     });
+
+    document.getElementById('lang-toggle')?.addEventListener('click', () => {
+      currentLang = currentLang === 'ja' ? 'en' : 'ja';
+      localStorage.setItem(LANG_KEY, currentLang);
+      applyStaticLanguage();
+      window.location.reload();
+    });
+
+    applyStaticLanguage();
   </script>
 
   <footer>

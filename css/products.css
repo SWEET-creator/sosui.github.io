@@ -12,8 +12,21 @@ body {
 
 header {
     width: min(980px, 100%);
+    position: relative;
     text-align: center;
     padding: 2rem 0 1rem;
+}
+
+.lang-toggle {
+    position: absolute;
+    top: 0.6rem;
+    right: 0;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 999px;
+    padding: 0.35rem 0.8rem;
+    cursor: pointer;
 }
 
 .subtitle {
