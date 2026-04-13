@@ -114,29 +114,23 @@ nav ul {
   padding-left: 0.6rem;
 }
 
-.content-block h3 {
+.achievements-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.achievement-group {
+  padding: 0.5rem 0;
+}
+
+.achievement-group-title {
   margin: 1rem 0 0.4rem;
   color: #dbeafe;
 }
 
-.content-block h4 {
+.achievement-subgroup-title {
   margin: 0.75rem 0 0.35rem;
   color: #bfdbfe;
-}
-
-.content-block ul {
-  margin: 0.35rem 0 0.75rem 1.2rem;
-  padding-left: 0.5rem;
-}
-
-.content-block li {
-  margin: 0.2rem 0;
-  line-height: 1.55;
-}
-
-.achievements-list {
-  display: grid;
-  gap: 0.6rem;
 }
 
 .achievement-item {
@@ -153,6 +147,16 @@ nav ul {
 .achievement-title {
   margin: 0;
   line-height: 1.45;
+}
+
+.achievement-year {
+  display: inline-block;
+  margin-right: 0.5rem;
+  padding: 0.1rem 0.5rem;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  background: rgba(37, 99, 235, 0.3);
+  color: #dbeafe;
 }
 
 .achievement-item a {
