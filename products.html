@@ -10,57 +10,22 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <!-- Papa Parse をCDNで読み込み -->
   <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+  <script src="scripts/common.js"></script>
 
   <link rel="stylesheet" href="css/products.css">
   
 </head>
 <body>
-  <header>
-    <div class="header-right-tools">
-      <button id="lang-toggle" class="lang-toggle" type="button">EN</button>
-      <div class="header-quick-links" aria-label="主要ページへの移動">
-        <a class="header-quick-link" href="index.html#bio">
-          <strong data-ja="Bio" data-en="Bio">Bio</strong>
-        </a>
-        <a class="header-quick-link" href="products.html">
-          <strong data-ja="Products" data-en="Products">Products</strong>
-        </a>
-        <a class="header-quick-link" href="index.html#links">
-          <strong data-ja="Links" data-en="Links">Links</strong>
-        </a>
-        <a class="header-quick-link" href="index.html#achievements">
-          <strong data-ja="Achievements" data-en="Achievements">Achievements</strong>
-        </a>
-      </div>
-    </div>
-    <h1 data-ja="古賀 荘翠 / Sosui Koga" data-en="Sosui Koga / 古賀 荘翠">古賀 荘翠 / Sosui Koga</h1>
-    <p class="subtitle" data-ja="Researcher / Creator" data-en="Researcher / Creator">Researcher / Creator</p>
-  </header>
+  <header id="site-header"></header>
 
-  <section class="profile-hero">
-    <img class="profile-image" src="public/face2.png" alt="プロフィール画像">
-    <div class="profile-summary">
-      <p data-ja="奈良先端科学技術大学院大学 情報理工学領域 博士後期課程 1年" data-en="Ph.D. student (1st year), Division of Information Science, NAIST">奈良先端科学技術大学院大学 情報理工学領域 博士後期課程 1年</p>
-      <p data-ja="光メディアインタフェース研究室 所属" data-en="Affiliation: Optical Media Interface Lab">光メディアインタフェース研究室 所属</p>
-    </div>
-  </section>
+  <section id="profile-hero"></section>
 
   <!-- カード一覧を表示するコンテナ -->
   <div id="cards-container" class="cards-container"></div>
 
   <!-- Papa Parse を使ってCSV読み込み & カード生成 -->
   <script>
-    const LANG_KEY = 'site-lang';
-    let currentLang = localStorage.getItem(LANG_KEY) || 'ja';
-
-    function applyStaticLanguage() {
-      document.documentElement.lang = currentLang;
-      document.querySelectorAll('[data-ja][data-en]').forEach((el) => {
-        el.textContent = currentLang === 'en' ? el.dataset.en : el.dataset.ja;
-      });
-      const button = document.getElementById('lang-toggle');
-      if (button) button.textContent = currentLang === 'en' ? '日本語' : 'EN';
-    }
+    window.SiteCommon.init('products');
 
     const csvFilePath = 'products_data.csv';
     const MIN_CARD_WIDTH = 280;
@@ -169,7 +134,7 @@
             const projectLink = document.createElement('a');
             projectLink.href = item.projectLink;
             projectLink.target = '_blank';
-            projectLink.textContent = currentLang === 'en' ? 'Project' : 'プロジェクト';
+            projectLink.textContent = window.SiteCommon.getCurrentLang() === 'en' ? 'Project' : 'プロジェクト';
             // リンク同士の間にスペースを入れる場合
             footer.appendChild(document.createTextNode(' '));
             footer.appendChild(projectLink);
@@ -190,14 +155,9 @@
       requestAnimationFrame(layoutMasonry);
     });
 
-    document.getElementById('lang-toggle')?.addEventListener('click', () => {
-      currentLang = currentLang === 'ja' ? 'en' : 'ja';
-      localStorage.setItem(LANG_KEY, currentLang);
-      applyStaticLanguage();
+    window.SiteCommon.onLanguageChange(() => {
       window.location.reload();
     });
-
-    applyStaticLanguage();
   </script>
 
   <footer>

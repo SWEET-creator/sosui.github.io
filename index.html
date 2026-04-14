@@ -10,42 +10,16 @@
             window.location.replace('products.html');
         }
     </script>
+    <script src="scripts/common.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
     <link rel="stylesheet" href="css/index.css">
 </head>
 
 <body>
-    <header>
-        <div class="header-right-tools">
-            <button id="lang-toggle" class="lang-toggle" type="button">EN</button>
-            <div class="header-quick-links" aria-label="主要ページへの移動">
-                <a class="header-quick-link" href="index.html#bio">
-                    <strong data-ja="Bio" data-en="Bio">Bio</strong>
-                </a>
-                <a class="header-quick-link" href="products.html">
-                    <strong data-ja="Products" data-en="Products">Products</strong>
-                </a>
-                <a class="header-quick-link" href="#links">
-                    <strong data-ja="Links" data-en="Links">Links</strong>
-                </a>
-                <a class="header-quick-link" href="#achievements">
-                    <strong data-ja="Achievements" data-en="Achievements">Achievements</strong>
-                </a>
-            </div>
-        </div>
-        <h1 data-ja="古賀 荘翠 / Sosui Koga" data-en="Sosui Koga / 古賀 荘翠">古賀 荘翠 / Sosui Koga</h1>
-        <p class="subtitle" data-ja="Researcher / Creator" data-en="Researcher / Creator">Researcher / Creator</p>
-    </header>
+    <header id="site-header"></header>
 
     <main class="container">
-        <section class="profile-hero">
-            <img class="profile-image" src="public/face2.png" alt="プロフィール画像">
-
-            <div class="profile-summary">
-                <p data-ja="奈良先端科学技術大学院大学 情報理工学領域 博士後期課程 1年" data-en="Ph.D. student (1st year), Division of Information Science, NAIST">奈良先端科学技術大学院大学 情報理工学領域 博士後期課程 1年</p>
-                <p data-ja="光メディアインタフェース研究室 所属" data-en="Affiliation: Optical Media Interface Lab">光メディアインタフェース研究室 所属</p>
-            </div>
-        </section>
+        <section id="profile-hero"></section>
 
         <section class="content-block" id="bio">
             <h2 data-ja="研究内容" data-en="Research">研究内容</h2>
@@ -70,8 +44,7 @@
     </main>
 
     <script>
-        const LANG_KEY = 'site-lang';
-        let currentLang = localStorage.getItem(LANG_KEY) || 'ja';
+        window.SiteCommon.init('index');
         let achievementRows = [];
 
         const TYPE_LABELS_EN = {
@@ -112,25 +85,13 @@
         ];
 
         function trType(value) {
-            if (currentLang === 'en') return TYPE_LABELS_EN[value] || value;
+            if (window.SiteCommon.getCurrentLang() === 'en') return TYPE_LABELS_EN[value] || value;
             return value;
         }
 
         function trCategory(value) {
-            if (currentLang === 'en') return CATEGORY_LABELS_EN[value] || value;
+            if (window.SiteCommon.getCurrentLang() === 'en') return CATEGORY_LABELS_EN[value] || value;
             return value;
-        }
-
-        function applyStaticLanguage() {
-            document.documentElement.lang = currentLang;
-            document.querySelectorAll('[data-ja][data-en]').forEach((el) => {
-                el.textContent = currentLang === 'en' ? el.dataset.en : el.dataset.ja;
-            });
-
-            const button = document.getElementById('lang-toggle');
-            if (button) {
-                button.textContent = currentLang === 'en' ? '日本語' : 'EN';
-            }
         }
 
         function renderAchievements(rows) {
@@ -178,7 +139,7 @@
 
                         const title = document.createElement('p');
                         title.className = 'achievement-title';
-                        title.textContent = currentLang === 'en'
+                        title.textContent = window.SiteCommon.getCurrentLang() === 'en'
                             ? ((item.title_en && item.title_en.trim()) ? item.title_en : item.title)
                             : item.title;
 
@@ -196,7 +157,7 @@
                             link.href = item.Link;
                             link.target = '_blank';
                             link.rel = 'noopener noreferrer';
-                            link.textContent = currentLang === 'en' ? 'Details' : '詳細';
+                            link.textContent = window.SiteCommon.getCurrentLang() === 'en' ? 'Details' : '詳細';
                             entry.appendChild(link);
                         }
 
@@ -218,14 +179,9 @@
             }
         });
 
-        document.getElementById('lang-toggle')?.addEventListener('click', () => {
-            currentLang = currentLang === 'ja' ? 'en' : 'ja';
-            localStorage.setItem(LANG_KEY, currentLang);
-            applyStaticLanguage();
+        window.SiteCommon.onLanguageChange(() => {
             renderAchievements(achievementRows);
         });
-
-        applyStaticLanguage();
     </script>
 
 </body>
