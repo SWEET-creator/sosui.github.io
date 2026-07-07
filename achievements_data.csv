@@ -8,15 +8,15 @@ year,type,category,title,title_en,Link
 2025,研究業績,国内会議（筆頭著者）,"古賀荘翠，舩冨卓哉，他「深度画像に基づく線画変形を用いた条件付拡散モデルによるアニメ中割手法」画像の認識・理解シンポジウム（MIRU2025）","Sosui Koga et al., Anime in-between generation with conditional diffusion using depth-based line-art warping, MIRU 2025", 
 2025,研究業績,国内会議（筆頭著者）,"古賀荘翠，舩冨卓哉，他「深度画像に基づく線画変形を用いた条件付拡散モデルによるアニメ中割手法の検討」Vision, Graphics, and Sensing Workshop（VGSW 2025）","Sosui Koga et al., Study on anime in-between generation with conditional diffusion using depth-based line-art warping, VGSW 2025", 
 2023,研究業績,国内会議（筆頭著者）,"古賀荘翠，北山晃生，岸孝樹，滝本裕則，金川明弘, 複数物体追跡におけるIDスイッチ抑制のためのMotionSORTの提案, 第28回パターン計測シンポジウム（第108回パターン計測部会研究会）登壇","Sosui Koga et al., MotionSORT for reducing ID-switches in multi-object tracking, 28th Pattern Measurement Symposium",https://www.sice.or.jp/org/pattern/program2023.html
-2025,研究業績,査読付き国際会議（共著）,"丸山敦史，古賀荘翠，他「LayerPack: レイヤー間一貫性を考慮したトレーニング不要な中割手法」SIGGRAPH Asia 2025 Posters 採択率：20%","Atsushi Maruyama, Sosui Koga et al., LayerPack: Training-free inbetweening with cross-layer consistency, SIGGRAPH Asia 2025 Posters (acceptance rate: 20%)", 
-2026,研究業績,査読付き国際会議（共著）,"丸山敦史，古賀荘翠，他「LayerPack: Cross-Layer Consistency in Animation Inbetweening」Computer Vision and Multimedia（CVM 2026）（採録決定）採択率：31%","Atsushi Maruyama, Sosui Koga et al., LayerPack: Cross-Layer Consistency in Animation Inbetweening, CVM 2026 (accepted, acceptance rate: 31%)", 
+2025,研究業績,査読付き国際会議（共著）,"丸山敦史，古賀荘翠，他「LayerPack: Training-Free Animation Inbetweening with Cross-Layer Consistency」SIGGRAPH Asia 2025 Posters 採択率：20%","Atsushi Maruyama, Sosui Koga et al., LayerPack: Training-Free Animation Inbetweening with Cross-Layer Consistency, SIGGRAPH Asia 2025 Posters (acceptance rate: 20%)", https://dl.acm.org/doi/10.1145/3757374.3771440
+2026,研究業績,査読付き国際会議（共著）,"丸山敦史，古賀荘翠，他「LayerPack: Cross-Layer Consistency in Animation Inbetweening」Computer Vision and Multimedia（CVM 2026）採択率：31%","Atsushi Maruyama, Sosui Koga et al., LayerPack: Cross-Layer Consistency in Animation Inbetweening, CVM 2026 (accepted, acceptance rate: 31%)", 
 2025,研究業績,国内会議（共著）,"丸山敦史，古賀荘翠，他「LayerPack: トレーニング不要な中割手法」Visual Computing 2025","Atsushi Maruyama, Sosui Koga et al., LayerPack: Training-free animation inbetweening, Visual Computing 2025", 
 2026,フェローシップ・研究費,,"日本学術振興会 特別研究員（DC1）研究課題：「合成データによる事前学習駆動の生成モデル構築」採択率：約12%（2026年4月〜2029年3月）","JSPS Research Fellowship for Young Scientists (DC1), research topic: Building generative models driven by synthetic-data pretraining (acceptance rate: ~12%, Apr 2026 - Mar 2029)", 
 2025,プロジェクト,,"「ジャンボタニシの卵撲滅するニャん」おかやまテックガレージ（J-PEAKS関連事業）採択プロジェクト，2025年","Selected project at Okayama Tech Garage (J-PEAKS): Nyan to Eliminate Apple Snail Eggs, 2025", 
 2024,競技・ハッカソン,,"Sensing Solution ハッカソン 2024 ファイナリスト（ソニーグループ株式会社・計測自動制御学会 共催）採択率：36%","Finalist, Sensing Solution Hackathon 2024 (co-hosted by Sony Group and SICE, acceptance rate: 36%)", 
 2023,競技・ハッカソン,,"WebxIoTメイカーズチャレンジ in 岡山 参加","Participant, WebxIoT Makers Challenge in Okayama",https://webiotmakers.github.io/2023/
 2023,競技・ハッカソン,,"C2C-ctf-2023 in 慶應義塾大学 本戦参加","Final round participant, C2C-CTF 2023 at Keio University",https://c2c-ctf-2023.cysec-lab.keio.ac.jp
-2023,その他,,"TOEIC：835","TOEIC: 835", 
+2023,その他,資格,"TOEIC：835","TOEIC: 835", 
 2022,競技・ハッカソン,,"emPit@Ehime（2022年11月〜2月）参加","Participant, emPit@Ehime (Nov 2022 - Feb 2023)",http://enpit.cs.ehime-u.ac.jp/camp/
 2022,競技・ハッカソン,,"enPiT-2 Security（2022年9月・12月）参加","Participant, enPiT-2 Security (Sep & Dec 2022)",https://www.eng.okayama-u.ac.jp/enpit2-sec/
 2024,職歴,,"ギリア株式会社 インターンシップ（2024年〜2025年）","Internship at GHELIA Inc. (2024-2025)", 
