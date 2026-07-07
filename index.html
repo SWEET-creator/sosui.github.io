@@ -5,11 +5,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>古賀 荘翠 / Sosui Koga</title>
-    <script>
-        if (!window.location.hash && !window.location.search) {
-            window.location.replace('products.html');
-        }
-    </script>
     <script src="scripts/common.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
     <link rel="stylesheet" href="css/index.css">
@@ -26,20 +21,35 @@
             <p data-ja="コンピュータビジョンを用いたアニメーション制作支援技術の研究開発" data-en="Research and development of animation production support using computer vision.">コンピュータビジョンを用いたアニメーション制作支援技術の研究開発</p>
 
             <h2 id="links" data-ja="Links" data-en="Links">Links</h2>
-            <p><span data-ja="Products:" data-en="Products:">Products:</span> <a href="products.html" data-ja="Products page" data-en="Products page">Products page</a></p>
-            <p><span data-ja="Google Scholar:" data-en="Google Scholar:">Google Scholar:</span> <a href="https://scholar.google.com/citations?view_op=list_works&hl=ja&hl=ja&user=VOoQZkEAAAAJ">古賀荘翠</a></p>
-            <p><span data-ja="X:" data-en="X:">X:</span> <a href="https://x.com/sosui0131">古賀 荘翠</a></p>
-            <p>GitHub: <a href="https://github.com/SWEET-creator">SWEET-creator</a></p>
-            <p>Instagram (Photo): <a href="https://www.instagram.com/sweets.photon/">@sweets.photon</a></p>
-            <p>Instagram (Generative Art): <a href="https://www.instagram.com/so_sweet_jp/">@so_sweet_jp</a></p>
+            <div class="social-links">
+                <a href="products.html" class="social-link" data-ja="Products page" data-en="Products page"><span class="link-icon">📦</span><span class="link-text" data-ja="Products" data-en="Products">Products</span></a>
+                <a href="https://scholar.google.com/citations?view_op=list_works&hl=ja&hl=ja&user=VOoQZkEAAAAJ" class="social-link" target="_blank" rel="noopener noreferrer"><span class="link-icon">🎓</span><span class="link-text">Scholar</span></a>
+                <a href="https://x.com/sosui0131" class="social-link" target="_blank" rel="noopener noreferrer"><span class="link-icon">𝕏</span><span class="link-text">X</span></a>
+                <a href="https://github.com/SWEET-creator" class="social-link" target="_blank" rel="noopener noreferrer"><span class="link-icon">🐙</span><span class="link-text">GitHub</span></a>
+                <a href="https://www.instagram.com/sweets.photon/" class="social-link" target="_blank" rel="noopener noreferrer"><span class="link-icon">📸</span><span class="link-text">Photo</span></a>
+                <a href="https://www.instagram.com/so_sweet_jp/" class="social-link" target="_blank" rel="noopener noreferrer"><span class="link-icon">🎨</span><span class="link-text">Art</span></a>
+            </div>
 
             <h2 data-ja="Contact" data-en="Contact">Contact</h2>
             <p><a href="mailto:sosui.koga.ko9@naist.ac.jp">sosui.koga.ko9@naist.ac.jp</a></p>
         </section>
 
+        <section class="content-block" id="featured-products">
+            <div class="section-header">
+                <h2 data-ja="Featured Products" data-en="Featured Products">Featured Products</h2>
+                <a href="products.html" class="view-more-btn" data-ja="View all" data-en="View all">View all</a>
+            </div>
+            <div id="featured-products-container" class="featured-products-grid"></div>
+        </section>
+
         <section class="content-block" id="achievements">
             <h2 data-ja="Achievements" data-en="Achievements">Achievements</h2>
             <div id="achievements-list" class="achievements-list"></div>
+        </section>
+
+        <section class="content-block" id="favorites">
+            <h2 data-ja="個人的に好きな方々" data-en="Favorite Creators">個人的に好きな方々</h2>
+            <div class="favorites-grid" id="favorites-grid"></div>
         </section>
     </main>
 
@@ -181,6 +191,124 @@
 
         window.SiteCommon.onLanguageChange(() => {
             renderAchievements(achievementRows);
+        });
+
+        // Load and display featured products
+        Papa.parse('products_data.csv', {
+            download: true,
+            header: true,
+            skipEmptyLines: true,
+            complete: function (results) {
+                const data = (results.data || []).filter((item) => item && (item.title || item.year));
+                data.sort((a, b) => {
+                    const ay = Number.parseInt((a.year || '').trim(), 10);
+                    const by = Number.parseInt((b.year || '').trim(), 10);
+                    const av = Number.isNaN(ay) ? -Infinity : ay;
+                    const bv = Number.isNaN(by) ? -Infinity : by;
+                    return bv - av;
+                });
+
+                const featuredContainer = document.getElementById('featured-products-container');
+                const featuredCount = 3;
+                const featuredItems = data.slice(0, featuredCount);
+
+                featuredItems.forEach(item => {
+                    const card = document.createElement('div');
+                    card.className = 'featured-product-card';
+
+                    if (item.year && item.year.trim() !== '') {
+                        const year = document.createElement('div');
+                        year.className = 'card-year';
+                        year.textContent = item.year;
+                        card.appendChild(year);
+                    }
+
+                    if (item.imgPath && item.imgPath.trim() !== '') {
+                        const img = document.createElement('img');
+                        img.src = item.imgPath;
+                        img.alt = item.title || 'Product';
+                        img.loading = 'lazy';
+                        card.appendChild(img);
+                    }
+
+                    if (item.title && item.title.trim() !== '') {
+                        const title = document.createElement('div');
+                        title.className = 'card-title';
+                        title.textContent = item.title;
+                        card.appendChild(title);
+                    }
+
+                    if (item.text && item.text.trim() !== '') {
+                        const text = document.createElement('div');
+                        text.className = 'card-text';
+                        text.textContent = item.text;
+                        card.appendChild(text);
+                    }
+
+                    const footer = document.createElement('div');
+                    footer.className = 'card-footer';
+
+                    if (item.githubLink && item.githubLink.trim() !== '') {
+                        const ghLink = document.createElement('a');
+                        ghLink.href = item.githubLink;
+                        ghLink.target = '_blank';
+                        ghLink.textContent = 'GitHub';
+                        footer.appendChild(ghLink);
+                    }
+
+                    if (item.projectLink && item.projectLink.trim() !== '') {
+                        const projectLink = document.createElement('a');
+                        projectLink.href = item.projectLink;
+                        projectLink.target = '_blank';
+                        projectLink.textContent = window.SiteCommon.getCurrentLang() === 'en' ? 'Project' : 'プロジェクト';
+                        if (footer.children.length > 0) {
+                            footer.appendChild(document.createTextNode(' '));
+                        }
+                        footer.appendChild(projectLink);
+                    }
+
+                    card.appendChild(footer);
+                    featuredContainer.appendChild(card);
+                });
+            }
+        });
+
+        // Render favorite creators
+        const favorites = [
+            { url: 'https://si-ku.art/', title: 'si-ku.art', description: 'Creative design & art' },
+            { url: 'http://ngethoma.com/', title: 'ngethoma', description: 'Digital creativity' },
+            { url: 'https://baku89.com/ja/', title: 'baku89', description: 'Creative coding & design' },
+            { url: 'https://ideoaves.github.io/', title: 'ideoaves', description: 'Interactive art & tech' }
+        ];
+
+        const favoritesGrid = document.getElementById('favorites-grid');
+        favorites.forEach(fav => {
+            const card = document.createElement('a');
+            card.href = fav.url;
+            card.className = 'favorite-card';
+            card.target = '_blank';
+            card.rel = 'noopener noreferrer';
+
+            const domainUrl = new URL(fav.url);
+            const domain = domainUrl.hostname;
+
+            const iconImg = document.createElement('img');
+            iconImg.className = 'favorite-icon';
+            iconImg.src = `https://www.google.com/s2/favicons?sz=64&domain=${domain}`;
+            iconImg.alt = fav.title;
+            card.appendChild(iconImg);
+
+            const title = document.createElement('span');
+            title.className = 'favorite-title';
+            title.textContent = fav.title;
+            card.appendChild(title);
+
+            const desc = document.createElement('span');
+            desc.className = 'favorite-description';
+            desc.textContent = fav.description;
+            card.appendChild(desc);
+
+            favoritesGrid.appendChild(card);
         });
     </script>
 
