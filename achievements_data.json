@@ -32,20 +32,18 @@
     "Links": []
   },
   {
-    "year": "2024",
-    "type": "研究業績",
-    "category": "査読付き論文（論文誌）",
-    "title": "北山晃生，岸孝樹，古賀荘翠，滝本裕則，金川明弘「室内での見守り実現に向けた全方位画像に対する複数人物追跡」日本福祉工学会誌，Vol.26，No.2，pp.2–8，2024",
-    "title_en": "A. Kitayama, T. Kishi, S. Koga, H. Takimoto, A. Kanagawa, Multi-person tracking on omnidirectional images for indoor monitoring, Journal of Japanese Society for Wellbeing Science and Assistive Technology, Vol.26, No.2, pp.2-8, 2024",
-    "Links": []
-  },
-  {
     "year": "2025",
     "type": "研究業績",
     "category": "査読付き国際会議（筆頭著者）",
-    "title": "古賀荘翠，舩冨卓哉，藤村友貴，品川政太朗，北野和哉，久保尋之，前島謙宣，向川康博「AniDepth: Depth-guided Warped Line-art に基づくアニメ中割生成手法」SIGGRAPH Talks 2025（ACM）採択率：21%",
-    "title_en": "Sosui Koga et al., AniDepth: Anime in-between generation based on depth-guided warped line-art, ACM SIGGRAPH Talks 2025 (acceptance rate: 21%)",
-    "Links": []
+    "title": "古賀荘翠，舩冨卓哉，藤村友貴，品川政太朗，北野和哉，久保尋之，前島謙宣，向川康博「AniDepth : Anime In-between Diffusion using Depth-guided Warped Line-art」SIGGRAPH Talks 2025（ACM）採択率：21%",
+    "title_en": "Sosui Koga et al., AniDepth : Anime In-between Diffusion using Depth-guided Warped Line-art, ACM SIGGRAPH Talks 2025 (acceptance rate: 21%)",
+    "Links": [
+      {
+        "label": "詳細",
+        "label_en": "Details",
+        "url": "https://dl.acm.org/doi/10.1145/3721239.3734091"
+      }
+    ]
   },
   {
     "year": "2025",
@@ -119,17 +117,37 @@
     "year": "2025",
     "type": "研究業績",
     "category": "国内会議（共著）",
-    "title": "丸山敦史，古賀荘翠，他「LayerPack: トレーニング不要な中割手法」Visual Computing 2025",
+    "title": "丸山敦史，古賀荘翠，他「LayerPack: トレーニング不要なレイヤー間一貫性のある中割り手法」Visual Computing 2025",
     "title_en": "Atsushi Maruyama, Sosui Koga et al., LayerPack: Training-free animation inbetweening, Visual Computing 2025",
+    "Links": [
+      {
+        "label": "詳細",
+        "label_en": "Details",
+        "url": "https://visualcomputing.jp/vc2025/program/poster/#:~:text=[P211]%20LayerPack:%20トレーニング不要なレイヤー間一貫性のある中割り手法"
+      }
+    ]
+  },
+  {
+    "year": "2024",
+    "type": "研究業績",
+    "category": "査読付き論文（論文誌）",
+    "title": "北山晃生，岸孝樹，古賀荘翠，滝本裕則，金川明弘「室内での見守り実現に向けた全方位画像に対する複数人物追跡」日本福祉工学会誌，Vol.26，No.2，pp.2–8，2024",
+    "title_en": "A. Kitayama, T. Kishi, S. Koga, H. Takimoto, A. Kanagawa, Multi-person tracking on omnidirectional images for indoor monitoring, Journal of Japanese Society for Wellbeing Science and Assistive Technology, Vol.26, No.2, pp.2-8, 2024",
     "Links": []
   },
   {
     "year": "2026",
     "type": "フェローシップ・研究費",
     "category": "",
-    "title": "日本学術振興会 特別研究員（DC1）研究課題：「合成データによる事前学習駆動の生成モデル構築」採択率：約12%（2026年4月〜2029年3月）",
-    "title_en": "JSPS Research Fellowship for Young Scientists (DC1), research topic: Building generative models driven by synthetic-data pretraining (acceptance rate: ~12%, Apr 2026 - Mar 2029)",
-    "Links": []
+    "title": "日本学術振興会 特別研究員（DC1）研究課題：「合成データによる事前学習駆動の生成モデル構築」採択率：約12%（2026年4月〜2029年3月）, 2,400千円",
+    "title_en": "JSPS Research Fellowship for Young Scientists (DC1), research topic: Building generative models driven by synthetic-data pretraining (acceptance rate: ~12%, Apr 2026 - Mar 2029), 2,400,000 JPY",
+    "Links": [
+      {
+        "label": "詳細",
+        "label_en": "Details",
+        "url": "https://kaken.nii.ac.jp/grant/KAKENHI-PROJECT-26KJ1721/"
+      }
+    ]
   },
   {
     "year": "2025",
@@ -151,7 +169,13 @@
     "category": "",
     "title": "Sensing Solution ハッカソン 2024 ファイナリスト（ソニーグループ株式会社・計測自動制御学会 共催）採択率：36%",
     "title_en": "Finalist, Sensing Solution Hackathon 2024 (co-hosted by Sony Group and SICE, acceptance rate: 36%)",
-    "Links": []
+    "Links": [
+      {
+        "label": "詳細",
+        "label_en": "Details",
+        "url": "https://sensing-solution-hackathon.sonyged.com/2024_report"
+      }
+    ]
   },
   {
     "year": "2023",

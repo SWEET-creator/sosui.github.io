@@ -355,6 +355,40 @@ nav ul {
   line-height: 1.45;
 }
 
+.achievement-title-link {
+  display: inline;
+  color: inherit;
+  text-decoration-color: rgba(147, 197, 253, 0.65);
+  text-underline-offset: 0.2em;
+  transition: color 160ms ease, text-decoration-color 160ms ease;
+}
+
+.achievement-title-link::after {
+  content: "↗";
+  display: inline-block;
+  margin-left: 0.28rem;
+  font-size: 0.9em;
+  line-height: 1;
+  text-decoration: none;
+  transition: transform 160ms ease;
+}
+
+.achievement-title-link:hover {
+  color: #67e8f9;
+  text-decoration-color: currentColor;
+}
+
+.achievement-title-link:hover::after {
+  transform: translate(0.1rem, -0.1rem);
+}
+
+.achievement-title-link:focus-visible {
+  color: #67e8f9;
+  outline: 2px solid rgba(103, 232, 249, 0.75);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
 .achievement-year {
   display: inline-block;
   margin-right: 0.5rem;
@@ -372,7 +406,7 @@ nav ul {
   gap: 0.35rem;
 }
 
-.achievement-item a {
+.achievement-links--multiple a {
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
@@ -381,6 +415,45 @@ nav ul {
   border-radius: 999px;
   padding: 0.18rem 0.65rem;
   color: #fff;
+}
+
+.achievement-links--single a {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  gap: 0.28rem;
+  padding: 0.08rem 0;
+  color: #93c5fd;
+  text-decoration-line: underline;
+  text-decoration-color: rgba(147, 197, 253, 0.65);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.24em;
+  transition: color 160ms ease, text-decoration-color 160ms ease;
+}
+
+.achievement-links--single a::after {
+  content: "↗";
+  display: inline-block;
+  font-size: 0.9em;
+  line-height: 1;
+  text-decoration: none;
+  transition: transform 160ms ease;
+}
+
+.achievement-links--single a:hover {
+  color: #67e8f9;
+  text-decoration-color: currentColor;
+}
+
+.achievement-links--single a:hover::after {
+  transform: translate(0.1rem, -0.1rem);
+}
+
+.achievement-links--single a:focus-visible {
+  color: #67e8f9;
+  outline: 2px solid rgba(103, 232, 249, 0.75);
+  outline-offset: 4px;
+  border-radius: 2px;
 }
 
 @media (max-width: 760px) {

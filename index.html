@@ -7,7 +7,7 @@
     <title>古賀 荘翠 / Sosui Koga</title>
     <script src="scripts/common.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
-    <link rel="stylesheet" href="css/index.css?v=20260710-achievement-links">
+    <link rel="stylesheet" href="css/index.css?v=20260711-achievement-single-link">
 </head>
 
 <body>
@@ -18,7 +18,7 @@
 
         <section class="content-block" id="bio">
             <h2 data-ja="研究内容" data-en="Research">研究内容</h2>
-            <p data-ja="コンピュータビジョンを用いたアニメーション制作支援技術の研究開発" data-en="Research and development of animation production support using computer vision.">コンピュータビジョンを用いたアニメーション制作支援技術の研究開発</p>
+            <p data-ja="コンピュータビジョンとグラフィックスを用いた映像制作支援技術の研究開発" data-en="Research and development of animation production support using computer vision.">コンピュータビジョンを用いたアニメーション制作支援技術の研究開発</p>
 
             <h2 id="links" data-ja="Links" data-en="Links">Links</h2>
             <div class="social-links">
@@ -179,12 +179,23 @@
                             title.prepend(year);
                         }
 
+                        const links = getAchievementLinks(item);
+                        if (links.length === 1) {
+                            const titleLink = document.createElement('a');
+                            titleLink.className = 'achievement-title-link';
+                            titleLink.href = links[0].url;
+                            titleLink.target = '_blank';
+                            titleLink.rel = 'noopener noreferrer';
+                            while (title.firstChild) titleLink.appendChild(title.firstChild);
+                            title.appendChild(titleLink);
+                        }
+
                         entry.appendChild(title);
 
-                        const links = getAchievementLinks(item);
-                        if (links.length > 0) {
+                        if (links.length > 1) {
                             const linkList = document.createElement('div');
                             linkList.className = 'achievement-links';
+                            linkList.classList.add('achievement-links--multiple');
 
                             links.forEach((linkItem) => {
                                 const link = document.createElement('a');
