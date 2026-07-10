@@ -135,9 +135,15 @@
     "year": "2025",
     "type": "プロジェクト",
     "category": "",
-    "title": "「ジャンボタニシの卵撲滅するニャん」おかやまテックガレージ（J-PEAKS関連事業）採択プロジェクト，2025年",
+    "title": "「ジャンボタニシの卵撲滅するニャん♪」おかやまテックガレージ（J-PEAKS関連事業）採択プロジェクト，2025年",
     "title_en": "Selected project at Okayama Tech Garage (J-PEAKS): Nyan to Eliminate Apple Snail Eggs, 2025",
-    "Links": []
+    "Links": [
+      {
+        "label": "記事",
+        "label_en": "Article",
+        "url": "https://prtimes.jp/main/html/rd/p/000003346.000072793.html"
+      }
+    ]
   },
   {
     "year": "2024",
