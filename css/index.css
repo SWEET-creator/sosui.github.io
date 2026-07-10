@@ -341,8 +341,8 @@ nav ul {
 
 .achievement-item {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+  flex-direction: column;
+  align-items: stretch;
   gap: 0.8rem;
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.12);
@@ -365,8 +365,17 @@ nav ul {
   color: #dbeafe;
 }
 
+.achievement-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 0.35rem;
+}
+
 .achievement-item a {
-  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
   text-decoration: none;
   background: #2563eb;
   border-radius: 999px;

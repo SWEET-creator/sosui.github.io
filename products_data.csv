@@ -1,5 +1,6 @@
 year,imgPath,title,text,githubLink,projectLink
 2026,public/ca.png,Cellular Automata Painter,"セルオートマトンをブラシで描いて再生できるWebアプリ。","https://github.com/SWEET-creator/sosui.github.io","ca-painter/"
+2025,public/janbo.png,ジャンボタニシ撲滅するにゃん♪,"コメの害虫であるジャンボタニシの卵を破壊する４足歩行ロボットと専用アームを開発 使用:Gazebo, OpenCV, 電子工作",
 2025,https://s2025.conference-schedule.org/wp-content/linklings_snippets/representative_images/5xLPi8fNn2yyMR9S.jpg,AniDepth : Anime In-between Diffusion using Depth-guided Warped Line-art,SIGGRAPH 2025 Talks,,https://s2025.conference-schedule.org/presentation/?id=gensub_270&sess=sess173
 2024,public/Mimamori_Zamurai.png,見守り侍,"""Sensing solution ハッカソン 2024""にて最終審査進出 画像認識で学習時間を計測に基づきアバターが成長する,学習支援プロダクト 使用:Spressense, AWS, Neural Network Console",https://github.com/SWEET-creator/Mimamori_Samurai
 2024,public/NTTRandD.png,NTTR&D 長期インターン,"V&L基盤モデルを活用した人物行動認識手法の提案 使用:Pytorch, Transformers, LAVIS, PEFT",

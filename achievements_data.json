@@ -1,0 +1,338 @@
+[
+  {
+    "year": "2026",
+    "type": "研究業績",
+    "category": "査読付き国際会議（共著）",
+    "title": "Akinobu Maejima, Sosui Koga, Kazuki Kumagai, Takuya Funatomi, Tatsuo Yotsukura, Yasuhiro Mukaigawa, Workflow-friendly Anime In-betweening Using Video Generation Models, SIGGRAPH 2026 Talks 採択率：?%",
+    "title_en": "Akinobu Maejima, Sosui Koga, Kazuki Kumagai, Takuya Funatomi, Tatsuo Yotsukura, Yasuhiro Mukaigawa, Workflow-friendly Anime In-betweening Using Video Generation Models, SIGGRAPH 2026 Talks Acceptance rate: ?%",
+    "Links": []
+  },
+  {
+    "year": "2026",
+    "type": "研究業績",
+    "category": "国内会議（筆頭著者）",
+    "title": "古賀荘翠，藤村友貴，他「拡散モデルと極小領域再割当によるアニメ彩色」画像の認識・理解シンポジウム（MIRU2026）口頭発表 (Acceptance rate 33.5%)",
+    "title_en": "Sosui Koga et al., Anime coloring using diffusion models and miniature region reallocation, MIRU 2026 Oral presentation(Acceptance rate 33.5%)",
+    "Links": []
+  },
+  {
+    "year": "2026",
+    "type": "学歴",
+    "category": "",
+    "title": "奈良先端科学技術大学院大学（NAIST） 先端科学技術研究科 情報科学領域 博士後期課程（2026年4月〜在学中）",
+    "title_en": "Ph.D. Program, Division of Information Science, NAIST (Apr 2026 - Present)",
+    "Links": []
+  },
+  {
+    "year": "2024",
+    "type": "学歴",
+    "category": "",
+    "title": "奈良先端科学技術大学院大学（NAIST） 先端科学技術研究科 情報科学領域 修士課程（2024年4月〜2026年3月",
+    "title_en": "M.S. Program, Division of Information Science, NAIST (Apr 2024 - Mar 2026)",
+    "Links": []
+  },
+  {
+    "year": "2024",
+    "type": "研究業績",
+    "category": "査読付き論文（論文誌）",
+    "title": "北山晃生，岸孝樹，古賀荘翠，滝本裕則，金川明弘「室内での見守り実現に向けた全方位画像に対する複数人物追跡」日本福祉工学会誌，Vol.26，No.2，pp.2–8，2024",
+    "title_en": "A. Kitayama, T. Kishi, S. Koga, H. Takimoto, A. Kanagawa, Multi-person tracking on omnidirectional images for indoor monitoring, Journal of Japanese Society for Wellbeing Science and Assistive Technology, Vol.26, No.2, pp.2-8, 2024",
+    "Links": []
+  },
+  {
+    "year": "2025",
+    "type": "研究業績",
+    "category": "査読付き国際会議（筆頭著者）",
+    "title": "古賀荘翠，舩冨卓哉，藤村友貴，品川政太朗，北野和哉，久保尋之，前島謙宣，向川康博「AniDepth: Depth-guided Warped Line-art に基づくアニメ中割生成手法」SIGGRAPH Talks 2025（ACM）採択率：21%",
+    "title_en": "Sosui Koga et al., AniDepth: Anime in-between generation based on depth-guided warped line-art, ACM SIGGRAPH Talks 2025 (acceptance rate: 21%)",
+    "Links": []
+  },
+  {
+    "year": "2025",
+    "type": "研究業績",
+    "category": "国内会議（筆頭著者）",
+    "title": "古賀荘翠，舩冨卓哉，他「深度画像に基づく線画変形を用いた条件付拡散モデルによるアニメ中割手法」画像の認識・理解シンポジウム（MIRU2025）",
+    "title_en": "Sosui Koga et al., Anime in-between generation with conditional diffusion using depth-based line-art warping, MIRU 2025",
+    "Links": [
+      {
+        "label": "論文",
+        "label_en": "Paper",
+        "url": "https://omilab.naist.jp/papers/MIRU2025-AniDepth.pdf"
+      },
+      {
+        "label": "記事",
+        "label_en": "Article",
+        "url": "https://www.olm.co.jp/post/miru2025"
+      },
+      {
+        "label": "記事",
+        "label_en": "Article",
+        "url": "https://tech.imagicagroup.co.jp/news/7993/"
+      }
+    ]
+  },
+  {
+    "year": "2025",
+    "type": "研究業績",
+    "category": "国内会議（筆頭著者）",
+    "title": "古賀荘翠，舩冨卓哉，他「深度画像に基づく線画変形を用いた条件付拡散モデルによるアニメ中割手法の検討」Vision, Graphics, and Sensing Workshop（VGSW 2025）",
+    "title_en": "Sosui Koga et al., Study on anime in-between generation with conditional diffusion using depth-based line-art warping, VGSW 2025",
+    "Links": []
+  },
+  {
+    "year": "2023",
+    "type": "研究業績",
+    "category": "国内会議（筆頭著者）",
+    "title": "古賀荘翠，北山晃生，岸孝樹，滝本裕則，金川明弘, 複数物体追跡におけるIDスイッチ抑制のためのMotionSORTの提案, 第28回パターン計測シンポジウム（第108回パターン計測部会研究会）登壇",
+    "title_en": "Sosui Koga et al., MotionSORT for reducing ID-switches in multi-object tracking, 28th Pattern Measurement Symposium",
+    "Links": [
+      {
+        "label": "詳細",
+        "label_en": "Details",
+        "url": "https://www.sice.or.jp/org/pattern/program2023.html"
+      }
+    ]
+  },
+  {
+    "year": "2025",
+    "type": "研究業績",
+    "category": "査読付き国際会議（共著）",
+    "title": "丸山敦史，古賀荘翠，他「LayerPack: Training-Free Animation Inbetweening with Cross-Layer Consistency」SIGGRAPH Asia 2025 Posters 採択率：20%",
+    "title_en": "Atsushi Maruyama, Sosui Koga et al., LayerPack: Training-Free Animation Inbetweening with Cross-Layer Consistency, SIGGRAPH Asia 2025 Posters (acceptance rate: 20%)",
+    "Links": [
+      {
+        "label": "詳細",
+        "label_en": "Details",
+        "url": "https://dl.acm.org/doi/10.1145/3757374.3771440"
+      }
+    ]
+  },
+  {
+    "year": "2026",
+    "type": "研究業績",
+    "category": "査読付き国際会議（共著）",
+    "title": "丸山敦史，古賀荘翠，他「LayerPack: Cross-Layer Consistency in Animation Inbetweening」Computer Vision and Multimedia（CVM 2026）採択率：31%",
+    "title_en": "Atsushi Maruyama, Sosui Koga et al., LayerPack: Cross-Layer Consistency in Animation Inbetweening, CVM 2026 (accepted, acceptance rate: 31%)",
+    "Links": []
+  },
+  {
+    "year": "2025",
+    "type": "研究業績",
+    "category": "国内会議（共著）",
+    "title": "丸山敦史，古賀荘翠，他「LayerPack: トレーニング不要な中割手法」Visual Computing 2025",
+    "title_en": "Atsushi Maruyama, Sosui Koga et al., LayerPack: Training-free animation inbetweening, Visual Computing 2025",
+    "Links": []
+  },
+  {
+    "year": "2026",
+    "type": "フェローシップ・研究費",
+    "category": "",
+    "title": "日本学術振興会 特別研究員（DC1）研究課題：「合成データによる事前学習駆動の生成モデル構築」採択率：約12%（2026年4月〜2029年3月）",
+    "title_en": "JSPS Research Fellowship for Young Scientists (DC1), research topic: Building generative models driven by synthetic-data pretraining (acceptance rate: ~12%, Apr 2026 - Mar 2029)",
+    "Links": []
+  },
+  {
+    "year": "2025",
+    "type": "プロジェクト",
+    "category": "",
+    "title": "「ジャンボタニシの卵撲滅するニャん」おかやまテックガレージ（J-PEAKS関連事業）採択プロジェクト，2025年",
+    "title_en": "Selected project at Okayama Tech Garage (J-PEAKS): Nyan to Eliminate Apple Snail Eggs, 2025",
+    "Links": []
+  },
+  {
+    "year": "2024",
+    "type": "競技・ハッカソン",
+    "category": "",
+    "title": "Sensing Solution ハッカソン 2024 ファイナリスト（ソニーグループ株式会社・計測自動制御学会 共催）採択率：36%",
+    "title_en": "Finalist, Sensing Solution Hackathon 2024 (co-hosted by Sony Group and SICE, acceptance rate: 36%)",
+    "Links": []
+  },
+  {
+    "year": "2023",
+    "type": "競技・ハッカソン",
+    "category": "",
+    "title": "WebxIoTメイカーズチャレンジ in 岡山 参加",
+    "title_en": "Participant, WebxIoT Makers Challenge in Okayama",
+    "Links": [
+      {
+        "label": "詳細",
+        "label_en": "Details",
+        "url": "https://webiotmakers.github.io/2023/"
+      }
+    ]
+  },
+  {
+    "year": "2023",
+    "type": "競技・ハッカソン",
+    "category": "",
+    "title": "C2C-ctf-2023 in 慶應義塾大学 本戦参加",
+    "title_en": "Final round participant, C2C-CTF 2023 at Keio University",
+    "Links": [
+      {
+        "label": "詳細",
+        "label_en": "Details",
+        "url": "https://c2c-ctf-2023.cysec-lab.keio.ac.jp"
+      }
+    ]
+  },
+  {
+    "year": "2023",
+    "type": "その他",
+    "category": "資格",
+    "title": "TOEIC：835",
+    "title_en": "TOEIC: 835",
+    "Links": []
+  },
+  {
+    "year": "2022",
+    "type": "競技・ハッカソン",
+    "category": "",
+    "title": "emPit@Ehime（2022年11月〜2月）参加",
+    "title_en": "Participant, emPit@Ehime (Nov 2022 - Feb 2023)",
+    "Links": [
+      {
+        "label": "詳細",
+        "label_en": "Details",
+        "url": "http://enpit.cs.ehime-u.ac.jp/camp/"
+      }
+    ]
+  },
+  {
+    "year": "2022",
+    "type": "競技・ハッカソン",
+    "category": "",
+    "title": "enPiT-2 Security（2022年9月・12月）参加",
+    "title_en": "Participant, enPiT-2 Security (Sep & Dec 2022)",
+    "Links": [
+      {
+        "label": "詳細",
+        "label_en": "Details",
+        "url": "https://www.eng.okayama-u.ac.jp/enpit2-sec/"
+      }
+    ]
+  },
+  {
+    "year": "2024",
+    "type": "職歴",
+    "category": "",
+    "title": "ギリア株式会社 インターンシップ（2024年〜2025年）",
+    "title_en": "Internship at GHELIA Inc. (2024-2025)",
+    "Links": []
+  },
+  {
+    "year": "2024",
+    "type": "職歴",
+    "category": "",
+    "title": "NTT R&D インターンシップ（2024年8月〜2024年9月・6週間）",
+    "title_en": "NTT R&D Internship (Aug-Sep 2024, 6 weeks)",
+    "Links": []
+  },
+  {
+    "year": "2025",
+    "type": "職歴",
+    "category": "",
+    "title": "OLM Digital R&D 研究調査業務（2025年〜2026年）",
+    "title_en": "Research and investigation work at OLM Digital R&D (2025-2026)",
+    "Links": []
+  },
+  {
+    "year": "2024",
+    "type": "受賞歴",
+    "category": "",
+    "title": "計測自動制御学会（SICE）優秀学生賞（2024年3月）",
+    "title_en": "SICE Outstanding Student Award (Mar 2024)",
+    "Links": []
+  },
+  {
+    "year": "2024",
+    "type": "受賞歴",
+    "category": "",
+    "title": "岡山県立大学 情報工学部 情報通信工学科学業成績最優秀賞（2024年3月）",
+    "title_en": "Best Academic Performance Award, Department of Information and Communication Engineering, OPU (Mar 2024)",
+    "Links": []
+  },
+  {
+    "year": "2022",
+    "type": "受賞歴",
+    "category": "",
+    "title": "岡山県立大学 情報工学部 情報通信工学科学業成績優秀賞（2022年3月）",
+    "title_en": "Academic Excellence Award, Department of Information and Communication Engineering, OPU (Mar 2022)",
+    "Links": []
+  },
+  {
+    "year": "2021",
+    "type": "受賞歴",
+    "category": "",
+    "title": "第21回 理工系科学技術論文コンクール 入賞（2021年）（日刊工業新聞社 モノづくり日本会議）",
+    "title_en": "Prize winner, 21st Science and Technology Essay Contest (2021)",
+    "Links": [
+      {
+        "label": "詳細",
+        "label_en": "Details",
+        "url": "http://www.rikokei.jp/winning/2021.html"
+      }
+    ]
+  },
+  {
+    "year": "2020",
+    "type": "学歴",
+    "category": "",
+    "title": "岡山県立大学 情報工学部 情報通信工学科 学士（2020年4月〜2024年3月）",
+    "title_en": "B.E., Information and Communication Engineering, Okayama Prefectural University (Apr 2020 - Mar 2024)",
+    "Links": []
+  },
+  {
+    "year": "2015",
+    "type": "受賞歴",
+    "category": "",
+    "title": "日本教育書道研究会主催 第二十七回書初コンクール 準特選",
+    "title_en": "Semi-special Prize, 27th New Year Calligraphy Contest",
+    "Links": []
+  },
+  {
+    "year": "2014",
+    "type": "その他",
+    "category": "資格",
+    "title": "鉱物鑑定士 6級",
+    "title_en": "Mineral Appraiser, Grade 6",
+    "Links": [
+      {
+        "label": "詳細",
+        "label_en": "Details",
+        "url": "https://masutomi.or.jp/pages/72/"
+      }
+    ]
+  },
+  {
+    "year": "2014",
+    "type": "受賞歴",
+    "category": "",
+    "title": "第二十五回ライオンズクラブ国際協会国際平和ポスター・コンテスト 優秀賞",
+    "title_en": "25th Lions Clubs International International Peace Poster Contest - Excellence Award",
+    "Links": []
+  },
+  {
+    "year": "2014",
+    "type": "受賞歴",
+    "category": "",
+    "title": "「明延鉱山跡の鉱物について」丹波市理科自由研究展 優秀賞",
+    "title_en": "On the Minerals of the Akebono Mine Site\" - Excellent Award, Tanba City Science Independent Research Exhibition",
+    "Links": []
+  },
+  {
+    "year": "2013",
+    "type": "受賞歴",
+    "category": "",
+    "title": "「ぼくの字はミミズがおどっているいようだ」第二十四回 伊藤園おーいお茶新俳句大賞 佳作",
+    "title_en": "Honorable Mention, 24th Ito En Oi Ocha New Haiku Contest",
+    "Links": []
+  },
+  {
+    "year": "2011",
+    "type": "受賞歴",
+    "category": "",
+    "title": "「愛知川の石」第五十二回京都ユネスコ協会「自然観察展」京都ユネスコ協会連盟賞",
+    "title_en": "Kyoto UNESCO Federation Award, 52nd Nature Observation Exhibition",
+    "Links": []
+  }
+]

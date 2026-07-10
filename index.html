@@ -7,7 +7,7 @@
     <title>古賀 荘翠 / Sosui Koga</title>
     <script src="scripts/common.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/index.css?v=20260710-achievement-links">
 </head>
 
 <body>
@@ -104,6 +104,25 @@
             return value;
         }
 
+        function getAchievementLinks(item) {
+            if (Array.isArray(item.Links)) {
+                return item.Links
+                    .map((link) => {
+                        if (typeof link === 'string') {
+                            return { url: link, label: '', label_en: '' };
+                        }
+                        return link || {};
+                    })
+                    .filter((link) => link.url && link.url.trim() !== '');
+            }
+
+            if (item.Link && item.Link.trim() !== '') {
+                return [{ url: item.Link, label: '詳細', label_en: 'Details' }];
+            }
+
+            return [];
+        }
+
         function renderAchievements(rows) {
             const container = document.getElementById('achievements-list');
             container.innerHTML = '';
@@ -162,13 +181,27 @@
 
                         entry.appendChild(title);
 
-                        if (item.Link && item.Link.trim() !== '') {
-                            const link = document.createElement('a');
-                            link.href = item.Link;
-                            link.target = '_blank';
-                            link.rel = 'noopener noreferrer';
-                            link.textContent = window.SiteCommon.getCurrentLang() === 'en' ? 'Details' : '詳細';
-                            entry.appendChild(link);
+                        const links = getAchievementLinks(item);
+                        if (links.length > 0) {
+                            const linkList = document.createElement('div');
+                            linkList.className = 'achievement-links';
+
+                            links.forEach((linkItem) => {
+                                const link = document.createElement('a');
+                                link.href = linkItem.url;
+                                link.target = '_blank';
+                                link.rel = 'noopener noreferrer';
+                                const linkLabel = window.SiteCommon.getCurrentLang() === 'en'
+                                    ? ((linkItem.label_en && linkItem.label_en.trim()) ? linkItem.label_en : (linkItem.label || 'Details'))
+                                    : ((linkItem.label && linkItem.label.trim()) ? linkItem.label : (linkItem.label_en || '詳細'));
+
+                                const label = document.createElement('span');
+                                label.textContent = linkLabel;
+                                link.appendChild(label);
+                                linkList.appendChild(link);
+                            });
+
+                            entry.appendChild(linkList);
                         }
 
                         typeSection.appendChild(entry);
@@ -179,15 +212,20 @@
             });
         }
 
-        Papa.parse('achievements_data.csv', {
-            download: true,
-            header: true,
-            skipEmptyLines: true,
-            complete: function (results) {
-                achievementRows = (results.data || []).filter((r) => r && r.title);
+        fetch('achievements_data.json')
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error(`Failed to load achievements_data.json: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then((data) => {
+                achievementRows = (data || []).filter((r) => r && r.title);
                 renderAchievements(achievementRows);
-            }
-        });
+            })
+            .catch((error) => {
+                console.error(error);
+            });
 
         window.SiteCommon.onLanguageChange(() => {
             renderAchievements(achievementRows);
