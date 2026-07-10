@@ -3,12 +3,10 @@
   const langListeners = [];
 
   function getLinks(page) {
-    const isIndex = page === 'index';
     return {
-      bio: 'index.html#bio',
+      research: 'index.html',
       products: 'products.html',
-      links: isIndex ? '#links' : 'index.html#links',
-      achievements: isIndex ? '#achievements' : 'index.html#achievements'
+      arts: 'Arts.html'
     };
   }
 
@@ -21,17 +19,14 @@
       <div class="header-right-tools">
         <button id="lang-toggle" class="lang-toggle" type="button">EN</button>
         <div class="header-quick-links" aria-label="主要ページへの移動">
-          <a class="header-quick-link" href="${links.bio}">
-            <strong data-ja="Bio" data-en="Bio">Bio</strong>
+          <a class="header-quick-link" href="${links.research}">
+            <strong data-ja="Research" data-en="Research">Research</strong>
           </a>
           <a class="header-quick-link" href="${links.products}">
             <strong data-ja="Products" data-en="Products">Products</strong>
           </a>
-          <a class="header-quick-link" href="${links.links}">
-            <strong data-ja="Links" data-en="Links">Links</strong>
-          </a>
-          <a class="header-quick-link" href="${links.achievements}">
-            <strong data-ja="Achievements" data-en="Achievements">Achievements</strong>
+          <a class="header-quick-link" href="${links.arts}">
+            <strong data-ja="Arts" data-en="Arts">Arts</strong>
           </a>
         </div>
       </div>
@@ -40,16 +35,35 @@
     `;
   }
 
-  function renderProfile() {
+  function renderProfile(page) {
     const profile = document.getElementById('profile-hero');
     if (!profile) return;
 
+    const profileImages = {
+      index: 'public/SosuiKoga_Research.png',
+      products: 'public/SosuiKoga_Products.png',
+      arts: 'public/SosuiKoga_Arts.png'
+    };
+    const profileImage = profileImages[page] || profileImages.index;
+    const profileDetails = {
+      index: [
+        ['奈良先端科学技術大学院大学 情報理工学領域 博士後期課程', 'Ph.D. student, Division of Information Science, NAIST'],
+        ['光メディアインタフェース研究室 所属', 'Affiliation: Optical Media Interface Lab']
+      ],
+      products: [
+        ['画像認識、生成モデル、Web、センシング、ロボティクスを用いて、研究上のアイデアや身近な課題を実際に動くシステムへと変化させる', 'I transform research ideas and everyday challenges into functional systems by leveraging image recognition, generative models, web technologies, sensing, and robotics.']
+      ],
+      arts: [
+        ['主観的な美しさと好みによって創られるものたちの場所', 'I create works using video, generative systems, and interactive media, exploring the boundaries between computation, biology, machines, and matter.']
+      ]
+    };
+    const details = profileDetails[page] || profileDetails.index;
+
     profile.classList.add('profile-hero');
     profile.innerHTML = `
-      <img class="profile-image" src="public/face2.png" alt="プロフィール画像">
+      <img class="profile-image" src="${profileImage}" alt="Sosui Koga">
       <div class="profile-summary">
-        <p data-ja="奈良先端科学技術大学院大学 情報理工学領域 博士後期課程 1年" data-en="Ph.D. student (1st year), Division of Information Science, NAIST">奈良先端科学技術大学院大学 情報理工学領域 博士後期課程 1年</p>
-        <p data-ja="光メディアインタフェース研究室 所属" data-en="Affiliation: Optical Media Interface Lab">光メディアインタフェース研究室 所属</p>
+        ${details.map(([ja, en]) => `<p data-ja="${ja}" data-en="${en}">${ja}</p>`).join('')}
       </div>
     `;
   }
@@ -76,7 +90,7 @@
 
   function init(page) {
     renderHeader(page);
-    renderProfile();
+    renderProfile(page);
 
     const toggle = document.getElementById('lang-toggle');
     if (toggle) {

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sosui Koga: Arts</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <script src="scripts/common.js"></script>
+  <link rel="stylesheet" href="css/products.css">
+  <link rel="stylesheet" href="css/arts.css">
+</head>
+<body>
+  <header id="site-header"></header>
+  <section id="profile-hero"></section>
+
+  <main class="arts-container">
+
+    <section class="works-section">
+      <h2 data-ja="作品" data-en="Works">作品</h2>
+      <div class="arts-work-grid" id="arts-work-grid"></div>
+    </section>
+
+    <div class="arts-grid">
+      <a class="art-card" href="https://www.instagram.com/so_sweet_jp/" target="_blank" rel="noopener noreferrer">
+        <span class="art-card-icon" aria-hidden="true">🎨</span>
+        <span class="art-card-body">
+          <strong data-ja="ジェネレーティブアート" data-en="Generative Art">ジェネレーティブアート</strong>
+          <span>@so_sweet_jp</span>
+        </span>
+        <span class="art-card-arrow" aria-hidden="true">↗</span>
+      </a>
+
+      <a class="art-card" href="https://www.instagram.com/sweets.photon/" target="_blank" rel="noopener noreferrer">
+        <span class="art-card-icon" aria-hidden="true">📸</span>
+        <span class="art-card-body">
+          <strong data-ja="写真" data-en="Photography">写真</strong>
+          <span>@sweets.photon</span>
+        </span>
+        <span class="art-card-arrow" aria-hidden="true">↗</span>
+      </a>
+    </div>
+
+    <section class="favorites-section" id="favorites">
+      <h2 data-ja="個人的に好きな方々" data-en="Favorite Creators">個人的に好きな方々</h2>
+      <div class="favorites-grid" id="favorites-grid"></div>
+    </section>
+  </main>
+
+  <footer>© 2026 Sosui Koga</footer>
+  <script>
+    window.SiteCommon.init('arts');
+    let artRows = [];
+
+    function renderArts() {
+      const grid = document.getElementById('arts-work-grid');
+      grid.innerHTML = '';
+
+      artRows.forEach((item) => {
+        const work = document.createElement('article');
+        work.className = 'arts-work-card';
+
+        const image = document.createElement('img');
+        image.src = item.image;
+        image.alt = window.SiteCommon.getCurrentLang() === 'en' ? (item.title_en || item.title) : item.title;
+        image.loading = 'lazy';
+        work.appendChild(image);
+
+        const title = document.createElement('h3');
+        title.textContent = window.SiteCommon.getCurrentLang() === 'en' ? (item.title_en || item.title) : item.title;
+        work.appendChild(title);
+
+        const description = window.SiteCommon.getCurrentLang() === 'en'
+          ? (item.description_en || item.description)
+          : item.description;
+        if (description) {
+          const text = document.createElement('p');
+          text.textContent = description;
+          work.appendChild(text);
+        }
+        grid.appendChild(work);
+      });
+    }
+
+    fetch('arts_data.json')
+      .then((response) => {
+        if (!response.ok) throw new Error(`Failed to load arts_data.json: ${response.status}`);
+        return response.json();
+      })
+      .then((data) => {
+        artRows = (data || []).filter((item) => item && item.title && item.image);
+        artRows.sort((a, b) => String(b.date || '').localeCompare(String(a.date || '')));
+        renderArts();
+      })
+      .catch((error) => console.error(error));
+
+    window.SiteCommon.onLanguageChange(renderArts);
+
+    const favorites = [
+      { url: 'https://si-ku.art/', title: 'si-ku.art', description: 'Creative design & art' },
+      { url: 'http://ngethoma.com/', title: 'ngethoma', description: 'Digital creativity' },
+      { url: 'https://baku89.com/ja/', title: 'baku89', description: 'Creative coding & design' },
+      { url: 'https://ideoaves.github.io/', title: 'ideoaves', description: 'Interactive art & tech' }
+    ];
+
+    const favoritesGrid = document.getElementById('favorites-grid');
+    favorites.forEach((favorite) => {
+      const card = document.createElement('a');
+      card.href = favorite.url;
+      card.className = 'favorite-card';
+      card.target = '_blank';
+      card.rel = 'noopener noreferrer';
+
+      const icon = document.createElement('img');
+      icon.className = 'favorite-icon';
+      icon.src = `https://www.google.com/s2/favicons?sz=64&domain=${new URL(favorite.url).hostname}`;
+      icon.alt = favorite.title;
+      card.appendChild(icon);
+
+      const title = document.createElement('span');
+      title.className = 'favorite-title';
+      title.textContent = favorite.title;
+      card.appendChild(title);
+
+      const description = document.createElement('span');
+      description.className = 'favorite-description';
+      description.textContent = favorite.description;
+      card.appendChild(description);
+
+      favoritesGrid.appendChild(card);
+    });
+  </script>
+</body>
+</html>

@@ -5,6 +5,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>古賀 荘翠 / Sosui Koga</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <script src="scripts/common.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
     <link rel="stylesheet" href="css/index.css?v=20260711-achievement-single-link">
@@ -17,13 +20,38 @@
         <section id="profile-hero"></section>
 
         <section class="content-block" id="bio">
-            <h2 data-ja="研究内容" data-en="Research">研究内容</h2>
-            <p data-ja="コンピュータビジョンとグラフィックスを用いた映像制作支援技術の研究開発" data-en="Research and development of animation production support using computer vision.">コンピュータビジョンを用いたアニメーション制作支援技術の研究開発</p>
+            <h2 data-ja="Research" data-en="Research">Research</h2>
+            <p data-ja="コンピュータビジョンとコンピュータグラフィックスを横断し、アニメーションを中心とした映像制作の支援・自動化・表現拡張に取り組んでいます。" data-en="Research and development of animation production support using computer vision.">コンピュータビジョンを用いたアニメーション制作支援技術の研究開発</p>
+            <div id="research-achievements-list" class="achievements-list"></div>
+        </section>
 
-            <h2 id="links" data-ja="Links" data-en="Links">Links</h2>
+        <section class="content-block" id="featured-products">
+            <div class="section-header">
+                <h2 data-ja="Latest Products" data-en="Latest Products">Latest Products</h2>
+                <a href="products.html" class="view-more-btn" data-ja="もっと見る" data-en="View all">もっと見る</a>
+            </div>
+            <div id="featured-products-container" class="featured-products-grid"></div>
+        </section>
+
+        <section class="content-block" id="latest-arts">
+            <div class="section-header">
+                <h2 data-ja="Latest Arts" data-en="Latest Arts">Latest Arts</h2>
+                <a href="Arts.html" class="view-more-btn" data-ja="もっと見る" data-en="View all">もっと見る</a>
+            </div>
+            <div id="latest-arts-container" class="featured-products-grid"></div>
+        </section>
+
+        <section class="content-block" id="achievements">
+            <h2 data-ja="Achievements" data-en="Achievements">Achievements</h2>
+            <div id="achievements-list" class="achievements-list"></div>
+        </section>
+
+        <section class="content-block" id="links">
+            <h2 data-ja="Links" data-en="Links">Links</h2>
             <div class="social-links">
-                <a href="products.html" class="social-link" data-ja="Products page" data-en="Products page"><span class="link-icon">📦</span><span class="link-text" data-ja="Products" data-en="Products">Products</span></a>
-                <a href="https://scholar.google.com/citations?view_op=list_works&hl=ja&hl=ja&user=VOoQZkEAAAAJ" class="social-link" target="_blank" rel="noopener noreferrer"><span class="link-icon">🎓</span><span class="link-text">Scholar</span></a>
+                <a href="https://scholar.google.com/citations?view_op=list_works&hl=ja&hl=ja&user=VOoQZkEAAAAJ" class="social-link" target="_blank" rel="noopener noreferrer"><span class="link-icon">🎓</span><span class="link-text">Google Scholar</span></a>
+                <a href="https://jglobal.jst.go.jp/detail?JGLOBAL_ID=202601016785382971" class="social-link" target="_blank" rel="noopener noreferrer"><span class="link-icon">🔬</span><span class="link-text">J-GLOBAL</span></a>
+                <a href="https://researchmap.jp/sosui" class="social-link" target="_blank" rel="noopener noreferrer"><span class="link-icon">🗺️</span><span class="link-text">researchmap</span></a>
                 <a href="https://x.com/sosui0131" class="social-link" target="_blank" rel="noopener noreferrer"><span class="link-icon">𝕏</span><span class="link-text">X</span></a>
                 <a href="https://github.com/SWEET-creator" class="social-link" target="_blank" rel="noopener noreferrer"><span class="link-icon">🐙</span><span class="link-text">GitHub</span></a>
                 <a href="https://www.instagram.com/sweets.photon/" class="social-link" target="_blank" rel="noopener noreferrer"><span class="link-icon">📸</span><span class="link-text">Photo</span></a>
@@ -34,28 +62,12 @@
             <p><a href="mailto:sosui.koga.ko9@naist.ac.jp">sosui.koga.ko9@naist.ac.jp</a></p>
         </section>
 
-        <section class="content-block" id="featured-products">
-            <div class="section-header">
-                <h2 data-ja="Featured Products" data-en="Featured Products">Featured Products</h2>
-                <a href="products.html" class="view-more-btn" data-ja="もっと見る" data-en="View all">もっと見る</a>
-            </div>
-            <div id="featured-products-container" class="featured-products-grid"></div>
-        </section>
-
-        <section class="content-block" id="achievements">
-            <h2 data-ja="Achievements" data-en="Achievements">Achievements</h2>
-            <div id="achievements-list" class="achievements-list"></div>
-        </section>
-
-        <section class="content-block" id="favorites">
-            <h2 data-ja="個人的に好きな方々" data-en="Favorite Creators">個人的に好きな方々</h2>
-            <div class="favorites-grid" id="favorites-grid"></div>
-        </section>
     </main>
 
     <script>
         window.SiteCommon.init('index');
         let achievementRows = [];
+        let artRows = [];
 
         const TYPE_LABELS_EN = {
             '学歴': 'Education',
@@ -123,8 +135,8 @@
             return [];
         }
 
-        function renderAchievements(rows) {
-            const container = document.getElementById('achievements-list');
+        function renderAchievementGroups(rows, containerId) {
+            const container = document.getElementById(containerId);
             container.innerHTML = '';
 
             const grouped = {};
@@ -223,6 +235,14 @@
             });
         }
 
+        function renderAchievements(rows) {
+            const researchRows = rows.filter((row) => (row.type || '').trim() === '研究業績');
+            const otherRows = rows.filter((row) => (row.type || '').trim() !== '研究業績');
+
+            renderAchievementGroups(researchRows, 'research-achievements-list');
+            renderAchievementGroups(otherRows, 'achievements-list');
+        }
+
         fetch('achievements_data.json')
             .then((response) => {
                 if (!response.ok) {
@@ -240,7 +260,54 @@
 
         window.SiteCommon.onLanguageChange(() => {
             renderAchievements(achievementRows);
+            renderLatestArts(artRows);
         });
+
+        function renderLatestArts(rows) {
+            const container = document.getElementById('latest-arts-container');
+            container.innerHTML = '';
+
+            rows.slice(0, 3).forEach((item) => {
+                const card = document.createElement('article');
+                card.className = 'featured-product-card';
+
+                if (item.image) {
+                    const image = document.createElement('img');
+                    image.src = item.image;
+                    image.alt = item.title || 'Art';
+                    image.loading = 'lazy';
+                    card.appendChild(image);
+                }
+
+                const title = document.createElement('div');
+                title.className = 'card-title';
+                title.textContent = window.SiteCommon.getCurrentLang() === 'en'
+                    ? (item.title_en || item.title)
+                    : item.title;
+                card.appendChild(title);
+
+                const text = document.createElement('div');
+                text.className = 'card-text';
+                text.textContent = window.SiteCommon.getCurrentLang() === 'en'
+                    ? (item.description_en || item.description || '')
+                    : (item.description || '');
+                card.appendChild(text);
+
+                container.appendChild(card);
+            });
+        }
+
+        fetch('arts_data.json')
+            .then((response) => {
+                if (!response.ok) throw new Error(`Failed to load arts_data.json: ${response.status}`);
+                return response.json();
+            })
+            .then((data) => {
+                artRows = (data || []).filter((item) => item && item.title);
+                artRows.sort((a, b) => String(b.date || '').localeCompare(String(a.date || '')));
+                renderLatestArts(artRows);
+            })
+            .catch((error) => console.error(error));
 
         // Load and display featured products
         Papa.parse('products_data.csv', {
@@ -322,43 +389,6 @@
             }
         });
 
-        // Render favorite creators
-        const favorites = [
-            { url: 'https://si-ku.art/', title: 'si-ku.art', description: 'Creative design & art' },
-            { url: 'http://ngethoma.com/', title: 'ngethoma', description: 'Digital creativity' },
-            { url: 'https://baku89.com/ja/', title: 'baku89', description: 'Creative coding & design' },
-            { url: 'https://ideoaves.github.io/', title: 'ideoaves', description: 'Interactive art & tech' }
-        ];
-
-        const favoritesGrid = document.getElementById('favorites-grid');
-        favorites.forEach(fav => {
-            const card = document.createElement('a');
-            card.href = fav.url;
-            card.className = 'favorite-card';
-            card.target = '_blank';
-            card.rel = 'noopener noreferrer';
-
-            const domainUrl = new URL(fav.url);
-            const domain = domainUrl.hostname;
-
-            const iconImg = document.createElement('img');
-            iconImg.className = 'favorite-icon';
-            iconImg.src = `https://www.google.com/s2/favicons?sz=64&domain=${domain}`;
-            iconImg.alt = fav.title;
-            card.appendChild(iconImg);
-
-            const title = document.createElement('span');
-            title.className = 'favorite-title';
-            title.textContent = fav.title;
-            card.appendChild(title);
-
-            const desc = document.createElement('span');
-            desc.className = 'favorite-description';
-            desc.textContent = fav.description;
-            card.appendChild(desc);
-
-            favoritesGrid.appendChild(card);
-        });
     </script>
 
 </body>

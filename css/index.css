@@ -155,8 +155,8 @@ nav ul {
 }
 
 .profile-image {
-  width: 200px;
-  height: 200px;
+  width: 160px;
+  height: 160px;
   object-fit: cover;
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
@@ -528,6 +528,10 @@ a:active {
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 1.2rem;
   margin: 1.2rem 0;
+}
+
+#latest-arts-container {
+  grid-template-columns: repeat(auto-fill, minmax(200px, 280px));
 }
 
 .featured-product-card {
