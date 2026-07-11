@@ -48,18 +48,70 @@
     </section>
   </main>
 
+  <div class="art-modal" id="art-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="art-modal-title">
+    <div class="art-modal-content">
+      <button class="art-modal-close" id="art-modal-close" type="button" aria-label="閉じる">×</button>
+      <button class="art-modal-nav art-modal-prev" id="art-modal-prev" type="button" aria-label="前の作品">‹</button>
+      <img id="art-modal-image" src="" alt="">
+      <button class="art-modal-nav art-modal-next" id="art-modal-next" type="button" aria-label="次の作品">›</button>
+      <h2 id="art-modal-title"></h2>
+      <p id="art-modal-description"></p>
+    </div>
+  </div>
+
   <footer>© 2026 Sosui Koga</footer>
   <script>
     window.SiteCommon.init('arts');
     let artRows = [];
+    let currentArtIndex = 0;
+    const artModal = document.getElementById('art-modal');
+    const artModalImage = document.getElementById('art-modal-image');
+    const artModalTitle = document.getElementById('art-modal-title');
+    const artModalDescription = document.getElementById('art-modal-description');
+
+    function showArt(index) {
+      if (artRows.length === 0) return;
+      currentArtIndex = (index + artRows.length) % artRows.length;
+      const item = artRows[currentArtIndex];
+      const isEnglish = window.SiteCommon.getCurrentLang() === 'en';
+      artModalImage.src = item.image;
+      artModalImage.alt = isEnglish ? (item.title_en || item.title) : item.title;
+      artModalTitle.textContent = artModalImage.alt;
+      artModalDescription.textContent = isEnglish
+        ? (item.description_en || item.description || '')
+        : (item.description || '');
+    }
+
+    function openArtModal(index) {
+      showArt(index);
+      artModal.classList.add('is-open');
+      artModal.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('modal-open');
+    }
+
+    function closeArtModal() {
+      artModal.classList.remove('is-open');
+      artModal.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('modal-open');
+    }
 
     function renderArts() {
       const grid = document.getElementById('arts-work-grid');
       grid.innerHTML = '';
 
-      artRows.forEach((item) => {
+      artRows.forEach((item, index) => {
         const work = document.createElement('article');
         work.className = 'arts-work-card';
+        work.tabIndex = 0;
+        work.setAttribute('role', 'button');
+        work.setAttribute('aria-label', `${item.title}を拡大表示`);
+        work.addEventListener('click', () => openArtModal(index));
+        work.addEventListener('keydown', (event) => {
+          if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            openArtModal(index);
+          }
+        });
 
         const image = document.createElement('img');
         image.src = item.image;
@@ -96,6 +148,19 @@
       .catch((error) => console.error(error));
 
     window.SiteCommon.onLanguageChange(renderArts);
+
+    document.getElementById('art-modal-close').addEventListener('click', closeArtModal);
+    document.getElementById('art-modal-prev').addEventListener('click', () => showArt(currentArtIndex - 1));
+    document.getElementById('art-modal-next').addEventListener('click', () => showArt(currentArtIndex + 1));
+    artModal.addEventListener('click', (event) => {
+      if (event.target === artModal) closeArtModal();
+    });
+    document.addEventListener('keydown', (event) => {
+      if (!artModal.classList.contains('is-open')) return;
+      if (event.key === 'Escape') closeArtModal();
+      if (event.key === 'ArrowLeft') showArt(currentArtIndex - 1);
+      if (event.key === 'ArrowRight') showArt(currentArtIndex + 1);
+    });
 
     const favorites = [
       { url: 'https://si-ku.art/', title: 'si-ku.art', description: 'Creative design & art' },
