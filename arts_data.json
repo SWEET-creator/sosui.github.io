@@ -1,6 +1,6 @@
 [
-  {"date":"2026-07-11","title":"無題148","title_en":"Untitled 148","description":"色彩と形の重なりを探るイラストレーション。","description_en":"An illustration exploring layered colors and forms.","image":"public/arts/無題148.png"},
-  {"date":"2026-07-11","title":"無題126","title_en":"Untitled 126","description":"線と色面から生まれるリズムを描いた抽象作品。","description_en":"An abstract work shaped by the rhythm of lines and color fields.","image":"public/arts/無題126.png"},
+  {"date":"2026-07-11","title":"都市喧騒のポートレート","title_en":"Portrait of Urban Noise","description":"都市の喧騒を表現したポートレート。","description_en":"A portrait expressing the noise of the city.","image":"public/arts/無題148.png"},
+  {"date":"2026-07-11","title":"チャイナドレスのKawaii Girl","title_en":"Kawaii Girl in a Chinese Dress","description":"チャイナドレスを着たかわいい女の子を描いた作品。","description_en":"A work depicting a cute girl in a Chinese dress.","image":"public/arts/無題126.png"},
   {"date":"2026-07-10","title":"Emerald Growth","title_en":"Emerald Growth","description":"暗い木壁の前でエメラルド色に発光する、有機的な立体作品。","description_en":"An organic sculptural form glowing emerald against a dark wooden wall.","image":"public/arts/001.png"},
   {"date":"2026-07-09","title":"Violet Trace","title_en":"Violet Trace","description":"紫色の光を帯びた断片が人物の輪郭を思わせる抽象作品。","description_en":"Glowing violet fragments suggest the outline of a human figure.","image":"public/arts/002.png"},
   {"date":"2026-07-08","title":"AOYANAGI","title_en":"AOYANAGI","description":"緑の直方体と光、影の重なりで構成した幾何学作品。","description_en":"A geometric composition of green blocks, light, and layered shadows.","image":"public/arts/AOYANAGI.png"},
@@ -11,7 +11,7 @@
   {"date":"2026-07-03","title":"Fragment Tree","title_en":"Fragment Tree","description":"色とりどりの断片で樹木の姿を再構成した草原の風景。","description_en":"A grassland scene where colorful fragments reconstruct the form of a tree.","image":"public/arts/Grass.Cuce.001.002.png"},
   {"date":"2026-06-30","title":"Golden Growth II","title_en":"Golden Growth II","description":"手と金色の線材が融合する有機的な立体表現。","description_en":"An organic sculptural study merging a hand with flowing golden strands.","image":"public/arts/Grass.Obj002.png"},
   {"date":"2026-06-29","title":"Golden Growth III","title_en":"Golden Growth III","description":"自然の中に置かれた金色の構造体をめぐる造形実験。","description_en":"A formal experiment placing a golden structure within nature.","image":"public/arts/Grass.Obj003.png"},
-  {"date":"2026-06-27","title":"Grass","title_en":"Grass","description":"風景の密度と光の広がりを捉えた草原のレンダリング。","description_en":"A grassland rendering focused on density, atmosphere, and light.","image":"public/arts/Grass.png"},
+  {"date":"2026-06-27","title":"Grass","title_en":"Grass","description":"風景の密度と光の広がりを捉えた草原のスケッチ的3D, Dream Core的な雰囲気","description_en":"A grassland rendering focused on density, atmosphere, and light.","image":"public/arts/Grass.png"},
   {"date":"2026-06-26","title":"Library I","title_en":"Library I","description":"本と建築がつくる静かな室内空間の3DCGスタディ。","description_en":"A quiet 3D interior study shaped by books and architecture.","image":"public/arts/Library.001.png"},
   {"date":"2026-06-25","title":"Library II","title_en":"Library II","description":"光と奥行きを意識して構成した図書空間。","description_en":"A library space composed around light and architectural depth.","image":"public/arts/Library.002.png"},
   {"date":"2026-06-24","title":"Line I","title_en":"Line I","description":"線の集合がつくる流れと立体感を探る抽象作品。","description_en":"An abstract study of flow and volume formed by gathered lines.","image":"public/arts/Line.001.png"},
