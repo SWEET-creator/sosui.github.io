@@ -3,9 +3,14 @@
     "year": "2026",
     "type": "研究業績",
     "category": "査読付き国際会議（共著）",
-    "title": "Akinobu Maejima, Sosui Koga, Kazuki Kumagai, Takuya Funatomi, Tatsuo Yotsukura, Yasuhiro Mukaigawa, Workflow-friendly Anime In-betweening Using Video Generation Models, SIGGRAPH 2026 Talks 採択率：?%",
-    "title_en": "Akinobu Maejima, Sosui Koga, Kazuki Kumagai, Takuya Funatomi, Tatsuo Yotsukura, Yasuhiro Mukaigawa, Workflow-friendly Anime In-betweening Using Video Generation Models, SIGGRAPH 2026 Talks Acceptance rate: ?%",
-    "Links": []
+    "title": "Akinobu Maejima, Sosui Koga, Kazuki Kumagai, Takuya Funatomi, Tatsuo Yotsukura, Yasuhiro Mukaigawa, Workflow-friendly Anime In-betweening Using Video Generation Models, SIGGRAPH 2026 Talks",
+    "title_en": "Akinobu Maejima, Sosui Koga, Kazuki Kumagai, Takuya Funatomi, Tatsuo Yotsukura, Yasuhiro Mukaigawa, Workflow-friendly Anime In-betweening Using Video Generation Models, SIGGRAPH 2026 Talks",
+    "Links": [{
+        "label": "論文",
+        "label_en": "Paper",
+        "url": "https://doi.acm.org/?doi=3799818.3812070"
+      }
+    ]
   },
   {
     "year": "2026",
