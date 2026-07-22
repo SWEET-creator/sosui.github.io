@@ -1,5 +1,5 @@
 [
-  {"date":"2026-07-11","title":"虎と少女","title_en":"Tiger and Girl","description":"山月記に影響を受けた自己投影的作品","description_en":"A portrait expressing the noise of the city.","image":"public/arts/IMG_8396.png"},
+  {"date":"2026-07-21","title":"虎と少女","title_en":"Tiger and Girl","description":"山月記に影響を受けた自己投影的作品","description_en":"A portrait expressing the noise of the city.","image":"public/arts/IMG_8396.png"},
   {"date":"2026-07-11","title":"都市喧騒のポートレート","title_en":"Portrait of Urban Noise","description":"都市の喧騒を表現したポートレート。","description_en":"A portrait expressing the noise of the city.","image":"public/arts/無題148.png"},
   {"date":"2026-07-11","title":"チャイナドレスのKawaii Girl","title_en":"Kawaii Girl in a Chinese Dress","description":"チャイナドレスを着たかわいい女の子を描いた作品。","description_en":"A work depicting a cute girl in a Chinese dress.","image":"public/arts/無題126.png"},
   {"date":"2026-07-10","title":"Emerald Growth","title_en":"Emerald Growth","description":"暗い木壁の前でエメラルド色に発光する、有機的な立体作品。","description_en":"An organic sculptural form glowing emerald against a dark wooden wall.","image":"public/arts/001.png"},
@@ -22,14 +22,10 @@
   {"date":"2026-06-20","title":"PIEN","title_en":"PIEN","description":"感情を象徴するモチーフを立体的に再解釈した作品。","description_en":"A three-dimensional reinterpretation of a motif associated with emotion.","image":"public/arts/PIEN.png"},
   {"date":"2026-06-19","title":"SK","title_en":"SK","description":"イニシャルを核に形と質感を構成したグラフィック作品。","description_en":"A graphic work organized around initials, form, and texture.","image":"public/arts/SK.001.png"},
   {"date":"2026-06-17","title":"Three Color Dumpling","title_en":"Three Color Dumpling","description":"三色団子をモチーフにした親しみのある3D作品。","description_en":"A playful 3D work inspired by traditional three-color dumplings.","image":"public/arts/Three_color_dumpling.png"},
-  {"date":"2026-06-16","title":"Torus I","title_en":"Torus I","description":"トーラス形状の反復と光沢を探る抽象スタディ。","description_en":"An abstract study of repeated torus forms and reflective surfaces.","image":"public/arts/Torus.001.png"},
-  {"date":"2026-06-15","title":"Torus II","title_en":"Torus II","description":"輪の連なりがつくる空間的なリズムを表現した作品。","description_en":"A spatial rhythm formed by linked and repeated rings.","image":"public/arts/Torus.002.png"},
-  {"date":"2026-06-14","title":"Torus III","title_en":"Torus III","description":"円環の重なりと陰影を扱った3D造形。","description_en":"A 3D composition exploring overlapping rings and shadow.","image":"public/arts/Torus.003.png"},
-  {"date":"2026-06-13","title":"Torus","title_en":"Torus","description":"単純な円環形状から複雑な印象を引き出す造形実験。","description_en":"A formal experiment drawing complexity from a simple ring shape.","image":"public/arts/Torus.png"},
+  {"date":"2026-06-15","title":"円","title_en":"Circle","description":"円環する遺伝子のイメージ","description_en":"An abstract representation of a gene looping in a torus shape.","image":"public/arts/Torus.001.png"},
   {"date":"2026-06-12","title":"WAKAKUSA","title_en":"WAKAKUSA","description":"若草色を基調に光と幾何形状を構成した抽象作品。","description_en":"An abstract geometric composition built around fresh green light.","image":"public/arts/WAKAKUSA.png"},
   {"date":"2026-06-10","title":"White Model","title_en":"White Model","description":"某電気自動車","description_en":"A 3D model of a certain electric vehicle.","image":"public/arts/White.005.png"},
   {"date":"2026-06-09","title":"Creature","title_en":"Creature","description":"未知の生物を思わせる有機的な形態の3D作品。","description_en":"An organic 3D form suggesting an unfamiliar creature.","image":"public/arts/creature.002.png"},
   {"date":"2026-06-08","title":"Room","title_en":"Room","description":"部屋を表現した3D作品。","description_en":"A 3D work depicting a room.","image":"public/arts/output.png"},
-  {"date":"2026-06-07","title":"Unknown","title_en":"Unknown","description":"正体の定まらない形と空間を扱った実験的作品。","description_en":"An experimental work centered on an indeterminate form and space.","image":"public/arts/unknown.001.png"},
   {"date":"2026-06-06","title":"Untitled","title_en":"Untitled","description":"形、色、質感の関係を自由に探った無題作品。","description_en":"An untitled exploration of relationships between form, color, and texture.","image":"public/arts/untitled.png"}
 ]
