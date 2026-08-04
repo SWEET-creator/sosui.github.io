@@ -4,7 +4,7 @@
     "type": "研究業績",
     "category": "査読付き国際会議（共著）",
     "title": "Akinobu Maejima, Sosui Koga, Kazuki Kumagai, Takuya Funatomi, Tatsuo Yotsukura, Yasuhiro Mukaigawa, Workflow-friendly Anime In-betweening Using Video Generation Models, SIGGRAPH 2026 Talks",
-    "title_en": "Akinobu Maejima, Sosui Koga, Kazuki Kumagai, Takuya Funatomi, Tatsuo Yotsukura, Yasuhiro Mukaigawa, Workflow-friendly Anime In-betweening Using Video Generation Models, SIGGRAPH 2026 Talks",
+    "title_en": "Akinobu Maejima, Sosui Koga, Kazuki Kumagai, Takuya Funatomi, Tatsuo Yotsukura, Yasuhiro Mukaigawa, Workflow-friendly Anime In-betweening Using Video Generation Models, SIGGRAPH 2026 Talks Acceptance rate: ?%",
     "Links": [{
         "label": "論文",
         "label_en": "Paper",
@@ -16,7 +16,7 @@
     "year": "2026",
     "type": "研究業績",
     "category": "国内会議（筆頭著者）",
-    "title": "古賀荘翠，藤村友貴，他「拡散モデルと極小領域再割当によるアニメ彩色」画像の認識・理解シンポジウム（MIRU2026）口頭発表 (Acceptance rate 33.5%)",
+    "title": "古賀荘翠，藤村友貴，他「拡散モデルと極小領域再割当によるアニメ彩色」画像の認識・理解シンポジウム（MIRU2026）口頭発表 (採択率: 33.5%)",
     "title_en": "Sosui Koga et al., Anime coloring using diffusion models and miniature region reallocation, MIRU 2026 Oral presentation(Acceptance rate 33.5%)",
     "Links": []
   },
@@ -40,8 +40,8 @@
     "year": "2025",
     "type": "研究業績",
     "category": "査読付き国際会議（筆頭著者）",
-    "title": "古賀荘翠，舩冨卓哉，藤村友貴，品川政太朗，北野和哉，久保尋之，前島謙宣，向川康博「AniDepth : Anime In-between Diffusion using Depth-guided Warped Line-art」SIGGRAPH Talks 2025（ACM）採択率：21%",
-    "title_en": "Sosui Koga et al., AniDepth : Anime In-between Diffusion using Depth-guided Warped Line-art, ACM SIGGRAPH Talks 2025 (acceptance rate: 21%)",
+    "title": "古賀荘翠，舩冨卓哉，藤村友貴，品川政太朗，北野和哉，久保尋之，前島謙宣，向川康博「AniDepth: Depth-guided Warped Line-art に基づくアニメ中割生成手法」SIGGRAPH Talks 2025",
+    "title_en": "Sosui Koga et al., AniDepth: Anime in-between generation based on depth-guided warped line-art, ACM SIGGRAPH Talks 2025",
     "Links": [
       {
         "label": "詳細",
@@ -100,8 +100,8 @@
     "year": "2025",
     "type": "研究業績",
     "category": "査読付き国際会議（共著）",
-    "title": "丸山敦史，古賀荘翠，他「LayerPack: Training-Free Animation Inbetweening with Cross-Layer Consistency」SIGGRAPH Asia 2025 Posters 採択率：20%",
-    "title_en": "Atsushi Maruyama, Sosui Koga et al., LayerPack: Training-Free Animation Inbetweening with Cross-Layer Consistency, SIGGRAPH Asia 2025 Posters (acceptance rate: 20%)",
+    "title": "丸山敦史，古賀荘翠，他「LayerPack: Training-Free Animation Inbetweening with Cross-Layer Consistency」SIGGRAPH Asia 2025 Posters",
+    "title_en": "Atsushi Maruyama, Sosui Koga et al., LayerPack: Training-Free Animation Inbetweening with Cross-Layer Consistency, SIGGRAPH Asia 2025 Posters",
     "Links": [
       {
         "label": "詳細",
@@ -122,7 +122,7 @@
     "year": "2025",
     "type": "研究業績",
     "category": "国内会議（共著）",
-    "title": "丸山敦史，古賀荘翠，他「LayerPack: トレーニング不要なレイヤー間一貫性のある中割り手法」Visual Computing 2025",
+    "title": "丸山敦史，古賀荘翠，他「LayerPack: トレーニング不要な中割手法」Visual Computing 2025",
     "title_en": "Atsushi Maruyama, Sosui Koga et al., LayerPack: Training-free animation inbetweening, Visual Computing 2025",
     "Links": [
       {
@@ -144,8 +144,8 @@
     "year": "2026",
     "type": "フェローシップ・研究費",
     "category": "",
-    "title": "日本学術振興会 特別研究員（DC1）研究課題：「合成データによる事前学習駆動の生成モデル構築」採択率：約12%（2026年4月〜2029年3月）, 2,400千円",
-    "title_en": "JSPS Research Fellowship for Young Scientists (DC1), research topic: Building generative models driven by synthetic-data pretraining (acceptance rate: ~12%, Apr 2026 - Mar 2029), 2,400,000 JPY",
+    "title": "日本学術振興会 特別研究員（DC1）研究課題：「合成データによる事前学習駆動の生成モデル構築」採択率：約12%（2026年4月〜2029年3月）",
+    "title_en": "JSPS Research Fellowship for Young Scientists (DC1), research topic: Building generative models driven by synthetic-data pretraining (acceptance rate: ~12%, Apr 2026 - Mar 2029)",
     "Links": [
       {
         "label": "詳細",
@@ -158,7 +158,7 @@
     "year": "2025",
     "type": "プロジェクト",
     "category": "",
-    "title": "「ジャンボタニシの卵撲滅するニャん♪」おかやまテックガレージ（地域中核イノベーション創出環境強化事業）採択プロジェクト，2025年",
+    "title": "「ジャンボタニシの卵撲滅するニャん」おかやまテックガレージ（地域中核イノベーション創出環境強化事業）採択プロジェクト，2025年",
     "title_en": "Selected project at Okayama Tech Garage (J-PEAKS): Nyan to Eliminate Apple Snail Eggs, 2025",
     "Links": [
       {
