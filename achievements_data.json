@@ -1,6 +1,22 @@
 [
   {
     "year": "2026",
+    "type": "受賞歴",
+    "category": "",
+    "title": "MIRU2026 学生奨励賞 拡散モデルと極小領域再割当によるアニメ彩色",
+    "title_en": "MIRU2026 Student Award, Anime coloring using diffusion models and miniature region reallocation",
+    "Links": []
+  },
+  {
+    "year": "2026",
+    "type": "受賞歴",
+    "category": "",
+    "title": "MIRU2026 オーディエンス賞 拡散モデルと極小領域再割当によるアニメ彩色（口頭発表のうち13%が選出）",
+    "title_en": "MIRU2026 Audience Award, Anime coloring using diffusion models and miniature region reallocation (13% of oral presentations selected)",
+    "Links": []
+  },
+  {
+    "year": "2026",
     "type": "研究業績",
     "category": "査読付き国際会議（共著）",
     "title": "Akinobu Maejima, Sosui Koga, Kazuki Kumagai, Takuya Funatomi, Tatsuo Yotsukura, Yasuhiro Mukaigawa, Workflow-friendly Anime In-betweening Using Video Generation Models, SIGGRAPH 2026 Talks",
@@ -325,6 +341,14 @@
     "Links": []
   },
   {
+    "year": "2017",
+    "type": "その他",
+    "category": "資格",
+    "title": "日本教育書道研究会 毛筆 三段",
+    "title_en": "Calligraphy, 3rd Dan",
+    "Links": []
+  },
+  {
     "year": "2014",
     "type": "その他",
     "category": "資格",
@@ -347,11 +371,35 @@
     "Links": []
   },
   {
+    "year": "2015",
+    "type": "受賞歴",
+    "category": "",
+    "title": "「身近にある鉱山跡〜日本一の赤白珪石〜」丹波市理科自由研究展 優秀賞",
+    "title_en": "Excellent Award, Tanba City Science Independent Research Exhibition - \"Familiar Mine Sites: Japan's Best Red and White Silica\"",
+    "Links": []
+  },
+  {
     "year": "2014",
     "type": "受賞歴",
     "category": "",
     "title": "「明延鉱山跡の鉱物について」丹波市理科自由研究展 優秀賞",
-    "title_en": "On the Minerals of the Akebono Mine Site\" - Excellent Award, Tanba City Science Independent Research Exhibition",
+    "title_en": "Excellent Award, Tanba City Science Independent Research Exhibition - \"About the Minerals of the Akenobe Mine Site\"",
+    "Links": []
+  },
+  {
+    "year": "2014",
+    "type": "受賞歴",
+    "category": "",
+    "title": "第６６回 兵庫県幼・小・中造形教育展　入選",
+    "title_en": "Selected, 66th Hyogo Prefecture Kindergarten, Elementary, and Junior High School Art Education Exhibition",
+    "Links": []
+  },
+    {
+    "year": "2014",
+    "type": "受賞歴",
+    "category": "",
+    "title": "第五十九回兵庫県小中学生書写コンクール　佳作",
+    "title_en": "Honorable Mention, 59th Hyogo Prefecture Elementary and Junior High School Calligraphy Contest",
     "Links": []
   },
   {
