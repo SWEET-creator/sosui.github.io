@@ -1,6 +1,20 @@
 [
   {
     "year": "2026",
+    "type": "フェローシップ・研究費",
+    "category": "",
+    "title": "2026年度 京都未踏的人材発掘・育成プログラム（京都府）採択「飛翔するシャボン玉を用いた死角可視化装置「シャボン・アイ」の開発」（2026年8月〜2027年2月） 約22%の採択率",
+    "title_en": "Selected for the 2026 Kyoto Unexplored Talent Discovery and Development Program (Kyoto Prefecture) for the project \"Development of a Blind Spot Visualization Device Using Flying Soap Bubbles: 'Shabon-Eye'\" (Aug 2026 - Feb 2027) with an acceptance rate of approximately 22%",
+    "Links": [
+      {
+        "label": "詳細",
+        "label_en": "Details",
+        "url": "https://kyoto-i-lab.org/selected-projects-for-2026/"
+      }
+    ]
+  },
+  {
+    "year": "2026",
     "type": "受賞歴",
     "category": "",
     "title": "MIRU2026 学生奨励賞 拡散モデルと極小領域再割当によるアニメ彩色",
