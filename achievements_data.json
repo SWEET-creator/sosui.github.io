@@ -52,6 +52,20 @@
   },
   {
     "year": "2026",
+    "type": "研究業績",
+    "category": "国内会議（筆頭著者）",
+    "title": "古賀荘翠，他「シャボン玉を反射カメラとして用いたNLOS3次元再構成」Vision, Graphics, and Sensing Workshop（VGSW 2026）",
+    "title_en": "Sosui Koga et al., NLOS 3D reconstruction using soap bubbles as reflective cameras, VGSW 2026",
+    "Links": [
+      {
+        "label": "詳細",
+        "label_en": "Details",
+        "url": "https://sites.google.com/view/vgsw2026/"
+      }
+    ]
+  },
+  {
+    "year": "2026",
     "type": "学歴",
     "category": "",
     "title": "奈良先端科学技術大学院大学（NAIST） 先端科学技術研究科 情報科学領域 博士後期課程（2026年4月〜在学中）",
