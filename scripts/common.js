@@ -2,9 +2,15 @@
   let currentLang = localStorage.getItem('site-lang') || 'ja';
   const langListeners = [];
 
+  // 配色: 保存した選択を優先し、無ければライト。
+  // このスクリプトは <head> で読むので、描画前に data-theme が付いてちらつかない。
+  let currentTheme = localStorage.getItem('site-theme') || 'light';
+  document.documentElement.dataset.theme = currentTheme;
+
   function getLinks(page) {
     return {
-      research: 'index.html',
+      home: 'index.html',
+      research: 'research.html',
       products: 'products.html',
       arts: 'Arts.html'
     };
@@ -15,10 +21,19 @@
     if (!header) return;
 
     const links = getLinks(page);
+    // トップページは独自のヒーローを持つので、名前の見出しを出さない
+    const title = page === 'home' ? '' : `
+      <h1 data-ja="古賀 荘翠 / Sosui Koga" data-en="Sosui Koga / 古賀 荘翠">古賀 荘翠 / Sosui Koga</h1>
+      <p class="subtitle" data-ja="Researcher / Creator" data-en="Researcher / Creator">Researcher / Creator</p>
+    `;
     header.innerHTML = `
       <div class="header-right-tools">
+        <button id="theme-toggle" class="lang-toggle theme-toggle" type="button"></button>
         <button id="lang-toggle" class="lang-toggle" type="button">EN</button>
         <div class="header-quick-links" aria-label="主要ページへの移動">
+          <a class="header-quick-link" href="${links.home}">
+            <strong data-ja="Home" data-en="Home">Home</strong>
+          </a>
           <a class="header-quick-link" href="${links.research}">
             <strong data-ja="Research" data-en="Research">Research</strong>
           </a>
@@ -29,10 +44,7 @@
             <strong data-ja="Arts" data-en="Arts">Arts</strong>
           </a>
         </div>
-      </div>
-      <h1 data-ja="古賀 荘翠 / Sosui Koga" data-en="Sosui Koga / 古賀 荘翠">古賀 荘翠 / Sosui Koga</h1>
-      <p class="subtitle" data-ja="Researcher / Creator" data-en="Researcher / Creator">Researcher / Creator</p>
-    `;
+      </div>${title}`;
   }
 
   function renderProfile(page) {
@@ -40,13 +52,13 @@
     if (!profile) return;
 
     const profileImages = {
-      index: 'public/SosuiKoga_Research.png',
+      research: 'public/SosuiKoga_Research.png',
       products: 'public/SosuiKoga_Products.png',
       arts: 'public/SosuiKoga_Arts.png'
     };
-    const profileImage = profileImages[page] || profileImages.index;
+    const profileImage = profileImages[page] || profileImages.research;
     const profileDetails = {
-      index: [
+      research: [
         ['奈良先端科学技術大学院大学 情報理工学領域 博士後期課程', 'Ph.D. student, Division of Information Science, NAIST'],
         ['光メディアインタフェース研究室 所属', 'Affiliation: Optical Media Interface Lab']
       ],
@@ -57,7 +69,7 @@
         ['主観的な美しさと好みによって創られるものたちの場所', 'I create works using video, generative systems, and interactive media, exploring the boundaries between computation, biology, machines, and matter.']
       ]
     };
-    const details = profileDetails[page] || profileDetails.index;
+    const details = profileDetails[page] || profileDetails.research;
 
     profile.classList.add('profile-hero');
     profile.innerHTML = `
@@ -79,6 +91,7 @@
       button.textContent = currentLang === 'en' ? '日本語' : 'EN';
     }
 
+    updateThemeButton();
     langListeners.forEach((listener) => listener(currentLang));
   }
 
@@ -88,6 +101,31 @@
     applyLanguage();
   }
 
+  // ボタンには切り替え先のモードを表示する
+  function updateThemeButton() {
+    const button = document.getElementById('theme-toggle');
+    if (!button) return;
+    const toLight = currentTheme === 'dark';
+    button.textContent = toLight ? '☀︎' : '☾';
+    const label = currentLang === 'en'
+      ? (toLight ? 'Switch to light mode' : 'Switch to dark mode')
+      : (toLight ? 'ライトモードに切り替え' : 'ダークモードに切り替え');
+    button.setAttribute('aria-label', label);
+    button.title = label;
+  }
+
+  function applyTheme(theme) {
+    currentTheme = theme;
+    document.documentElement.dataset.theme = theme;
+    updateThemeButton();
+  }
+
+  function toggleTheme() {
+    const next = currentTheme === 'dark' ? 'light' : 'dark';
+    localStorage.setItem('site-theme', next);
+    applyTheme(next);
+  }
+
   function init(page) {
     renderHeader(page);
     renderProfile(page);
@@ -95,6 +133,11 @@
     const toggle = document.getElementById('lang-toggle');
     if (toggle) {
       toggle.addEventListener('click', toggleLanguage);
+    }
+
+    const themeToggle = document.getElementById('theme-toggle');
+    if (themeToggle) {
+      themeToggle.addEventListener('click', toggleTheme);
     }
 
     applyLanguage();

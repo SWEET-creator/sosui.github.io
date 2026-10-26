@@ -1,0 +1,190 @@
+/* トップページ専用。ヘッダー・リンク・年号チップなどの共通部分は index.css を使う */
+
+body.home header {
+  min-height: 0;
+  padding: 0;
+}
+
+.home-hero {
+  padding: 3.5rem 0 2.5rem;
+}
+
+.home-kicker {
+  margin: 0 0 0.9rem;
+  color: var(--accent-1);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.home-name {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.4rem 1.2rem;
+  line-height: 1.1;
+}
+
+.home-name-ja {
+  font-size: clamp(2.6rem, 8vw, 4.2rem);
+  letter-spacing: 0.06em;
+}
+
+.home-name-en {
+  font-size: clamp(1.3rem, 3.5vw, 1.9rem);
+  font-weight: 400;
+  color: var(--text-4);
+  letter-spacing: 0.04em;
+}
+
+.home-statement {
+  max-width: 38em;
+  margin: 1.6rem 0 0.8rem;
+  font-size: clamp(1rem, 2.2vw, 1.18rem);
+  line-height: 1.8;
+  color: var(--text-2);
+}
+
+.home-affiliation {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* Research / Products / Arts への入口。線画のアイコンと手書き風の見出し（参考: 100r.co） */
+.home-doors {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 0 0 1.4rem;
+}
+
+.home-door {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  padding: 0.4rem 0.4rem 0.8rem;
+  border-radius: 14px;
+  color: var(--icon-ink);
+  text-align: center;
+  text-decoration: none;
+}
+
+.home-door:visited {
+  color: var(--icon-ink);
+}
+
+.home-door-icon {
+  width: min(200px, 100%);
+  height: auto;
+  transition: transform 300ms ease;
+}
+
+.home-door-title {
+  font-family: 'Gochi Hand', 'Roboto', sans-serif;
+  font-size: 2rem;
+  line-height: 1.1;
+  letter-spacing: 0.04em;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.18em;
+  transition: text-decoration-color 200ms ease;
+}
+
+.home-door-text {
+  max-width: 17em;
+  font-size: 0.82rem;
+  line-height: 1.55;
+  color: var(--text-muted);
+}
+
+.home-door:hover .home-door-icon,
+.home-door:focus-visible .home-door-icon {
+  transform: translateY(-4px) rotate(-2deg);
+}
+
+.home-door:hover .home-door-title,
+.home-door:focus-visible .home-door-title {
+  text-decoration-color: currentColor;
+}
+
+.home-door:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
+/* News */
+.home-news .section-header {
+  margin-top: 1.2rem;
+}
+
+.home-news-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid rgb(var(--ink-rgb) / 0.1);
+}
+
+.home-news-item {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  padding: 0.75rem 0.2rem;
+  border-bottom: 1px solid rgb(var(--ink-rgb) / 0.1);
+  line-height: 1.55;
+  color: var(--text-2);
+}
+
+.home-news-item .achievement-year {
+  flex-shrink: 0;
+}
+
+@media (max-width: 760px) {
+  .home-hero {
+    padding: 2rem 0 1.8rem;
+  }
+
+  .home-doors {
+    gap: 0.25rem;
+  }
+
+  .home-door {
+    padding: 0.2rem 0 0.5rem;
+  }
+
+  .home-door-title {
+    font-size: 1.45rem;
+  }
+
+  .home-door-text {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-door-icon,
+  .home-door-title {
+    transition: none;
+  }
+}
+
+/* 埋め込んだ線画アイコン: 後ろの線を隠す塗りを背景色に合わせる */
+.home-icon-defs {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.home-door-icon .k {
+  fill: var(--bg-solid);
+}
+
+.home-door-icon .ks {
+  stroke: var(--bg-solid);
+}

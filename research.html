@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>古賀 荘翠 / Sosui Koga</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script src="scripts/common.js"></script>
+    <link rel="stylesheet" href="css/theme.css?v=20261026-light">
+    <link rel="stylesheet" href="css/index.css?v=20261026-light2">
+</head>
+
+<body>
+    <header id="site-header"></header>
+
+    <main class="container">
+        <section id="profile-hero"></section>
+
+        <section class="content-block" id="bio">
+            <h2 data-ja="Research" data-en="Research">Research</h2>
+            <p data-ja="コンピュータビジョンとコンピュータグラフィックスを横断し、アニメーションを中心とした映像制作の支援・自動化・表現拡張に取り組んでいます。" data-en="Research and development of animation production support using computer vision.">コンピュータビジョンを用いたアニメーション制作支援技術の研究開発</p>
+            <div id="research-achievements-list" class="achievements-list"></div>
+        </section>
+
+        <section class="content-block" id="achievements">
+            <h2 data-ja="Achievements" data-en="Achievements">Achievements</h2>
+            <div id="achievements-list" class="achievements-list"></div>
+        </section>
+
+    </main>
+
+    <script>
+        window.SiteCommon.init('research');
+        let achievementRows = [];
+
+        const TYPE_LABELS_EN = {
+            '学歴': 'Education',
+            '研究業績': 'Research',
+            'フェローシップ・研究費': 'Fellowships & Grants',
+            'プロジェクト': 'Projects',
+            '競技・ハッカソン': 'Competitions & Hackathons',
+            '職歴': 'Work Experience',
+            '受賞歴': 'Awards',
+            'スキル': 'Skills',
+            'その他': 'Others'
+        };
+
+        const CATEGORY_LABELS_EN = {
+            '査読付き論文（論文誌）': 'Peer-reviewed Journal Papers',
+            '査読付き国際会議（筆頭著者）': 'Peer-reviewed International Conferences (First Author)',
+            '国内会議（筆頭著者）': 'Domestic Conferences (First Author)',
+            '査読付き国際会議（共著）': 'Peer-reviewed International Conferences (Co-author)',
+            '国内会議（共著）': 'Domestic Conferences (Co-author)',
+            'プログラミング': 'Programming',
+            'Web': 'Web',
+            'AI / 機械学習': 'AI / Machine Learning',
+            'ツール': 'Tools',
+            '資格': 'Certification'
+        };
+
+        const TYPE_ORDER = [
+            '学歴',
+            '研究業績',
+            'フェローシップ・研究費',
+            'プロジェクト',
+            '競技・ハッカソン',
+            '職歴',
+            '受賞歴',
+            'スキル',
+            'その他'
+        ];
+
+        // 研究業績の小見出しはアピールしたい順に並べる（ここに無い区分はデータの順で後ろに付く）
+        const CATEGORY_ORDER = [
+            '査読付き国際会議（筆頭著者）',
+            '査読付き国際会議（共著）',
+            '査読付き論文（論文誌）',
+            '国内会議（筆頭著者）',
+            '国内会議（共著）'
+        ];
+
+        function trType(value) {
+            if (window.SiteCommon.getCurrentLang() === 'en') return TYPE_LABELS_EN[value] || value;
+            return value;
+        }
+
+        function trCategory(value) {
+            if (window.SiteCommon.getCurrentLang() === 'en') return CATEGORY_LABELS_EN[value] || value;
+            return value;
+        }
+
+        function getAchievementLinks(item) {
+            if (Array.isArray(item.Links)) {
+                return item.Links
+                    .map((link) => {
+                        if (typeof link === 'string') {
+                            return { url: link, label: '', label_en: '' };
+                        }
+                        return link || {};
+                    })
+                    .filter((link) => link.url && link.url.trim() !== '');
+            }
+
+            if (item.Link && item.Link.trim() !== '') {
+                return [{ url: item.Link, label: '詳細', label_en: 'Details' }];
+            }
+
+            return [];
+        }
+
+        function renderAchievementGroups(rows, containerId) {
+            const container = document.getElementById(containerId);
+            container.innerHTML = '';
+
+            const grouped = {};
+            rows.forEach((row) => {
+                const type = (row.type || 'その他').trim();
+                const category = (row.category || '').trim();
+                if (!grouped[type]) grouped[type] = {};
+                if (!grouped[type][category]) grouped[type][category] = [];
+                grouped[type][category].push(row);
+            });
+
+            const orderedTypes = [
+                ...TYPE_ORDER.filter((t) => grouped[t]),
+                ...Object.keys(grouped).filter((t) => !TYPE_ORDER.includes(t))
+            ];
+
+            orderedTypes.forEach((type) => {
+                const typeSection = document.createElement('section');
+                typeSection.className = 'achievement-group';
+
+                const typeTitle = document.createElement('h3');
+                typeTitle.className = 'achievement-group-title';
+                typeTitle.textContent = trType(type);
+                typeSection.appendChild(typeTitle);
+
+                const categories = [
+                    ...CATEGORY_ORDER.filter((c) => grouped[type][c]),
+                    ...Object.keys(grouped[type]).filter((c) => !CATEGORY_ORDER.includes(c))
+                ];
+                categories.forEach((category) => {
+                    const categoryRows = grouped[type][category];
+                    categoryRows.sort((a, b) => Number(b.year || 0) - Number(a.year || 0));
+
+                    if (category) {
+                        const subTitle = document.createElement('h4');
+                        subTitle.className = 'achievement-subgroup-title';
+                        subTitle.textContent = trCategory(category);
+                        typeSection.appendChild(subTitle);
+                    }
+
+                    categoryRows.forEach((item) => {
+                        const entry = document.createElement('article');
+                        entry.className = 'achievement-item';
+
+                        const title = document.createElement('p');
+                        title.className = 'achievement-title';
+                        title.textContent = window.SiteCommon.getCurrentLang() === 'en'
+                            ? ((item.title_en && item.title_en.trim()) ? item.title_en : item.title)
+                            : item.title;
+
+                        if (item.year && item.year.trim() !== '') {
+                            const year = document.createElement('span');
+                            year.className = 'achievement-year';
+                            year.textContent = item.year;
+                            title.prepend(year);
+                        }
+
+                        const links = getAchievementLinks(item);
+                        if (links.length === 1) {
+                            const titleLink = document.createElement('a');
+                            titleLink.className = 'achievement-title-link';
+                            titleLink.href = links[0].url;
+                            titleLink.target = '_blank';
+                            titleLink.rel = 'noopener noreferrer';
+                            while (title.firstChild) titleLink.appendChild(title.firstChild);
+                            title.appendChild(titleLink);
+                        }
+
+                        entry.appendChild(title);
+
+                        if (links.length > 1) {
+                            const linkList = document.createElement('div');
+                            linkList.className = 'achievement-links';
+                            linkList.classList.add('achievement-links--multiple');
+
+                            links.forEach((linkItem) => {
+                                const link = document.createElement('a');
+                                link.href = linkItem.url;
+                                link.target = '_blank';
+                                link.rel = 'noopener noreferrer';
+                                const linkLabel = window.SiteCommon.getCurrentLang() === 'en'
+                                    ? ((linkItem.label_en && linkItem.label_en.trim()) ? linkItem.label_en : (linkItem.label || 'Details'))
+                                    : ((linkItem.label && linkItem.label.trim()) ? linkItem.label : (linkItem.label_en || '詳細'));
+
+                                const label = document.createElement('span');
+                                label.textContent = linkLabel;
+                                link.appendChild(label);
+                                linkList.appendChild(link);
+                            });
+
+                            entry.appendChild(linkList);
+                        }
+
+                        typeSection.appendChild(entry);
+                    });
+                });
+
+                container.appendChild(typeSection);
+            });
+        }
+
+        function renderAchievements(rows) {
+            const researchRows = rows.filter((row) => (row.type || '').trim() === '研究業績');
+            const otherRows = rows.filter((row) => (row.type || '').trim() !== '研究業績');
+
+            renderAchievementGroups(researchRows, 'research-achievements-list');
+            renderAchievementGroups(otherRows, 'achievements-list');
+        }
+
+        fetch('achievements_data.json')
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error(`Failed to load achievements_data.json: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then((data) => {
+                achievementRows = (data || []).filter((r) => r && r.title);
+                renderAchievements(achievementRows);
+            })
+            .catch((error) => {
+                console.error(error);
+            });
+
+        window.SiteCommon.onLanguageChange(() => renderAchievements(achievementRows));
+
+    </script>
+
+</body>
+</html>

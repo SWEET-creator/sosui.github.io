@@ -5,29 +5,191 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>古賀 荘翠 / Sosui Koga</title>
+    <meta name="description" content="古賀 荘翠（Sosui Koga）— アニメーション制作を支えるコンピュータビジョンの研究、動くプロダクト、作品。">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <script src="scripts/common.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
-    <link rel="stylesheet" href="css/index.css?v=20260711-achievement-single-link">
+    <link rel="stylesheet" href="css/theme.css?v=20261026-light">
+    <link rel="stylesheet" href="css/index.css?v=20261026-light2">
+    <link rel="stylesheet" href="css/home.css?v=20261026-theme">
 </head>
 
-<body>
+<body class="home">
     <header id="site-header"></header>
 
     <main class="container">
-        <section id="profile-hero"></section>
-
-        <section class="content-block" id="bio">
-            <h2 data-ja="Research" data-en="Research">Research</h2>
-            <p data-ja="コンピュータビジョンとコンピュータグラフィックスを横断し、アニメーションを中心とした映像制作の支援・自動化・表現拡張に取り組んでいます。" data-en="Research and development of animation production support using computer vision.">コンピュータビジョンを用いたアニメーション制作支援技術の研究開発</p>
-            <div id="research-achievements-list" class="achievements-list"></div>
+        <section class="home-hero">
+            <h1 class="home-name">
+                <span class="home-name-ja">古賀 荘翠</span>
+                <span class="home-name-en">Sosui Koga</span>
+            </h1>
+            <p class="home-statement"
+                data-ja="視覚表現を中心に、学術、社会応用、創作の3つの側面で活動しています。最近はアニメ制作支援とシャボン玉センシングの人です。"
+                data-en="I work on three aspects of visual expression: academia, social application, and creation. Recently, I'm interested in animation production support and bubble sensing.">
+                視覚表現を中心に、学術、社会応用、創作の3つの側面で活動しています。最近はアニメ制作支援とシャボン玉センシングの人です。</p>
+            <p class="home-affiliation"
+                data-ja="奈良先端科学技術大学院大学（NAIST）博士後期課程 ・ 光メディアインタフェース研究室"
+                data-en="Ph.D. student, NAIST · Optical Media Interface Lab">
+                奈良先端科学技術大学院大学（NAIST）博士後期課程 ・ 光メディアインタフェース研究室</p>
         </section>
 
-        <section class="content-block" id="achievements">
-            <h2 data-ja="Achievements" data-en="Achievements">Achievements</h2>
-            <div id="achievements-list" class="achievements-list"></div>
+        <svg class="home-icon-defs" width="0" height="0" aria-hidden="true">
+            <defs>
+                <filter id="wobble-research" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="3"/><feDisplacementMap in="SourceGraphic" scale="2.6"/></filter>
+                <filter id="wobble-products" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="7"/><feDisplacementMap in="SourceGraphic" scale="2.6"/></filter>
+                <filter id="wobble-arts" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="11"/><feDisplacementMap in="SourceGraphic" scale="2.6"/></filter>
+            </defs>
+        </svg>
+
+        <nav class="home-doors" aria-label="Sections">
+            <a class="home-door" href="research.html">
+                <svg class="home-door-icon" viewBox="0 0 200 200" width="200" height="200" aria-hidden="true">
+                    <!-- Research: シャボン玉のマスコットが虫めがねでのぞく -->
+                  <g filter="url(#wobble-research)" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <!-- 足もとの影 -->
+                    <path d="M52 160 L60 152 M60 161 L68 153 M68 161 L76 153 M76 161 L84 153 M84 161 L92 153 M92 160 L99 154" stroke-width="1.6"/>
+                    <path d="M46 157 Q78 150 106 157" stroke-width="1.6"/>
+
+                    <!-- 浮かぶ泡 -->
+                    <circle cx="40" cy="52" r="7"/>
+                    <path d="M35 50 A5 5 0 0 1 38 47" stroke-width="1.6"/>
+                    <circle cx="60" cy="32" r="4"/>
+                    <circle cx="28" cy="80" r="3"/>
+
+                    <!-- マスコット -->
+                    <g transform="translate(78 108)">
+                      <path d="M-12 33 L-14 46 L-21 47 M12 33 L14 46 L21 47"/>
+                      <path d="M-32 6 Q-42 14 -44 22"/>
+                      <path d="M31 4 Q38 0 44 -3"/>
+                      <circle r="34" class="k"/>
+                      <path d="M-25 -6 A26 26 0 0 1 -7 -25" stroke-width="2.2"/>
+                      <circle cx="-16" cy="-15" r="1.6" fill="currentColor" stroke="none"/>
+                      <path d="M22 16 A26 26 0 0 1 6 27" stroke-width="1.6" stroke-dasharray="4 5"/>
+                      <ellipse cx="-6" cy="0" rx="3.4" ry="4.8" fill="currentColor" stroke="none"/>
+                      <ellipse cx="14" cy="-2" rx="3.4" ry="4.8" fill="currentColor" stroke="none"/>
+                      <path d="M1 12 Q5 15 9 11" stroke-width="2.2"/>
+                      <path d="M-17 7 L-14 4 M-13 8 L-10 5 M22 5 L25 2 M26 6 L29 3" stroke-width="1.4"/>
+                    </g>
+
+                    <!-- 虫めがね -->
+                    <path d="M136 90 L119 110" stroke-width="10"/>
+                    <path d="M136 90 L119 110" class="ks" stroke-width="4"/>
+                    <circle cx="151" cy="72" r="23" class="k"/>
+                    <circle cx="151" cy="72" r="18" stroke-width="1.6"/>
+                    <path d="M139 64 A13 13 0 0 1 147 57" stroke-width="2"/>
+                    <path d="M154 64 L156 71 L163 73 L156 75 L154 82 L152 75 L145 73 L152 71 Z" stroke-width="1.8"/>
+                    <path d="M170 46 L174 40 M178 54 L184 51 M164 40 L165 33" stroke-width="2"/>
+                  </g>
+                </svg>
+                <span class="home-door-title">Research</span>
+                <span class="home-door-text" data-ja="CV × CG でアニメ制作の支援・自動化・表現拡張に取り組む" data-en="Computer vision and graphics for animation production">CV × CG でアニメ制作の支援・自動化・表現拡張に取り組む</span>
+            </a>
+            <a class="home-door" href="products.html">
+                <svg class="home-door-icon" viewBox="0 0 200 200" width="200" height="200" aria-hidden="true">
+                    <!-- Products: シャボン玉のマスコットが四足ロボットをいじる -->
+                  <g filter="url(#wobble-products)" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <!-- 足もとの線 -->
+                    <path d="M24 163 Q100 156 184 163" stroke-width="1.6"/>
+
+                    <!-- 四足ロボット -->
+                    <path d="M122 136 L114 150 L121 162 M136 137 L130 150 L136 162 M156 137 L162 150 L156 162 M168 135 L176 148 L170 161"/>
+                    <path d="M117 162 L125 162 M132 162 L140 162 M152 162 L160 162 M166 161 L174 161" stroke-width="2.4"/>
+                    <rect x="112" y="106" width="62" height="32" rx="8" class="k"/>
+                    <path d="M120 128 L126 122 M128 129 L135 122 M137 129 L144 122" stroke-width="1.5"/>
+                    <circle cx="160" cy="122" r="3.5" stroke-width="2"/>
+                    <path d="M160 106 L164 96"/>
+                    <rect x="152" y="78" width="30" height="20" rx="6" class="k"/>
+                    <circle cx="170" cy="88" r="4.5" stroke-width="2.4"/>
+                    <circle cx="170" cy="88" r="1.4" fill="currentColor" stroke="none"/>
+                    <path d="M160 78 L156 66"/>
+                    <circle cx="155" cy="62" r="3.5"/>
+                    <!-- 作業中の火花 -->
+                    <path d="M108 100 L101 96 M110 92 L106 85 M115 96 L116 88" stroke-width="2"/>
+
+                    <!-- マスコット -->
+                    <g transform="translate(62 112)">
+                      <path d="M-12 33 L-14 46 L-21 47 M12 33 L14 46 L21 47"/>
+                      <path d="M-32 4 Q-40 -6 -38 -16"/>
+                      <path d="M31 2 Q38 -10 42 -22"/>
+                      <circle r="34" class="k"/>
+                      <path d="M-25 -6 A26 26 0 0 1 -7 -25" stroke-width="2.2"/>
+                      <circle cx="-16" cy="-15" r="1.6" fill="currentColor" stroke="none"/>
+                      <path d="M22 16 A26 26 0 0 1 6 27" stroke-width="1.6" stroke-dasharray="4 5"/>
+                      <ellipse cx="-4" cy="-2" rx="3.4" ry="4.8" fill="currentColor" stroke="none"/>
+                      <ellipse cx="16" cy="-1" rx="3.4" ry="4.8" fill="currentColor" stroke="none"/>
+                      <path d="M3 11 Q8 16 13 11" stroke-width="2.2"/>
+                      <path d="M-15 6 L-12 3 M-11 7 L-8 4 M24 7 L27 4 M28 8 L31 5" stroke-width="1.4"/>
+                    </g>
+
+                    <!-- スパナ -->
+                    <path d="M104 90 L96 58" stroke-width="10"/>
+                    <path d="M104 90 L96 58" class="ks" stroke-width="4"/>
+                    <path d="M87 36 L86 50 Q86 60 94 60 Q102 60 102 50 L101 36 L97 39 L96 47 L92 47 L91 39 Z" class="k" transform="rotate(-14 94 50)"/>
+                  </g>
+                </svg>
+                <span class="home-door-title">Products</span>
+                <span class="home-door-text" data-ja="アイデアを実際に動くシステムにする" data-en="Turning ideas into working systems">アイデアを実際に動くシステムにする</span>
+            </a>
+            <a class="home-door" href="Arts.html">
+                <svg class="home-door-icon" viewBox="0 0 200 200" width="200" height="200" aria-hidden="true">
+                    <!-- Arts: シャボン玉のマスコットがイーゼルで描く -->
+                  <g filter="url(#wobble-arts)" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <!-- 足もとの線 -->
+                    <path d="M20 163 Q100 156 186 163" stroke-width="1.6"/>
+
+                    <!-- イーゼル -->
+                    <path d="M151 64 L151 164"/>
+                    <path d="M141 70 L126 164 M161 70 L176 164"/>
+                    <rect x="118" y="56" width="66" height="54" rx="2" class="k"/>
+                    <path d="M112 112 L190 112"/>
+                    <!-- キャンバスの絵 -->
+                    <circle cx="168" cy="72" r="6" stroke-width="2"/>
+                    <path d="M124 102 L138 84 L147 95 L157 79 L178 102" stroke-width="2"/>
+                    <path d="M130 102 L134 97 M140 102 L145 96 M150 102 L156 95 M161 102 L167 95" stroke-width="1.3"/>
+
+                    <!-- マスコット -->
+                    <g transform="translate(66 114)">
+                      <path d="M-12 33 L-14 46 L-21 47 M12 33 L14 46 L21 47"/>
+                      <path d="M-31 8 Q-38 14 -40 20"/>
+                      <path d="M31 -2 Q38 -8 44 -12"/>
+                      <circle r="34" class="k"/>
+                      <path d="M-25 -6 A26 26 0 0 1 -7 -25" stroke-width="2.2"/>
+                      <circle cx="-16" cy="-15" r="1.6" fill="currentColor" stroke="none"/>
+                      <path d="M22 16 A26 26 0 0 1 6 27" stroke-width="1.6" stroke-dasharray="4 5"/>
+                      <ellipse cx="-2" cy="2" rx="3.4" ry="4.8" fill="currentColor" stroke="none"/>
+                      <ellipse cx="17" cy="1" rx="3.4" ry="4.8" fill="currentColor" stroke="none"/>
+                      <path d="M5 14 L11 14" stroke-width="2.2"/>
+                      <path d="M-13 9 L-10 6 M-9 10 L-6 7 M25 8 L28 5 M29 9 L32 6" stroke-width="1.4"/>
+                      <!-- ベレー帽 -->
+                      <path d="M-22 -26 Q-2 -48 24 -30 Q2 -22 -22 -26 Z" fill="currentColor"/>
+                      <path d="M1 -40 L3 -47" stroke-width="2.4"/>
+                    </g>
+
+                    <!-- 筆 -->
+                    <path d="M108 104 L126 90" stroke-width="2.4"/>
+                    <path d="M126 90 L133 85" stroke-width="5.5"/>
+
+                    <!-- パレット -->
+                    <path d="M14 142 Q12 124 30 120 Q50 117 52 130 Q53 138 44 138 Q38 138 40 145 Q42 153 30 153 Q16 153 14 142 Z" class="k"/>
+                    <circle cx="25" cy="129" r="3" fill="currentColor" stroke="none"/>
+                    <circle cx="36" cy="126" r="3" stroke-width="1.8"/>
+                    <circle cx="23" cy="142" r="3" stroke-width="1.8"/>
+                    <path d="M44 128 L47 125" stroke-width="2"/>
+                  </g>
+                </svg>
+                <span class="home-door-title">Arts</span>
+                <span class="home-door-text" data-ja="主観的な美しさと好みで創るものたち" data-en="Works made from subjective beauty and taste">主観的な美しさと好みで創るものたち</span>
+            </a>
+        </nav>
+
+        <section class="content-block home-news">
+            <div class="section-header">
+                <h2 data-ja="News" data-en="News">News</h2>
+                <a href="research.html#achievements" class="view-more-btn" data-ja="すべての業績" data-en="All achievements">すべての業績</a>
+            </div>
+            <ul id="home-news-list" class="home-news-list"></ul>
         </section>
 
         <section class="content-block" id="featured-products">
@@ -52,214 +214,76 @@
                 <a href="https://scholar.google.com/citations?view_op=list_works&hl=ja&hl=ja&user=VOoQZkEAAAAJ" class="social-link" target="_blank" rel="noopener noreferrer"><span class="link-icon">🎓</span><span class="link-text">Google Scholar</span></a>
                 <a href="https://jglobal.jst.go.jp/detail?JGLOBAL_ID=202601016785382971" class="social-link" target="_blank" rel="noopener noreferrer"><span class="link-icon">🔬</span><span class="link-text">J-GLOBAL</span></a>
                 <a href="https://researchmap.jp/sosui" class="social-link" target="_blank" rel="noopener noreferrer"><span class="link-icon">🗺️</span><span class="link-text">researchmap</span></a>
+                <a href="https://orcid.org/0009-0001-2840-6024" class="social-link" target="_blank" rel="noopener noreferrer"><span class="link-icon"><img src="public/icon/orcid.svg" alt=""></span><span class="link-text">ORCID</span></a>
+                <a href="https://research-er.jp/researchers/view/1023994" class="social-link" target="_blank" rel="noopener noreferrer"><span class="link-icon">🔎</span><span class="link-text">research-er</span></a>
                 <a href="https://x.com/sosui0131" class="social-link" target="_blank" rel="noopener noreferrer"><span class="link-icon">𝕏</span><span class="link-text">X</span></a>
                 <a href="https://github.com/SWEET-creator" class="social-link" target="_blank" rel="noopener noreferrer"><span class="link-icon">🐙</span><span class="link-text">GitHub</span></a>
+                <a href="https://qiita.com/Sweet" class="social-link" target="_blank" rel="noopener noreferrer"><span class="link-icon"><img src="public/icon/qiita-icon.png" alt=""></span><span class="link-text">Qiita</span></a>
                 <a href="https://www.instagram.com/sweets.photon/" class="social-link" target="_blank" rel="noopener noreferrer"><span class="link-icon">📸</span><span class="link-text">Photo</span></a>
                 <a href="https://www.instagram.com/so_sweet_jp/" class="social-link" target="_blank" rel="noopener noreferrer"><span class="link-icon">🎨</span><span class="link-text">Art</span></a>
             </div>
 
             <h2 data-ja="Contact" data-en="Contact">Contact</h2>
-            <p><a href="mailto:sosui.koga.ko9@naist.ac.jp">sosui.koga.ko9@naist.ac.jp</a></p>
+            <p><a href="mailto:koga.sosui.ko9@naist.ac.jp">koga.sosui.ko9@naist.ac.jp</a></p>
         </section>
-
     </main>
 
     <script>
-        window.SiteCommon.init('index');
-        let achievementRows = [];
-        let artRows = [];
+        window.SiteCommon.init('home');
 
-        const TYPE_LABELS_EN = {
-            '学歴': 'Education',
-            '研究業績': 'Research',
-            'フェローシップ・研究費': 'Fellowships & Grants',
-            'プロジェクト': 'Projects',
-            '競技・ハッカソン': 'Competitions & Hackathons',
-            '職歴': 'Work Experience',
-            '受賞歴': 'Awards',
-            'スキル': 'Skills',
-            'その他': 'Others'
-        };
+        // 学歴を除いた最新の業績を、achievements_data.json の並び順（新しい順）で表示する
+        const NEWS_COUNT = 5;
+        let newsRows = [];
 
-        const CATEGORY_LABELS_EN = {
-            '査読付き論文（論文誌）': 'Peer-reviewed Journal Papers',
-            '査読付き国際会議（筆頭著者）': 'Peer-reviewed International Conferences (First Author)',
-            '国内会議（筆頭著者）': 'Domestic Conferences (First Author)',
-            '査読付き国際会議（共著）': 'Peer-reviewed International Conferences (Co-author)',
-            '国内会議（共著）': 'Domestic Conferences (Co-author)',
-            'プログラミング': 'Programming',
-            'Web': 'Web',
-            'AI / 機械学習': 'AI / Machine Learning',
-            'ツール': 'Tools',
-            '資格': 'Certification'
-        };
+        function renderNews(rows) {
+            const list = document.getElementById('home-news-list');
+            list.innerHTML = '';
+            const isEn = window.SiteCommon.getCurrentLang() === 'en';
 
-        const TYPE_ORDER = [
-            '学歴',
-            '研究業績',
-            'フェローシップ・研究費',
-            'プロジェクト',
-            '競技・ハッカソン',
-            '職歴',
-            '受賞歴',
-            'スキル',
-            'その他'
-        ];
+            rows.slice(0, NEWS_COUNT).forEach((item) => {
+                const entry = document.createElement('li');
+                entry.className = 'home-news-item';
 
-        function trType(value) {
-            if (window.SiteCommon.getCurrentLang() === 'en') return TYPE_LABELS_EN[value] || value;
-            return value;
-        }
+                const year = document.createElement('span');
+                year.className = 'achievement-year';
+                year.textContent = item.year || '';
+                entry.appendChild(year);
 
-        function trCategory(value) {
-            if (window.SiteCommon.getCurrentLang() === 'en') return CATEGORY_LABELS_EN[value] || value;
-            return value;
-        }
+                const text = (isEn && item.title_en && item.title_en.trim()) ? item.title_en : item.title;
+                const links = Array.isArray(item.Links) ? item.Links.filter((link) => link && link.url) : [];
+                if (links.length > 0) {
+                    const link = document.createElement('a');
+                    link.className = 'achievement-title-link';
+                    link.href = links[0].url;
+                    link.target = '_blank';
+                    link.rel = 'noopener noreferrer';
+                    link.textContent = text;
+                    entry.appendChild(link);
+                } else {
+                    const span = document.createElement('span');
+                    span.textContent = text;
+                    entry.appendChild(span);
+                }
 
-        function getAchievementLinks(item) {
-            if (Array.isArray(item.Links)) {
-                return item.Links
-                    .map((link) => {
-                        if (typeof link === 'string') {
-                            return { url: link, label: '', label_en: '' };
-                        }
-                        return link || {};
-                    })
-                    .filter((link) => link.url && link.url.trim() !== '');
-            }
-
-            if (item.Link && item.Link.trim() !== '') {
-                return [{ url: item.Link, label: '詳細', label_en: 'Details' }];
-            }
-
-            return [];
-        }
-
-        function renderAchievementGroups(rows, containerId) {
-            const container = document.getElementById(containerId);
-            container.innerHTML = '';
-
-            const grouped = {};
-            rows.forEach((row) => {
-                const type = (row.type || 'その他').trim();
-                const category = (row.category || '').trim();
-                if (!grouped[type]) grouped[type] = {};
-                if (!grouped[type][category]) grouped[type][category] = [];
-                grouped[type][category].push(row);
+                list.appendChild(entry);
             });
-
-            const orderedTypes = [
-                ...TYPE_ORDER.filter((t) => grouped[t]),
-                ...Object.keys(grouped).filter((t) => !TYPE_ORDER.includes(t))
-            ];
-
-            orderedTypes.forEach((type) => {
-                const typeSection = document.createElement('section');
-                typeSection.className = 'achievement-group';
-
-                const typeTitle = document.createElement('h3');
-                typeTitle.className = 'achievement-group-title';
-                typeTitle.textContent = trType(type);
-                typeSection.appendChild(typeTitle);
-
-                const categories = Object.keys(grouped[type]);
-                categories.forEach((category) => {
-                    const categoryRows = grouped[type][category];
-                    categoryRows.sort((a, b) => Number(b.year || 0) - Number(a.year || 0));
-
-                    if (category) {
-                        const subTitle = document.createElement('h4');
-                        subTitle.className = 'achievement-subgroup-title';
-                        subTitle.textContent = trCategory(category);
-                        typeSection.appendChild(subTitle);
-                    }
-
-                    categoryRows.forEach((item) => {
-                        const entry = document.createElement('article');
-                        entry.className = 'achievement-item';
-
-                        const title = document.createElement('p');
-                        title.className = 'achievement-title';
-                        title.textContent = window.SiteCommon.getCurrentLang() === 'en'
-                            ? ((item.title_en && item.title_en.trim()) ? item.title_en : item.title)
-                            : item.title;
-
-                        if (item.year && item.year.trim() !== '') {
-                            const year = document.createElement('span');
-                            year.className = 'achievement-year';
-                            year.textContent = item.year;
-                            title.prepend(year);
-                        }
-
-                        const links = getAchievementLinks(item);
-                        if (links.length === 1) {
-                            const titleLink = document.createElement('a');
-                            titleLink.className = 'achievement-title-link';
-                            titleLink.href = links[0].url;
-                            titleLink.target = '_blank';
-                            titleLink.rel = 'noopener noreferrer';
-                            while (title.firstChild) titleLink.appendChild(title.firstChild);
-                            title.appendChild(titleLink);
-                        }
-
-                        entry.appendChild(title);
-
-                        if (links.length > 1) {
-                            const linkList = document.createElement('div');
-                            linkList.className = 'achievement-links';
-                            linkList.classList.add('achievement-links--multiple');
-
-                            links.forEach((linkItem) => {
-                                const link = document.createElement('a');
-                                link.href = linkItem.url;
-                                link.target = '_blank';
-                                link.rel = 'noopener noreferrer';
-                                const linkLabel = window.SiteCommon.getCurrentLang() === 'en'
-                                    ? ((linkItem.label_en && linkItem.label_en.trim()) ? linkItem.label_en : (linkItem.label || 'Details'))
-                                    : ((linkItem.label && linkItem.label.trim()) ? linkItem.label : (linkItem.label_en || '詳細'));
-
-                                const label = document.createElement('span');
-                                label.textContent = linkLabel;
-                                link.appendChild(label);
-                                linkList.appendChild(link);
-                            });
-
-                            entry.appendChild(linkList);
-                        }
-
-                        typeSection.appendChild(entry);
-                    });
-                });
-
-                container.appendChild(typeSection);
-            });
-        }
-
-        function renderAchievements(rows) {
-            const researchRows = rows.filter((row) => (row.type || '').trim() === '研究業績');
-            const otherRows = rows.filter((row) => (row.type || '').trim() !== '研究業績');
-
-            renderAchievementGroups(researchRows, 'research-achievements-list');
-            renderAchievementGroups(otherRows, 'achievements-list');
         }
 
         fetch('achievements_data.json')
             .then((response) => {
-                if (!response.ok) {
-                    throw new Error(`Failed to load achievements_data.json: ${response.status}`);
-                }
+                if (!response.ok) throw new Error(`Failed to load achievements_data.json: ${response.status}`);
                 return response.json();
             })
             .then((data) => {
-                achievementRows = (data || []).filter((r) => r && r.title);
-                renderAchievements(achievementRows);
+                newsRows = (data || []).filter((r) => r && r.title && (r.type || '').trim() !== '学歴');
+                renderNews(newsRows);
             })
-            .catch((error) => {
-                console.error(error);
-            });
+            .catch((error) => console.error(error));
+
+        let artRows = [];
 
         window.SiteCommon.onLanguageChange(() => {
-            renderAchievements(achievementRows);
+            renderNews(newsRows);
             renderLatestArts(artRows);
         });
 
@@ -388,8 +412,7 @@
                 });
             }
         });
-
     </script>
-
 </body>
+
 </html>

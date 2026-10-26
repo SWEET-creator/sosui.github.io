@@ -1,0 +1,56 @@
+/* 配色の変数。既定はライト、<html data-theme="dark"> でダーク（切り替えは scripts/common.js） */
+:root {
+  color-scheme: light;
+  --bg-gradient: linear-gradient(135deg, #fafaf9, #efeee9);
+  /* 線画アイコンの塗りつぶし（背景と同じ色で後ろの線を隠す） */
+  --bg-solid: #f5f4f1;
+  /* 半透明の面・枠線に使う色（rgb(var(--ink-rgb) / 0.1) のように使う） */
+  --ink-rgb: 15 23 42;
+  --text: #1c1f24;
+  --text-2: #2f343b;
+  --text-3: #454b54;
+  --text-4: #5b6370;
+  --text-muted: #6b7280;
+  --accent-1: #1d4ed8;
+  --accent-2: #1e3a8a;
+  --accent-3: #1e40af;
+  --accent-4: #4338ca;
+  --accent-hover: #0e7490;
+  --link-underline: rgba(29, 78, 216, 0.45);
+  --focus: rgba(14, 116, 144, 0.6);
+  --tools-bg: rgba(255, 255, 255, 0.8);
+  --tools-border: rgba(15, 23, 42, 0.12);
+  --tile-bg: rgba(255, 255, 255, 0.75);
+  --tile-border: rgba(15, 23, 42, 0.1);
+  --card-bg: #fff;
+  --icon-ink: #23262c;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg-gradient: linear-gradient(135deg, #1c1c1c, #2c2c2c);
+  --bg-solid: #202020;
+  --ink-rgb: 255 255 255;
+  --text: #fff;
+  --text-2: #e5e7eb;
+  --text-3: #d1d5db;
+  --text-4: #cbd5e1;
+  --text-muted: #9ca3af;
+  --accent-1: #93c5fd;
+  --accent-2: #dbeafe;
+  --accent-3: #bfdbfe;
+  --accent-4: #c7d2fe;
+  --accent-hover: #67e8f9;
+  --link-underline: rgba(147, 197, 253, 0.65);
+  --focus: rgba(103, 232, 249, 0.75);
+  --tools-bg: rgba(2, 6, 23, 0.7);
+  --tools-border: rgba(148, 163, 184, 0.25);
+  --tile-bg: rgba(30, 41, 59, 0.6);
+  --tile-border: rgba(148, 163, 184, 0.2);
+  --card-bg: #333;
+  --icon-ink: #f2efe9;
+}
+
+html {
+  background: var(--bg-solid);
+}
