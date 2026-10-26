@@ -59,7 +59,7 @@
     const profileImage = profileImages[page] || profileImages.research;
     const profileDetails = {
       research: [
-        ['奈良先端科学技術大学院大学 情報理工学領域 博士後期課程', 'Ph.D. student, Division of Information Science, NAIST'],
+        ['奈良先端科学技術大学院大学 情報科学領域 博士後期課程', 'Ph.D. student, Division of Information Science, NAIST'],
         ['光メディアインタフェース研究室 所属', 'Affiliation: Optical Media Interface Lab']
       ],
       products: [
